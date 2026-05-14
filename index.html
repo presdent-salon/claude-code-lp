@@ -138,6 +138,18 @@
   .pb h4{margin:0 0 4px;font-size:13px;font-weight:800;color:var(--blue)}
   .pb p{margin:0;font-size:11px;color:var(--ink-2);line-height:1.7;font-weight:500}
 
+  /* Testimonials */
+  .testimonials{background:#F7FAFE}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .testi-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:14px;transition:transform .2s,box-shadow .2s}
+  .testi-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(20,50,120,.08)}
+  .testi-stars{color:#F59E0B;font-size:16px;letter-spacing:2px}
+  .testi-comment{font-size:13px;color:var(--ink-2);line-height:1.85;margin:0;font-weight:500;flex:1}
+  .testi-author{display:flex;align-items:center;gap:12px;margin-top:4px}
+  .testi-avatar{width:40px;height:40px;border-radius:50%;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--blue);flex-shrink:0}
+  .testi-name{font-size:13px;font-weight:700;color:var(--ink);margin:0}
+  .testi-role{font-size:11px;color:var(--muted);font-weight:500;margin:0}
+
   /* Footer CTA */
   .footer-cta{background:#EAF1FE;padding:40px 64px}
   .fc-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center}
@@ -202,6 +214,9 @@
     .profile-info{text-align:center}
     h2.section-title[style]{text-align:center!important}
 
+    /* Testimonials */
+    .testi-grid{grid-template-columns:1fr}
+
     /* Footer CTA */
     .footer-cta{padding:32px 20px}
     .fc-grid{grid-template-columns:1fr}
@@ -231,7 +246,6 @@
       <img src="assets/02_logo_claudecode.png" alt="ClaudeCode講座">
     </div>
     <div class="nav-links">
-      <a href="why-claude-code.html">なぜClaudeCode？</a>
     </div>
     <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-primary" target="_blank" rel="noopener">無料相談に申し込む</a>
     <button class="hamburger" aria-label="メニュー" onclick="document.querySelector('.nav-links').classList.toggle('open')">
@@ -516,7 +530,7 @@
         <div class="price-card">
           <div class="price-left">
             <span class="tag">2ヶ月／全8回</span>
-            <div class="price-num">298,000<small>円(税込)</small></div>
+            <div class="price-num">398,000<small>円(税込)</small></div>
             <ul class="price-checks">
               <li>マンツーマン伴走でしっかり学べる</li>
               <li>作りたいものを一緒に形にする</li>
@@ -801,6 +815,49 @@
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">お客様の声</h2>
+      <p class="section-sub">受講いただいた方々からの声をご紹介します。</p>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-comment">プログラミング未経験でしたが、自分の業務に直結するツールを2ヶ月で形にできました。マンツーマンなので質問しやすく、つまずいてもすぐに解決できたのが大きかったです。</p>
+          <div class="testi-author">
+            <div class="testi-avatar">T.S</div>
+            <div>
+              <p class="testi-name">T.S さん</p>
+              <p class="testi-role">中小企業 経営者</p>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-comment">自分のやりたいことをベースに進められるので、モチベーションが途切れませんでした。講座が終わった後も、学んだスキルを活かして新しいツールを自分で作れるようになりました。</p>
+          <div class="testi-author">
+            <div class="testi-avatar">M.K</div>
+            <div>
+              <p class="testi-name">M.K さん</p>
+              <p class="testi-role">フリーランス マーケター</p>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-comment">チャットサポートがあるので、講座の時間以外でも安心して開発を進められました。セキュリティ対策や公開まで丁寧にサポートしてもらえたのがとてもありがたかったです。</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A.Y</div>
+            <div>
+              <p class="testi-name">A.Y さん</p>
+              <p class="testi-role">スタートアップ 事業開発</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer CTA -->
   <div class="footer-cta">
     <div class="fc-grid">
@@ -828,7 +885,10 @@
     </div>
   </div>
 
-  <footer class="copyright">&copy; 2026 ClaudeCode講座</footer>
+  <footer class="copyright">
+    <a href="why-claude-code.html" style="color:var(--muted);text-decoration:none;font-size:11px;margin-bottom:6px;display:inline-block">なぜClaudeCode？</a><br>
+    &copy; 2026 ClaudeCode講座
+  </footer>
 
 </body>
 </html>
