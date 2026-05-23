@@ -86,6 +86,7 @@ h2.section-title .accent{color:var(--blue)}
 .pain-strong{background:var(--blue-soft-2);border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:24px;margin-top:4px}
 .pain-strong h3{font-size:16px;font-weight:900;line-height:1.55;margin-bottom:12px;color:var(--blue)}
 .pain-strong p{font-size:13px;line-height:1.9;color:var(--ink-2);font-weight:500}
+.misconception-img{width:100%;height:auto;border-radius:14px;box-shadow:var(--card-shadow)}
 
 /* ===== Proposal ===== */
 .proposal-card{background:linear-gradient(135deg,var(--blue),var(--blue-deep));border-radius:16px;padding:32px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden;display:flex;align-items:center;gap:32px}
@@ -105,6 +106,14 @@ h2.section-title .accent{color:var(--blue)}
 .staff-tasks{list-style:none;display:flex;flex-direction:column;gap:6px}
 .staff-tasks li{font-size:12px;color:var(--ink-2);font-weight:500;display:flex;align-items:center;gap:8px;line-height:1.4}
 .staff-tasks li::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0}
+
+/* ===== Difference ===== */
+.difference-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.difference-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 22px;box-shadow:var(--card-shadow);position:relative;overflow:hidden}
+.difference-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),#60A5FA)}
+.difference-num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:var(--blue-soft);color:var(--blue);font-size:13px;font-weight:900;margin-bottom:14px}
+.difference-card h3{font-size:16px;font-weight:900;color:var(--ink);line-height:1.45;margin-bottom:10px}
+.difference-card p{font-size:13px;color:var(--ink-2);line-height:1.8;font-weight:500}
 
 /* ===== Works ===== */
 .works-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -203,11 +212,6 @@ h2.section-title .accent{color:var(--blue)}
 .footer-right{text-align:right}
 .footer-copy{font-size:11px;color:var(--muted);font-weight:500}
 
-/* ===== Fixed bottom CTA ===== */
-.fixed-cta{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;justify-content:center;pointer-events:none}
-.fixed-cta-inner{width:100%;max-width:1200px;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:12px 32px;pointer-events:all;box-shadow:0 -4px 24px rgba(30,91,230,.1);display:flex;align-items:center;justify-content:space-between;gap:16px}
-.fixed-cta-text{font-size:13px;font-weight:700;color:var(--ink)}
-
 /* ===== Responsive (SP) ===== */
 @media(max-width:900px){
   .topnav{padding:12px 20px;position:relative}
@@ -230,6 +234,7 @@ h2.section-title .accent{color:var(--blue)}
 
   .pain-list{grid-template-columns:1fr}
   .staff-grid{grid-template-columns:1fr 1fr}
+  .difference-grid{grid-template-columns:1fr}
   .works-grid{grid-template-columns:1fr}
   .video-grid{grid-template-columns:1fr 1fr}
   .network-grid{grid-template-columns:1fr}
@@ -245,8 +250,6 @@ h2.section-title .accent{color:var(--blue)}
 
   .footer{padding:24px 22px;flex-direction:column;align-items:flex-start}
   .footer-right{text-align:left}
-  .fixed-cta-inner{padding:12px 20px}
-  .fixed-cta-text{display:none}
 }
 @media(max-width:480px){
   .staff-grid{grid-template-columns:1fr}
@@ -284,8 +287,8 @@ h2.section-title .accent{color:var(--blue)}
       <span class="pill">経営者のリアルな悩みから生まれた</span>
       <h1 class="hero-title">
         ClaudeCodeで<br>
-        <span class="accent">AI社員・AIプロダクト</span>を<br>
-        構築する
+        <span class="accent">AI社員・AIプロダクト</span><br>
+        を構築する
       </h1>
       <p class="hero-sub-label">経営者のための実践型AI支援サービス</p>
       <p class="hero-desc">
@@ -349,7 +352,14 @@ h2.section-title .accent{color:var(--blue)}
   </div>
 </section>
 
-<!-- ===== ③ 提案セクション ===== -->
+<!-- ===== ③ AI導入のよくある誤解セクション ===== -->
+<section>
+  <div class="container">
+    <img class="misconception-img fade-up" src="assets/ai-misconception-lp.png" alt="AI導入のよくある誤解">
+  </div>
+</section>
+
+<!-- ===== ④ 提案セクション ===== -->
 <section class="sec-alt">
   <div class="container">
     <div class="fade-up">
@@ -415,8 +425,36 @@ h2.section-title .accent{color:var(--blue)}
   </div>
 </section>
 
-<!-- ===== ⑤ 実績セクション ===== -->
-<section class="sec-alt">
+<!-- ===== ⑤ 他講座との違いセクション ===== -->
+<section class="sec-alt" id="reason">
+  <div class="container">
+    <div class="fade-up">
+      <div style="text-align:center;margin-bottom:8px"><span class="sec-label">選ばれる理由</span></div>
+      <h2 class="section-title">他の講座と<span class="accent">ココが違う。</span></h2>
+      <p class="section-sub">AIを学ぶだけで終わらせず、ひとり社長の実務に落とし込む講座です。</p>
+    </div>
+    <div class="difference-grid">
+      <div class="difference-card fade-up">
+        <div class="difference-num">01</div>
+        <h3>ClaudeCodeに特化</h3>
+        <p>汎用的なAI知識ではなく、ClaudeCodeを使ったAI社員・AIプロダクト構築に絞って実践します。</p>
+      </div>
+      <div class="difference-card fade-up">
+        <div class="difference-num">02</div>
+        <h3>講師は現役エンジニア</h3>
+        <p>実際に開発・自動化・AI導入を行うエンジニアが、現場目線で具体的にサポートします。</p>
+      </div>
+      <div class="difference-card fade-up">
+        <div class="difference-num">03</div>
+        <h3>ひとり社長向け</h3>
+        <p>人を増やす前にAIで業務を仕組み化したい経営者・個人事業主に合わせて設計しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑥ 実績セクション ===== -->
+<section>
   <div class="container">
     <div class="fade-up">
       <div style="text-align:center;margin-bottom:8px"><span class="sec-label">構築実績</span></div>
@@ -706,17 +744,6 @@ h2.section-title .accent{color:var(--blue)}
   </div>
 </footer>
 
-<!-- ===== 固定CTA ===== -->
-<div class="fixed-cta" id="fixedCta">
-  <div class="fixed-cta-inner">
-    <p class="fixed-cta-text">AI社員・AIプロダクト構築支援サービス</p>
-    <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-primary" target="_blank" rel="noopener" style="padding:12px 22px;white-space:nowrap">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="8 14 11 17 16 12"/></svg>
-      無料相談を予約する
-    </a>
-  </div>
-</div>
-
 <script>
 // Scroll animation
 const observer = new IntersectionObserver((entries) => {
@@ -746,16 +773,6 @@ const ham = document.getElementById('hamburger');
 const nav = document.getElementById('navLinks');
 if (ham) ham.addEventListener('click', () => nav.classList.toggle('open'));
 
-// Hide fixed CTA near hero
-const fixedCta = document.getElementById('fixedCta');
-const heroEl = document.querySelector('.hero');
-if (heroEl && fixedCta) {
-  const heroObs = new IntersectionObserver((entries) => {
-    fixedCta.style.opacity = entries[0].isIntersecting ? '0' : '1';
-    fixedCta.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'all';
-  }, { threshold: 0.2 });
-  heroObs.observe(heroEl);
-}
 </script>
 </body>
 </html>
