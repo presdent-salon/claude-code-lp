@@ -152,6 +152,21 @@ h2.section-title .accent{color:var(--blue)}
 .price-note{font-size:14px;color:var(--ink-2);font-weight:700}
 .price-sub{font-size:12px;color:var(--muted);margin-top:12px;font-weight:500}
 
+/* ===== Outsourcing ===== */
+.outsourcing-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px;box-shadow:var(--card-shadow)}
+.outsourcing-lead{font-size:15px;line-height:1.9;color:var(--ink-2);font-weight:600;text-align:center;max-width:760px;margin:0 auto 28px}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.ba-card{border:1px solid var(--line);border-radius:14px;padding:24px;background:var(--blue-soft-2)}
+.ba-card.after{background:#fff;border-color:#BFD0F6}
+.ba-label{font-size:12px;font-weight:900;color:var(--muted);letter-spacing:.08em;margin-bottom:10px}
+.ba-card.after .ba-label{color:var(--blue)}
+.ba-card h3{font-size:18px;font-weight:900;color:var(--ink);line-height:1.5;margin-bottom:12px}
+.ba-card p{font-size:13px;color:var(--ink-2);line-height:1.85;font-weight:500}
+.outsourcing-result{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.result-box{background:var(--blue);color:#fff;border-radius:12px;padding:20px;text-align:center;font-weight:900}
+.result-box span{display:block;font-size:13px;opacity:.9;margin-bottom:4px}
+.result-box strong{font-size:28px;line-height:1.2}
+
 /* ===== Message (代表挨拶) ===== */
 .message-wrap{background:#fff;border:1px solid var(--line);border-radius:16px;padding:36px;box-shadow:var(--card-shadow);max-width:780px;margin:0 auto}
 .message-header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
@@ -253,6 +268,7 @@ h2.section-title .accent{color:var(--blue)}
 @media(max-width:480px){
   .staff-grid{grid-template-columns:1fr}
   .video-grid{grid-template-columns:1fr}
+  .ba-grid,.outsourcing-result{grid-template-columns:1fr}
   h1.hero-title{font-size:26px}
 }
 </style>
@@ -433,44 +449,6 @@ h2.section-title .accent{color:var(--blue)}
         <div class="difference-num">03</div>
         <h3>ひとり社長向け</h3>
         <p>人を増やす前にAIで業務を仕組み化したい経営者・個人事業主に合わせて設計しています。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ⑥ 比較表セクション ===== -->
-<section>
-  <div class="container">
-    <div class="fade-up">
-      <div style="text-align:center;margin-bottom:8px"><span class="sec-label">比較</span></div>
-      <h2 class="section-title">なぜ、<span class="accent">ClaudeCode実践支援</span>なのか。</h2>
-      <p class="section-sub">AI知識を増やすだけでなく、ひとり社長の実務に成果物として落とし込みます。</p>
-    </div>
-    <div class="comparison-wrap fade-up">
-      <div class="comparison-grid">
-        <div class="comparison-cell comparison-head"></div>
-        <div class="comparison-cell comparison-head featured">この講座</div>
-        <div class="comparison-cell comparison-head">他のAI講座一般</div>
-
-        <div class="comparison-cell comparison-label">対象ツール</div>
-        <div class="comparison-cell comparison-featured">ClaudeCodeに特化して深く実践</div>
-        <div class="comparison-cell comparison-other">ChatGPTやAI全般を広く浅く学ぶ</div>
-
-        <div class="comparison-cell comparison-label">対象者</div>
-        <div class="comparison-cell comparison-featured">ひとり社長・経営者向け</div>
-        <div class="comparison-cell comparison-other">エンジニア向け、または一般向け</div>
-
-        <div class="comparison-cell comparison-label">学習内容</div>
-        <div class="comparison-cell comparison-featured">AI社員・AIプロダクト構築まで実践</div>
-        <div class="comparison-cell comparison-other">ツール操作やプロンプト学習が中心</div>
-
-        <div class="comparison-cell comparison-label">サポート</div>
-        <div class="comparison-cell comparison-featured">業務棚卸しから個別伴走</div>
-        <div class="comparison-cell comparison-other">動画視聴やチャット質問が中心</div>
-
-        <div class="comparison-cell comparison-label">目指す成果</div>
-        <div class="comparison-cell comparison-featured">自社業務で動く仕組みを作る</div>
-        <div class="comparison-cell comparison-other">AI知識を増やして終わりやすい</div>
       </div>
     </div>
   </div>
@@ -679,7 +657,37 @@ h2.section-title .accent{color:var(--blue)}
   </div>
 </section>
 
-<!-- ===== ⑫ 料金セクション ===== -->
+<!-- ===== ⑫ 外注から自走開発へセクション ===== -->
+<section>
+  <div class="container">
+    <div class="fade-up">
+      <div style="text-align:center;margin-bottom:8px"><span class="sec-label">外注から自走へ</span></div>
+      <h2 class="section-title">外注で<span class="accent">思い通りにならなかった</span>経験はありませんか？</h2>
+      <p class="section-sub">ClaudeCodeを学ぶことで、自分の意図をそのまま形にする開発を目指せます。</p>
+    </div>
+    <div class="outsourcing-card fade-up">
+      <p class="outsourcing-lead">サイトやアプリを外注したものの、意図が伝わらない。修正をお願いしても、思っていた形にならない。そんな経営者こそ、ClaudeCodeで「自分で作れる力」を持つ価値があります。</p>
+      <div class="ba-grid">
+        <div class="ba-card">
+          <p class="ba-label">BEFORE</p>
+          <h3>外注任せで、意図が伝わらない</h3>
+          <p>要望を説明しても汲み取ってもらえず、修正のたびに時間と費用が増えていく。完成しても「本当に作りたかったもの」とズレてしまう。</p>
+        </div>
+        <div class="ba-card after">
+          <p class="ba-label">AFTER</p>
+          <h3>ClaudeCodeで、自分の意図をそのまま形にする</h3>
+          <p>自分の言葉でAIに指示しながら、サイトや業務アプリを改善できる。小さな修正も新しいアイデアも、外注待ちにせず進められます。</p>
+        </div>
+      </div>
+      <div class="outsourcing-result">
+        <div class="result-box"><span>目指せる外注費用</span><strong>0円</strong></div>
+        <div class="result-box"><span>目指せる開発期間</span><strong>1日</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑬ 料金セクション ===== -->
 <section id="price">
   <div class="container">
     <div class="fade-up">
@@ -691,6 +699,44 @@ h2.section-title .accent{color:var(--blue)}
       <p class="price-main">月額4,980円<small>（税込）</small></p>
       <p class="price-note">入会金198,000円（税込）</p>
       <p class="price-sub">詳細な支援内容は無料相談にてご案内します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ⑬ 比較表セクション ===== -->
+<section>
+  <div class="container">
+    <div class="fade-up">
+      <div style="text-align:center;margin-bottom:8px"><span class="sec-label">比較</span></div>
+      <h2 class="section-title">なぜ、<span class="accent">ClaudeCode実践支援</span>なのか。</h2>
+      <p class="section-sub">AI知識を増やすだけでなく、ひとり社長の実務に成果物として落とし込みます。</p>
+    </div>
+    <div class="comparison-wrap fade-up">
+      <div class="comparison-grid">
+        <div class="comparison-cell comparison-head"></div>
+        <div class="comparison-cell comparison-head featured">この講座</div>
+        <div class="comparison-cell comparison-head">他のAI講座一般</div>
+
+        <div class="comparison-cell comparison-label">対象ツール</div>
+        <div class="comparison-cell comparison-featured">ClaudeCodeに特化して深く実践</div>
+        <div class="comparison-cell comparison-other">ChatGPTやAI全般を広く浅く学ぶ</div>
+
+        <div class="comparison-cell comparison-label">対象者</div>
+        <div class="comparison-cell comparison-featured">ひとり社長・経営者向け</div>
+        <div class="comparison-cell comparison-other">エンジニア向け、または一般向け</div>
+
+        <div class="comparison-cell comparison-label">学習内容</div>
+        <div class="comparison-cell comparison-featured">AI社員・AIプロダクト構築まで実践</div>
+        <div class="comparison-cell comparison-other">ツール操作やプロンプト学習が中心</div>
+
+        <div class="comparison-cell comparison-label">サポート</div>
+        <div class="comparison-cell comparison-featured">業務棚卸しから個別伴走</div>
+        <div class="comparison-cell comparison-other">動画視聴やチャット質問が中心</div>
+
+        <div class="comparison-cell comparison-label">目指す成果</div>
+        <div class="comparison-cell comparison-featured">自社業務で動く仕組みを作る</div>
+        <div class="comparison-cell comparison-other">AI知識を増やして終わりやすい</div>
+      </div>
     </div>
   </div>
 </section>
