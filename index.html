@@ -152,6 +152,11 @@
   .testi-role{font-size:11px;color:var(--muted);font-weight:500;margin:0}
   .testi-featured{background:#fff;border:1.5px solid var(--blue);border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:14px;margin-bottom:24px;box-shadow:0 4px 24px rgba(30,91,230,.1)}
   .testi-tag{display:inline-flex;align-items:center;gap:6px;background:var(--blue-soft);color:var(--blue);font-weight:700;font-size:12px;padding:6px 14px;border-radius:999px;width:fit-content}
+  .testi-profile-top{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:2px}
+  .testi-avatar-sq{width:88px;height:88px;border-radius:14px;overflow:hidden;flex-shrink:0}
+  .testi-avatar-sq img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .testi-name-center{font-size:15px;font-weight:700;color:var(--ink);margin:0;text-align:center}
+  .testi-role-center{font-size:12px;color:var(--muted);font-weight:500;margin:0;text-align:center}
 
   /* Footer CTA */
   .footer-cta{background:#EAF1FE;padding:40px 64px}
@@ -825,18 +830,16 @@
       <p class="section-sub">実際に受講いただいた方々からの声をご紹介します。</p>
 
       <div class="testi-featured">
+        <div class="testi-profile-top">
+          <div class="testi-avatar-sq">
+            <img src="assets/kajiya_profile.jpg" alt="梶屋さん">
+          </div>
+          <p class="testi-name-center">梶屋 さん</p>
+          <p class="testi-role-center">民泊運営 経営者</p>
+        </div>
         <div class="testi-stars">★★★★★</div>
         <span class="testi-tag">🏠 民泊物件の価格調整ツールを作りました</span>
         <p class="testi-comment">Claude Codeでホームページ制作やツール開発ができることは知っていましたが、実際に自分のPCでどう環境構築し、どうプロンプトを打ち、外部連携や公開まで進めるのかが分かっていませんでした。今回のコンサルでは、民泊運営の価格調整業務を題材に、実際の価格調整ツールを開発。これまで140件の物件を確認しながら4〜5時間かけて行っていた作業を、一瞬で実行できるレベルまで改善できました。初心者でも理解できるよう丁寧に解説しながら伴走していただけたので、学びながら実務成果まで出せたのが非常に良かったです。</p>
-        <div class="testi-author">
-          <div class="testi-avatar">
-            <img src="assets/kajiya_profile.jpg" alt="梶屋さん">
-          </div>
-          <div>
-            <p class="testi-name">梶屋 さん</p>
-            <p class="testi-role">民泊運営 経営者</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
