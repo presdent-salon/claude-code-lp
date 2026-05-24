@@ -4,382 +4,759 @@
 <meta charset="utf-8">
 <title>マーケ&業務効率化をClaudeCodeで全部やる｜無料体験セミナー</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="ChatGPT・Geminiを使っているのに業務が変わらない。そのモヤモヤを解決するClaudeCode実践セミナー。講師：清水勝紀。">
+<meta name="description" content="ChatGPT・Geminiを使っているのに業務が変わらない。ClaudeCodeで解決する無料体験セミナー。講師：清水勝紀。">
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
 <style>
-/* ===== Reset & Base ===== */
+/* ===== Reset ===== */
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:"Noto Sans JP",system-ui,sans-serif;color:#15233A;background:#fff;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 a{text-decoration:none}
 
-/* ===== Design Tokens ===== */
+/* ===== Color Tokens ===== */
 :root{
-  --blue:#1E5BE6;
-  --blue-deep:#1648BD;
-  --blue-soft:#EAF1FE;
-  --blue-soft-2:#F4F8FF;
-  --ink:#15233A;
-  --ink-2:#3B4A63;
-  --muted:#6B7891;
-  --line:#E1E8F2;
-  --page:#F7FAFE;
-  --orange:#FF6B35;
-  --orange-deep:#E55A28;
-  --card-shadow:0 4px 20px rgba(30,91,230,.09);
-  --card-shadow-hover:0 12px 40px rgba(30,91,230,.15);
+  --orange:#FF6600;
+  --orange-dark:#E55500;
+  --orange-soft:#FFF3E8;
+  --ink:#111111;
+  --white:#ffffff;
+  --green-cta:#3DB851;
+  --green-cta-dark:#2FA044;
 }
 
-/* ===== Scroll Animations ===== */
-.fade-up{opacity:0;transform:translateY(24px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
+/* ===== Base ===== */
+body{
+  font-family:"Noto Sans JP",sans-serif;
+  color:var(--ink);
+  background:#ffffff;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:80px;
+}
+
+/* ===== Page Wrapper（540px中央寄せ） ===== */
+.page-wrap{
+  max-width:540px;
+  margin:0 auto;
+  overflow-x:hidden;
+}
+
+/* ===== Animations ===== */
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)}
 .fade-up.visible{opacity:1;transform:none}
-.fade-in{opacity:0;transition:opacity .6s ease}
-.fade-in.visible{opacity:1}
 
-/* ===== Navigation ===== */
-.topnav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:200}
-.brand{display:flex;align-items:center;gap:10px}
-.brand-text{font-size:15px;font-weight:900;color:var(--ink)}
-.nav-links{display:flex;gap:28px;font-size:14px;font-weight:500;color:var(--ink-2)}
-.nav-links a{color:inherit}
-.nav-links a:hover{color:var(--blue)}
-.nav-cta{background:var(--orange);color:#fff;border:none;padding:12px 22px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit;display:inline-block;transition:background .2s}
-.nav-cta:hover{background:var(--orange-deep)}
-
-/* ===== Buttons ===== */
-.btn-primary{display:inline-flex;align-items:center;justify-content:center;background:var(--orange);color:#fff;border:none;padding:18px 40px;border-radius:10px;font-weight:900;font-size:17px;cursor:pointer;font-family:inherit;gap:8px;transition:background .2s,transform .15s;box-shadow:0 4px 16px rgba(255,107,53,.35);text-decoration:none}
-.btn-primary:hover{background:var(--orange-deep);transform:translateY(-1px)}
-.btn-sub{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;border:none;padding:14px 32px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;transition:background .2s;text-decoration:none}
-.btn-sub:hover{background:var(--blue-deep)}
+/* ===== Nav ===== */
+.topnav{
+  background:var(--white);
+  border-bottom:3px solid var(--orange);
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:200;
+}
+.brand-text{font-size:14px;font-weight:900;color:var(--ink)}
+.nav-cta{
+  background:var(--orange);
+  color:#fff;
+  font-size:12px;
+  font-weight:700;
+  padding:9px 16px;
+  border-radius:6px;
+  font-family:inherit;
+}
 
 /* ===== Sections ===== */
-section{padding:72px 24px}
-.container{max-width:960px;margin:0 auto}
-.sec-alt{background:var(--page)}
+section{padding:52px 24px}
+.sec-alt{background:var(--orange-soft)}
 
-.sec-label{display:inline-block;background:var(--blue-soft);color:var(--blue);font-weight:700;font-size:11px;padding:5px 14px;border-radius:999px;margin-bottom:12px;letter-spacing:.06em}
-h2.section-title{font-size:28px;font-weight:900;text-align:center;margin:0 0 10px;line-height:1.35}
-h2.section-title .accent{color:var(--blue)}
-h2.section-title .accent-orange{color:var(--orange)}
-.section-sub{text-align:center;color:var(--muted);font-size:13px;margin:0 0 40px;font-weight:500}
+.sec-label{
+  display:inline-block;
+  background:var(--orange);
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  padding:4px 12px;
+  border-radius:2px;
+  margin-bottom:14px;
+  letter-spacing:.08em;
+}
+h2.section-title{
+  font-size:22px;
+  font-weight:900;
+  color:var(--ink);
+  margin:0 0 8px;
+  line-height:1.4;
+}
+h2.section-title .accent{color:var(--orange)}
+.section-sub{
+  font-size:13px;
+  color:#555;
+  margin:0 0 32px;
+  line-height:1.8;
+}
+
+/* ===== Buttons ===== */
+.btn-orange{
+  display:block;
+  width:100%;
+  background:var(--orange);
+  color:#fff;
+  font-size:17px;
+  font-weight:900;
+  padding:18px 20px;
+  border-radius:8px;
+  text-align:center;
+  font-family:inherit;
+  box-shadow:0 4px 14px rgba(255,102,0,.35);
+}
+.btn-orange:active{background:var(--orange-dark)}
+.btn-green{
+  display:block;
+  width:100%;
+  background:var(--green-cta);
+  color:#fff;
+  font-size:17px;
+  font-weight:900;
+  padding:18px 20px;
+  border-radius:8px;
+  text-align:center;
+  font-family:inherit;
+  box-shadow:0 4px 14px rgba(61,184,81,.35);
+}
+.btn-green:active{background:var(--green-cta-dark)}
+
+/* ===== Sticky CTA ===== */
+.sticky-cta{
+  position:fixed;
+  bottom:16px;
+  left:50%;
+  transform:translateX(-50%);
+  width:calc(100% - 32px);
+  max-width:508px;
+  background:var(--green-cta);
+  color:#fff;
+  font-size:18px;
+  font-weight:900;
+  padding:17px 20px;
+  border-radius:10px;
+  text-align:center;
+  z-index:500;
+  box-shadow:0 6px 24px rgba(61,184,81,.45);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-family:inherit;
+}
+.sticky-cta:active{background:var(--green-cta-dark)}
+.sticky-cta .arrow{
+  width:24px;
+  height:24px;
+  background:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.sticky-cta .arrow::after{
+  content:"";
+  border:solid var(--green-cta);
+  border-width:0 3px 3px 0;
+  padding:4px;
+  transform:rotate(-45deg);
+  margin-left:-2px;
+}
 
 /* ===== Hero ===== */
-.hero{background:linear-gradient(135deg,#0A1628 0%,#152244 55%,#1E3A8A 100%);padding:64px 40px 0;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;top:-100px;left:-60px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.03);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:flex-end;max-width:1100px;margin:0 auto;position:relative;z-index:2}
-.hero-text{padding-bottom:64px}
-.hero-eyecatch{display:inline-block;background:var(--orange);color:#fff;font-size:13px;font-weight:700;padding:7px 20px;border-radius:999px;margin-bottom:24px;letter-spacing:.04em}
-.hero-title{font-size:46px;font-weight:900;color:#fff;line-height:1.2;margin:0 0 20px;letter-spacing:-.02em}
-.hero-title .hl{color:#FFD166}
-.hero-sub{font-size:15px;color:rgba(255,255,255,.8);line-height:1.9;margin:0 0 32px;font-weight:500}
-.hero-cta-wrap{margin-bottom:16px}
-.hero-note{font-size:12px;color:rgba(255,255,255,.5);font-weight:500;margin-bottom:28px}
-.hero-badges{display:flex;gap:12px;flex-wrap:wrap}
-.hero-badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:8px 16px;font-size:12px;font-weight:700;color:#fff;display:flex;align-items:center;gap:6px}
-.hero-img{display:flex;align-items:flex-end;justify-content:center}
-.hero-img img{width:100%;max-width:400px;height:auto;display:block;object-fit:contain}
+.hero{
+  background:var(--orange);
+  padding:40px 24px 0;
+  overflow:hidden;
+}
+.hero-label{
+  display:inline-block;
+  background:#fff;
+  color:var(--orange);
+  font-size:12px;
+  font-weight:900;
+  padding:6px 16px;
+  border-radius:2px;
+  margin-bottom:18px;
+  letter-spacing:.04em;
+}
+.hero-title{
+  font-size:32px;
+  font-weight:900;
+  color:#fff;
+  line-height:1.25;
+  margin:0 0 16px;
+  letter-spacing:-.01em;
+}
+.hero-sub{
+  font-size:14px;
+  color:rgba(255,255,255,.9);
+  line-height:1.9;
+  margin:0 0 24px;
+  font-weight:500;
+}
+.hero-cta{margin-bottom:16px}
+.hero-note{
+  font-size:11px;
+  color:rgba(255,255,255,.7);
+  text-align:center;
+  margin-bottom:28px;
+}
+.hero-badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:28px;
+}
+.hero-badge{
+  background:rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.4);
+  border-radius:4px;
+  padding:6px 12px;
+  font-size:12px;
+  font-weight:700;
+  color:#fff;
+}
+.hero-img{
+  display:flex;
+  justify-content:center;
+  margin:0 -24px;
+}
+.hero-img img{
+  width:80%;
+  max-width:360px;
+  height:auto;
+}
 
-/* ===== 日程調整フォーム ===== */
-.schedule-sec{background:var(--blue-soft-2);padding:60px 24px;border-top:3px solid var(--blue)}
-.schedule-inner{max-width:720px;margin:0 auto;text-align:center}
-.schedule-sec h2{font-size:24px;font-weight:900;color:var(--ink);margin-bottom:8px}
-.schedule-sec .schedule-sub{font-size:13px;color:var(--muted);font-weight:500;margin-bottom:28px}
-.schedule-dates{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
-.sdate{background:#fff;border:2px solid var(--line);border-radius:12px;padding:16px 12px;text-align:center;cursor:pointer;transition:border-color .2s,box-shadow .2s;text-decoration:none;display:block}
-.sdate:hover{border-color:var(--blue);box-shadow:0 4px 16px rgba(30,91,230,.15)}
-.sdate .sd-day{font-size:13px;font-weight:700;color:var(--muted);margin-bottom:4px}
-.sdate .sd-date{font-size:18px;font-weight:900;color:var(--ink);margin-bottom:4px}
-.sdate .sd-time{font-size:13px;font-weight:700;color:var(--blue)}
-.sdate .sd-badge{display:inline-block;background:var(--orange);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;margin-top:6px}
-.schedule-or{font-size:13px;color:var(--muted);font-weight:500;margin-bottom:16px}
+/* ===== 日程フォーム ===== */
+.schedule-sec{
+  background:var(--orange-soft);
+  padding:48px 24px;
+  border-top:4px solid var(--orange);
+}
+.schedule-sec h2{
+  font-size:20px;
+  font-weight:900;
+  color:var(--ink);
+  margin-bottom:6px;
+}
+.schedule-sub{
+  font-size:13px;
+  color:#555;
+  margin-bottom:22px;
+  line-height:1.7;
+}
+.schedule-dates{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:22px;
+}
+.sdate{
+  background:#fff;
+  border:2px solid var(--orange);
+  border-radius:8px;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  cursor:pointer;
+}
+.sdate-info{display:flex;align-items:center;gap:16px}
+.sdate-date{font-size:18px;font-weight:900;color:var(--ink)}
+.sdate-day{font-size:12px;color:#555;font-weight:500}
+.sdate-time{font-size:13px;font-weight:700;color:var(--orange)}
+.sdate-badge{
+  background:var(--orange);
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  padding:4px 10px;
+  border-radius:4px;
+  flex-shrink:0;
+}
+.schedule-or{
+  font-size:12px;
+  color:#555;
+  text-align:center;
+  margin-bottom:12px;
+}
+.btn-outline{
+  display:block;
+  width:100%;
+  border:2px solid var(--orange);
+  color:var(--orange);
+  background:#fff;
+  font-size:15px;
+  font-weight:700;
+  padding:14px 20px;
+  border-radius:8px;
+  text-align:center;
+  font-family:inherit;
+}
+
+/* ===== Pain ===== */
+.pain-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:28px;
+}
+.pain-card{
+  background:#fff;
+  border-left:4px solid var(--orange);
+  border-radius:0 8px 8px 0;
+  padding:14px 16px;
+  font-size:14px;
+  font-weight:700;
+  color:var(--ink);
+  line-height:1.55;
+}
+.pain-card span{
+  display:block;
+  font-size:12px;
+  font-weight:400;
+  color:#555;
+  margin-top:4px;
+}
+.pain-resolve{
+  background:var(--orange);
+  border-radius:8px;
+  padding:24px 20px;
+  text-align:center;
+  color:#fff;
+}
+.pain-resolve h3{font-size:17px;font-weight:900;margin-bottom:10px;line-height:1.5}
+.pain-resolve p{font-size:13px;opacity:.9;line-height:1.8;font-weight:500}
 
 /* ===== 参加特典 ===== */
-.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.benefit-card{background:#fff;border-radius:16px;padding:28px 20px;text-align:center;box-shadow:var(--card-shadow);border:1px solid var(--line)}
-.benefit-num{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange-deep));color:#fff;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
-.benefit-icon{font-size:32px;margin-bottom:10px}
-.benefit-title{font-size:15px;font-weight:900;color:var(--ink);margin-bottom:8px;line-height:1.4}
-.benefit-desc{font-size:12px;color:var(--muted);font-weight:500;line-height:1.8}
-.benefit-badge{display:inline-block;background:var(--orange);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.benefit-list{display:flex;flex-direction:column;gap:14px}
+.benefit-card{
+  background:#fff;
+  border-radius:8px;
+  padding:20px;
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  border:1px solid #e0e0e0;
+}
+.benefit-num{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:var(--orange);
+  color:#fff;
+  font-size:16px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.benefit-body h3{font-size:15px;font-weight:900;margin-bottom:6px;color:var(--ink)}
+.benefit-body p{font-size:13px;color:#555;line-height:1.7;font-weight:400}
+.benefit-tag{
+  display:inline-block;
+  background:var(--orange);
+  color:#fff;
+  font-size:10px;
+  font-weight:700;
+  padding:2px 8px;
+  border-radius:2px;
+  margin-bottom:6px;
+}
 
-/* ===== Pain section ===== */
-.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:40px}
-.pain-card{background:#fff;border:2px solid var(--line);border-radius:14px;padding:20px 22px;display:flex;align-items:flex-start;gap:14px}
-.pain-card .pain-icon{font-size:28px;flex-shrink:0;margin-top:2px}
-.pain-card .pain-text{font-size:14px;font-weight:700;color:var(--ink);line-height:1.6}
-.pain-card .pain-text span{display:block;font-size:12px;font-weight:500;color:var(--muted);margin-top:4px}
-.pain-resolve{background:linear-gradient(135deg,var(--blue),var(--blue-deep));border-radius:16px;padding:28px 32px;text-align:center;color:#fff}
-.pain-resolve h3{font-size:20px;font-weight:900;margin-bottom:10px;line-height:1.5}
-.pain-resolve p{font-size:14px;opacity:.85;font-weight:500;line-height:1.8}
-
-/* ===== Summary ===== */
-.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.summary-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 20px;text-align:center;box-shadow:var(--card-shadow)}
-.summary-card .s-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;margin-bottom:8px}
-.summary-card .s-val{font-size:22px;font-weight:900;color:var(--blue)}
-.summary-card .s-sub{font-size:12px;color:var(--muted);margin-top:4px;font-weight:500}
+/* ===== Overview ===== */
+.overview-list{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  background:#fff;
+  border-radius:8px;
+  border:1px solid #e0e0e0;
+  overflow:hidden;
+  margin-bottom:20px;
+}
+.overview-row{
+  display:flex;
+  border-bottom:1px solid #e0e0e0;
+}
+.overview-row:last-child{border-bottom:none}
+.ov-label{
+  background:var(--orange-soft);
+  font-size:13px;
+  font-weight:700;
+  color:var(--orange);
+  padding:14px 16px;
+  min-width:100px;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+}
+.ov-val{
+  font-size:14px;
+  font-weight:500;
+  color:var(--ink);
+  padding:14px 16px;
+  line-height:1.6;
+}
+.ov-val strong{font-weight:900}
 
 /* ===== Chapters ===== */
-.chapter-list{display:flex;flex-direction:column;gap:32px}
-.chapter-item{display:grid;grid-template-columns:160px 1fr;gap:24px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 32px;box-shadow:var(--card-shadow)}
-.chapter-num{text-align:center}
-.chapter-num .ch-label{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--blue)}
-.chapter-num .ch-n{font-size:52px;font-weight:900;color:var(--blue);line-height:1}
-.chapter-num .ch-title{font-size:13px;font-weight:700;color:var(--ink-2);margin-top:6px;line-height:1.4}
-.chapter-body h3{font-size:18px;font-weight:900;color:var(--ink);margin-bottom:12px;line-height:1.4}
-.chapter-body p{font-size:13px;color:var(--ink-2);line-height:1.9;font-weight:500;margin-bottom:14px}
+.chapter-list{display:flex;flex-direction:column;gap:16px}
+.chapter-item{
+  background:#fff;
+  border-radius:8px;
+  border:1px solid #e0e0e0;
+  overflow:hidden;
+}
+.chapter-head{
+  background:var(--orange);
+  color:#fff;
+  padding:12px 16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.ch-num{font-size:11px;font-weight:700;letter-spacing:.1em;opacity:.85}
+.ch-title-head{font-size:15px;font-weight:900}
+.chapter-body{padding:18px 16px}
+.chapter-body h3{font-size:14px;font-weight:900;margin-bottom:10px;line-height:1.5;color:var(--ink)}
+.chapter-body p{font-size:13px;color:#555;line-height:1.85;margin-bottom:12px;font-weight:400}
 .chapter-points{list-style:none;display:flex;flex-direction:column;gap:8px}
-.chapter-points li{display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:600;color:var(--ink)}
-.chapter-points li::before{content:"✓";color:var(--blue);font-weight:900;flex-shrink:0;margin-top:1px}
+.chapter-points li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:13px;
+  font-weight:600;
+  color:var(--ink);
+}
+.chapter-points li::before{
+  content:"";
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:var(--orange);
+  flex-shrink:0;
+  margin-top:1px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:center;
+}
 
 /* ===== Instructor ===== */
-.inst-wrap{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:20px;padding:40px;box-shadow:var(--card-shadow)}
-.inst-photo{border-radius:16px;width:180px;height:180px;object-fit:cover}
-.inst-role{font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.04em;margin-bottom:6px}
-.inst-name{font-size:28px;font-weight:900;color:var(--ink);margin-bottom:4px}
-.inst-yomi{font-size:13px;color:var(--muted);font-weight:500;margin-bottom:16px}
-.inst-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-.inst-tag{background:var(--blue-soft);color:var(--blue);font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px}
-.inst-desc{font-size:14px;color:var(--ink-2);line-height:2;font-weight:500}
-.inst-desc strong{color:var(--ink);font-weight:800}
+.inst-card{
+  background:#fff;
+  border-radius:8px;
+  border:1px solid #e0e0e0;
+  overflow:hidden;
+}
+.inst-head{
+  background:var(--orange);
+  padding:20px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.inst-photo{
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #fff;
+  flex-shrink:0;
+}
+.inst-head-info .inst-role{font-size:11px;color:rgba(255,255,255,.8);font-weight:700;margin-bottom:2px}
+.inst-head-info .inst-name{font-size:20px;font-weight:900;color:#fff;margin-bottom:2px}
+.inst-head-info .inst-yomi{font-size:11px;color:rgba(255,255,255,.7);font-weight:500}
+.inst-tags{display:flex;flex-wrap:wrap;gap:6px;padding:14px 16px;border-bottom:1px solid #e0e0e0}
+.inst-tag{
+  background:var(--orange-soft);
+  border:1px solid var(--orange);
+  color:var(--orange);
+  font-size:11px;
+  font-weight:700;
+  padding:3px 10px;
+  border-radius:2px;
+}
+.inst-desc{
+  padding:16px;
+  font-size:13px;
+  color:#333;
+  line-height:2;
+  font-weight:400;
+}
+.inst-desc strong{font-weight:900;color:var(--ink)}
 
 /* ===== Voices ===== */
-.voices-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.voice-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:var(--card-shadow)}
-.voice-stars{color:#FFD166;font-size:14px;letter-spacing:2px;margin-bottom:10px}
-.voice-text{font-size:13px;color:var(--ink-2);line-height:1.9;font-weight:500;margin-bottom:14px}
-.voice-meta{display:flex;align-items:center;gap:10px}
-.voice-avatar{width:36px;height:36px;border-radius:50%;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.voice-info{font-size:12px;color:var(--muted);font-weight:500}
+.voice-list{display:flex;flex-direction:column;gap:14px}
+.voice-card{
+  background:#fff;
+  border-radius:8px;
+  border:1px solid #e0e0e0;
+  padding:18px 16px;
+}
+.voice-stars{
+  color:var(--orange);
+  font-size:14px;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+.voice-text{
+  font-size:13px;
+  color:#333;
+  line-height:1.9;
+  margin-bottom:14px;
+  font-weight:400;
+}
+.voice-meta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  border-top:1px solid #f0f0f0;
+  padding-top:12px;
+}
+.voice-avatar{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:var(--orange);
+  flex-shrink:0;
+}
 .voice-info strong{display:block;font-size:13px;color:var(--ink);font-weight:700}
-.voice-disclaimer{font-size:11px;color:var(--muted);text-align:center;margin-top:20px;font-weight:500}
+.voice-info span{font-size:11px;color:#777;font-weight:400}
+.voice-disclaimer{font-size:11px;color:#888;text-align:center;margin-top:16px}
 
 /* ===== FAQ ===== */
 .faq-list{display:flex;flex-direction:column;gap:0}
-.faq-item{border-bottom:1px solid var(--line)}
-.faq-item:first-child{border-top:1px solid var(--line)}
-.faq-q{display:flex;align-items:center;gap:12px;padding:20px 4px;cursor:pointer;user-select:none}
-.faq-q-badge{width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.faq-q-text{flex:1;font-size:15px;font-weight:700;color:var(--ink);line-height:1.5}
-.faq-toggle{font-size:20px;color:var(--muted);transition:transform .25s;font-weight:300;width:24px;text-align:center}
-.faq-a{display:none;padding:0 4px 20px 40px}
-.faq-a-inner{font-size:14px;color:var(--ink-2);line-height:2;font-weight:500}
+.faq-item{border-bottom:1px solid #e0e0e0}
+.faq-item:first-child{border-top:1px solid #e0e0e0}
+.faq-q{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:18px 4px;
+  cursor:pointer;
+  user-select:none;
+}
+.faq-q-badge{
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:var(--orange);
+  color:#fff;
+  font-size:13px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.faq-q-text{flex:1;font-size:14px;font-weight:700;color:var(--ink);line-height:1.5}
+.faq-toggle{font-size:22px;color:#aaa;transition:transform .25s;width:24px;text-align:center;font-weight:300}
+.faq-a{display:none;padding:0 4px 18px 38px}
+.faq-a-inner{font-size:13px;color:#444;line-height:1.9;font-weight:400}
 .faq-item.open .faq-a{display:block}
 .faq-item.open .faq-toggle{transform:rotate(45deg)}
 
 /* ===== Final CTA ===== */
-.final-cta{background:linear-gradient(135deg,#0A1628,#1a2d5a);padding:80px 24px;text-align:center;color:#fff;position:relative;overflow:hidden}
-.final-cta::before{content:"";position:absolute;top:-100px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.03);pointer-events:none}
-.final-cta-inner{position:relative;z-index:2;max-width:680px;margin:0 auto}
-.final-cta h2{font-size:26px;font-weight:900;margin-bottom:16px;line-height:1.45}
-.final-cta h2 .hl{color:#FFD166}
-.final-cta p{font-size:14px;opacity:.8;margin-bottom:32px;line-height:1.8;font-weight:500}
-.final-note{font-size:12px;opacity:.55;margin-top:14px;font-weight:500}
+.final-cta{
+  background:var(--orange);
+  padding:56px 24px;
+  text-align:center;
+  color:#fff;
+}
+.final-cta h2{
+  font-size:22px;
+  font-weight:900;
+  margin-bottom:12px;
+  line-height:1.45;
+}
+.final-cta p{
+  font-size:13px;
+  opacity:.9;
+  margin-bottom:28px;
+  line-height:1.8;
+  font-weight:400;
+}
+.final-note{font-size:11px;opacity:.65;margin-top:12px}
 
 /* ===== Footer ===== */
-.footer{background:#0A1628;padding:28px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.footer-links{display:flex;gap:20px;flex-wrap:wrap}
-.footer-links a{font-size:12px;color:rgba(255,255,255,.45);font-weight:500;transition:color .2s}
-.footer-links a:hover{color:#fff}
-.footer-copy{font-size:12px;color:rgba(255,255,255,.3);font-weight:500}
-
-/* ===== Responsive ===== */
-@media(max-width:768px){
-  .topnav{padding:12px 20px}
-  .nav-links{display:none}
-  .hero{padding:48px 20px 0}
-  .hero-grid{grid-template-columns:1fr;gap:32px}
-  .hero-text{padding-bottom:0}
-  .hero-title{font-size:28px}
-  .hero-img{justify-content:center}
-  .hero-img img{max-width:280px}
-  .schedule-dates{grid-template-columns:1fr}
-  .benefit-grid{grid-template-columns:1fr}
-  .pain-grid{grid-template-columns:1fr}
-  .summary-grid{grid-template-columns:1fr 1fr}
-  .chapter-item{grid-template-columns:1fr;gap:16px}
-  .chapter-num{display:flex;align-items:center;gap:16px;text-align:left}
-  .chapter-num .ch-n{font-size:36px}
-  .inst-wrap{grid-template-columns:1fr;gap:24px}
-  .inst-photo{margin:0 auto}
-  .voices-grid{grid-template-columns:1fr}
-  .final-cta h2{font-size:20px}
-  .footer{flex-direction:column;align-items:flex-start}
-  section{padding:56px 20px}
+.footer{
+  background:var(--ink);
+  padding:24px 20px;
 }
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-bottom:12px;
+}
+.footer-links a{font-size:11px;color:rgba(255,255,255,.5);font-weight:400}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
 </style>
 </head>
 <body>
 
+<!-- ===== Sticky CTA ===== -->
+<a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="sticky-cta" target="_blank" rel="noopener">
+  今すぐセミナーに申し込む
+  <span class="arrow"></span>
+</a>
+
+<div class="page-wrap">
+
 <!-- ===== Navigation ===== -->
 <nav class="topnav">
-  <div class="brand">
-    <span class="brand-text">ClaudeCode 実践セミナー</span>
-  </div>
-  <div class="nav-links">
-    <a href="#foryou">こんな方へ</a>
-    <a href="#benefit">参加特典</a>
-    <a href="#content">内容</a>
-    <a href="#instructor">講師</a>
-    <a href="#voice">参加者の声</a>
-    <a href="#faq">FAQ</a>
-  </div>
-  <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="nav-cta" target="_blank" rel="noopener">無料体験会に申し込む</a>
+  <span class="brand-text">ClaudeCode 実践セミナー</span>
+  <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="nav-cta" target="_blank" rel="noopener">無料で申し込む</a>
 </nav>
 
 <!-- ===== Hero ===== -->
 <section class="hero">
-  <div class="hero-grid">
-    <div class="hero-text fade-up">
-      <span class="hero-eyecatch">🎯 ひとり社長のためのClaudeCode実践セミナー</span>
-      <h1 class="hero-title">
-        マーケ&amp;業務効率化を<br>
-        ClaudeCodeで<br>
-        <span class="hl">全部やる。</span>
-      </h1>
-      <p class="hero-sub">
-        ChatGPT・Geminiを使っているのに変わらない——。<br>
-        その理由は、「AIを使っている」だけだから。<br>
-        ClaudeCodeで<strong style="color:#fff;font-weight:900">「AI自身が動く仕組み」</strong>を作れば、<br>
-        マーケも業務も全部まるごと変わります。
-      </p>
-      <div class="hero-cta-wrap">
-        <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-primary" target="_blank" rel="noopener">
-          無料体験会に申し込む →
-        </a>
-      </div>
-      <p class="hero-note">完全無料 ／ しつこい勧誘は一切なし</p>
-      <div class="hero-badges">
-        <div class="hero-badge">💻 オンライン（Zoom）</div>
-        <div class="hero-badge">🆓 参加費：無料</div>
-        <div class="hero-badge">👤 ひとり社長対象</div>
-      </div>
+  <div class="fade-up">
+    <div class="hero-label">ひとり社長のためのClaudeCode実践セミナー</div>
+    <h1 class="hero-title">
+      マーケ&amp;業務効率化を<br>
+      ClaudeCodeで<br>全部やる。
+    </h1>
+    <p class="hero-sub">
+      ChatGPT・Geminiを使っているのに変わらない——。<br>
+      その理由は「AIを使っているだけ」だから。<br>
+      ClaudeCodeで「AI自身が動く仕組み」を作れば、<br>
+      マーケも業務も全部まるごと変わります。
+    </p>
+    <div class="hero-cta">
+      <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-green" target="_blank" rel="noopener">今すぐセミナーに申し込む</a>
     </div>
-    <div class="hero-img fade-in">
-      <img src="../assets/01_portrait.png" alt="ClaudeCode実践セミナー">
+    <p class="hero-note">完全無料 / しつこい勧誘は一切なし</p>
+    <div class="hero-badges">
+      <span class="hero-badge">オンライン（Zoom）</span>
+      <span class="hero-badge">参加費：無料</span>
+      <span class="hero-badge">ひとり社長対象</span>
     </div>
+  </div>
+  <div class="hero-img fade-up">
+    <img src="../assets/01_portrait.png" alt="ClaudeCode実践セミナー">
   </div>
 </section>
 
-<!-- ===== 日程調整フォーム（FV直下） ===== -->
+<!-- ===== 日程フォーム（FV直下） ===== -->
 <div class="schedule-sec" id="schedule">
-  <div class="schedule-inner fade-up">
-    <h2>日程を選んで申し込む</h2>
-    <p class="schedule-sub">ご都合の良い日程をクリックして申し込みページへ進んでください</p>
+  <div class="fade-up">
+    <div class="sec-label">日程選択</div>
+    <h2 class="section-title">日程を選んで申し込む</h2>
+    <p class="schedule-sub">ご都合の良い日程を選んで申し込みページへ進んでください</p>
     <div class="schedule-dates">
       <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="sdate" target="_blank" rel="noopener">
-        <div class="sd-day">火曜日</div>
-        <div class="sd-date">6月3日</div>
-        <div class="sd-time">20:00〜21:00</div>
-        <div class="sd-badge">残席あり</div>
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">6月3日（火）</div>
+            <div class="sdate-time">20:00 〜 21:00</div>
+          </div>
+        </div>
+        <div class="sdate-badge">残席あり</div>
       </a>
       <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="sdate" target="_blank" rel="noopener">
-        <div class="sd-day">土曜日</div>
-        <div class="sd-date">6月7日</div>
-        <div class="sd-time">10:00〜11:00</div>
-        <div class="sd-badge">残席あり</div>
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">6月7日（土）</div>
+            <div class="sdate-time">10:00 〜 11:00</div>
+          </div>
+        </div>
+        <div class="sdate-badge">残席あり</div>
       </a>
       <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="sdate" target="_blank" rel="noopener">
-        <div class="sd-day">火曜日</div>
-        <div class="sd-date">6月10日</div>
-        <div class="sd-time">20:00〜21:00</div>
-        <div class="sd-badge">残席あり</div>
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">6月10日（火）</div>
+            <div class="sdate-time">20:00 〜 21:00</div>
+          </div>
+        </div>
+        <div class="sdate-badge">残席あり</div>
       </a>
     </div>
-    <p class="schedule-or">希望日程がない場合は →</p>
-    <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-sub" target="_blank" rel="noopener">日程をリクエストする</a>
+    <p class="schedule-or">希望日程がない場合は</p>
+    <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-outline" target="_blank" rel="noopener">日程をリクエストする</a>
   </div>
 </div>
 
 <!-- ===== こんな方へ ===== -->
 <section id="foryou">
-  <div class="container">
-    <div class="fade-up" style="text-align:center;margin-bottom:8px">
-      <span class="sec-label">FOR YOU</span>
+  <div class="fade-up" style="text-align:center;margin-bottom:20px">
+    <span class="sec-label">FOR YOU</span>
+    <h2 class="section-title">こんなお悩みありませんか？</h2>
+    <p class="section-sub">多くのひとり社長が「同じモヤモヤ」を抱えています</p>
+  </div>
+  <div class="pain-list">
+    <div class="pain-card fade-up">
+      ChatGPTやGeminiを試したけど、イマイチ業務がラクにならない
+      <span>学んだけど、結局もとの作業量に戻ってしまう</span>
     </div>
-    <h2 class="section-title fade-up">こんなお悩みありませんか？</h2>
-    <p class="section-sub fade-up">多くのひとり社長が「同じモヤモヤ」を抱えています</p>
-    <div class="pain-grid">
-      <div class="pain-card fade-up">
-        <div class="pain-icon">😔</div>
-        <div class="pain-text">
-          ChatGPTやGeminiを試したけど、<br>イマイチ業務がラクにならない
-          <span>学んだけど、結局もとに戻ってしまう</span>
-        </div>
-      </div>
-      <div class="pain-card fade-up">
-        <div class="pain-icon">🔄</div>
-        <div class="pain-text">
-          AIに対して毎回、<br>結局自分で指示を出している
-          <span>AIが「勝手に動く」感覚がまったくない</span>
-        </div>
-      </div>
-      <div class="pain-card fade-up">
-        <div class="pain-icon">⏰</div>
-        <div class="pain-text">
-          忙しくてAIを学ぶ時間が取れない
-          <span>勉強しても実務に活かせる気がしない</span>
-        </div>
-      </div>
-      <div class="pain-card fade-up">
-        <div class="pain-icon">💸</div>
-        <div class="pain-text">
-          外注・ツール費用がかさんでいる
-          <span>思い通りにならず、費用だけ増えていく</span>
-        </div>
-      </div>
-      <div class="pain-card fade-up">
-        <div class="pain-icon">📱</div>
-        <div class="pain-text">
-          マーケも業務効率化も、<br>全部自分でやっていて手が回らない
-          <span>人を採用する余裕もなく、消耗している</span>
-        </div>
-      </div>
-      <div class="pain-card fade-up">
-        <div class="pain-icon">🤔</div>
-        <div class="pain-text">
-          AI社員・AI自動化に興味はあるが<br>何から始めればいいかわからない
-          <span>情報が多すぎて、自分に合うものが選べない</span>
-        </div>
-      </div>
+    <div class="pain-card fade-up">
+      AIに対して毎回、結局自分で指示を出している
+      <span>AIが「勝手に動く」感覚がまったくない</span>
     </div>
-    <div class="pain-resolve fade-up">
-      <h3>その悩み、ClaudeCodeが解決します。</h3>
-      <p>ChatGPTとの決定的な違いは「AIが自律的に動く仕組みを作れること」。<br>マーケ・業務効率化・顧客対応——ひとり社長の全業務をAIに任せる経営へ。</p>
+    <div class="pain-card fade-up">
+      マーケも業務効率化も全部自分でやっていて手が回らない
+      <span>人を採用する余裕もなく、消耗が続いている</span>
     </div>
+    <div class="pain-card fade-up">
+      忙しくてAIを学ぶ時間が取れない
+      <span>勉強しても実務に活かせる気がしない</span>
+    </div>
+    <div class="pain-card fade-up">
+      AI社員・AI自動化に興味はあるが何から始めるかわからない
+      <span>情報が多すぎて、自分に合うものが選べない</span>
+    </div>
+  </div>
+  <div class="pain-resolve fade-up" style="margin-top:24px">
+    <h3>その悩み、ClaudeCodeが解決します。</h3>
+    <p>ChatGPTとの決定的な違いは「AIが自律的に動く仕組みを作れること」。マーケ・業務効率化・顧客対応——ひとり社長の全業務をAIに任せる経営へ。</p>
   </div>
 </section>
 
 <!-- ===== 参加特典 ===== -->
 <section class="sec-alt" id="benefit">
-  <div class="container">
-    <div class="fade-up" style="text-align:center;margin-bottom:8px">
-      <span class="sec-label">BONUS</span>
+  <div class="fade-up" style="text-align:center;margin-bottom:24px">
+    <span class="sec-label">BONUS</span>
+    <h2 class="section-title">参加<span class="accent">特典</span></h2>
+    <p class="section-sub">無料参加なのに、これだけ持ち帰れます</p>
+  </div>
+  <div class="benefit-list">
+    <div class="benefit-card fade-up">
+      <div class="benefit-num">1</div>
+      <div class="benefit-body">
+        <div class="benefit-tag">特典①</div>
+        <h3>業務棚卸しシート（PDF）プレゼント</h3>
+        <p>自社のどの業務をAI化すべきか、優先順位を整理できるオリジナルシートをお渡しします。</p>
+      </div>
     </div>
-    <h2 class="section-title fade-up">参加<span class="accent-orange" style="color:var(--orange)">特典</span></h2>
-    <p class="section-sub fade-up">無料参加なのに、これだけ持ち帰れます</p>
-    <div class="benefit-grid">
-      <div class="benefit-card fade-up">
-        <div class="benefit-badge">特典①</div>
-        <div class="benefit-icon">📋</div>
-        <div class="benefit-title">業務棚卸しシート<br>（PDF）プレゼント</div>
-        <div class="benefit-desc">自社のどの業務をAI化すべきか、優先順位を整理できるオリジナルシートをお渡しします。</div>
+    <div class="benefit-card fade-up">
+      <div class="benefit-num">2</div>
+      <div class="benefit-body">
+        <div class="benefit-tag">特典②</div>
+        <h3>ClaudeCodeセットアップチェックリスト</h3>
+        <p>ClaudeCodeを最短で使い始めるためのチェックリストを参加者全員に配布します。</p>
       </div>
-      <div class="benefit-card fade-up">
-        <div class="benefit-badge">特典②</div>
-        <div class="benefit-icon">✅</div>
-        <div class="benefit-title">ClaudeCode<br>セットアップ<br>チェックリスト</div>
-        <div class="benefit-desc">ClaudeCodeを最短で使い始めるためのチェックリストを参加者全員に配布します。</div>
-      </div>
-      <div class="benefit-card fade-up">
-        <div class="benefit-badge" style="background:var(--blue)">特典③ 先着5名</div>
-        <div class="benefit-icon">💬</div>
-        <div class="benefit-title">セミナー後<br>30分個別相談<br>（先着5名）</div>
-        <div class="benefit-desc">あなたの業務課題に合わせた個別アドバイスを無料で実施。先着5名限定です。</div>
+    </div>
+    <div class="benefit-card fade-up">
+      <div class="benefit-num">3</div>
+      <div class="benefit-body">
+        <div class="benefit-tag" style="background:var(--ink)">特典③ 先着5名</div>
+        <h3>セミナー後30分の個別相談（先着5名）</h3>
+        <p>あなたの業務課題に合わせた個別アドバイスを無料で実施。先着5名限定です。</p>
       </div>
     </div>
   </div>
@@ -387,289 +764,277 @@ h2.section-title .accent-orange{color:var(--orange)}
 
 <!-- ===== 開催概要 ===== -->
 <section>
-  <div class="container">
-    <div class="fade-up" style="text-align:center;margin-bottom:8px">
-      <span class="sec-label">概要</span>
+  <div class="fade-up" style="text-align:center;margin-bottom:24px">
+    <span class="sec-label">概要</span>
+    <h2 class="section-title">セミナー<span class="accent">開催概要</span></h2>
+  </div>
+  <div class="overview-list fade-up">
+    <div class="overview-row">
+      <div class="ov-label">開催形式</div>
+      <div class="ov-val"><strong>オンライン（Zoom）</strong><br>URLはお申込み後にお送りします</div>
     </div>
-    <h2 class="section-title fade-up">セミナー<span class="accent">開催概要</span></h2>
-    <p class="section-sub fade-up">まずは無料で体験して、あなたの業務への活かし方を見つけましょう</p>
-    <div class="summary-grid">
-      <div class="summary-card fade-up">
-        <div class="s-label">開催形式</div>
-        <div class="s-val" style="font-size:16px">オンライン</div>
-        <div class="s-sub">Zoom（URLはお申込み後にお送りします）</div>
-      </div>
-      <div class="summary-card fade-up">
-        <div class="s-label">参加費</div>
-        <div class="s-val">無料</div>
-        <div class="s-sub">完全無料・しつこい勧誘なし</div>
-      </div>
-      <div class="summary-card fade-up">
-        <div class="s-label">対象</div>
-        <div class="s-val" style="font-size:16px">ひとり社長</div>
-        <div class="s-sub">個人事業主・経営者向け</div>
-      </div>
+    <div class="overview-row">
+      <div class="ov-label">参加費</div>
+      <div class="ov-val"><strong>無料</strong><br>しつこい勧誘は一切なし</div>
     </div>
-    <div style="margin-top:24px;background:var(--page);border:1px solid var(--line);border-radius:14px;padding:24px 28px" class="fade-up">
-      <p style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:12px">📋 対象者の詳細</p>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-        <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-2);font-weight:500"><span style="color:var(--blue);font-weight:900">✓</span>ChatGPT・Geminiなどを使ったことがある、またはAIに興味がある経営者</li>
-        <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-2);font-weight:500"><span style="color:var(--blue);font-weight:900">✓</span>マーケ・業務効率化を自動化したいが、何から始めるべきかわからない方</li>
-        <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-2);font-weight:500"><span style="color:var(--blue);font-weight:900">✓</span>人を増やさず、AI社員・AI仕組みで事業を伸ばしたい方</li>
-      </ul>
+    <div class="overview-row">
+      <div class="ov-label">対象</div>
+      <div class="ov-val">ChatGPT等を使っているが成果が出ていないひとり社長・個人事業主</div>
     </div>
+    <div class="overview-row">
+      <div class="ov-label">時間</div>
+      <div class="ov-val">約60分</div>
+    </div>
+  </div>
+  <div class="fade-up" style="margin-top:20px">
+    <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-orange" target="_blank" rel="noopener">無料体験会に申し込む</a>
+    <p style="font-size:11px;color:#888;text-align:center;margin-top:10px">完全無料 / しつこい勧誘は一切なし</p>
   </div>
 </section>
 
 <!-- ===== セミナー内容 ===== -->
 <section class="sec-alt" id="content">
-  <div class="container">
-    <div class="fade-up" style="text-align:center;margin-bottom:8px">
-      <span class="sec-label">SEMINAR</span>
+  <div class="fade-up" style="text-align:center;margin-bottom:24px">
+    <span class="sec-label">SEMINAR</span>
+    <h2 class="section-title">セミナー<span class="accent">内容</span></h2>
+    <p class="section-sub">ひとり社長が「AIと働く経営」を実現するための4ステップ</p>
+  </div>
+  <div class="chapter-list">
+
+    <div class="chapter-item fade-up">
+      <div class="chapter-head">
+        <span class="ch-num">CHAPTER 01</span>
+        <span class="ch-title-head">なぜChatGPTでは変わらないのか</span>
+      </div>
+      <div class="chapter-body">
+        <h3>「使うAI」から「働かせるAI」へ——思考の転換</h3>
+        <p>ChatGPT・Geminiで満足できない理由は、「ツールを使っているだけ」だから。ClaudeCodeは、あなたの業務に合わせてAI自身が動く仕組みを作れます。</p>
+        <ul class="chapter-points">
+          <li>ChatGPTとClaudeCodeの決定的な違い</li>
+          <li>「AI社員」とはどういう概念か</li>
+          <li>最初に自動化すべき業務の選び方</li>
+        </ul>
+      </div>
     </div>
-    <h2 class="section-title fade-up">セミナー<span class="accent">内容</span></h2>
-    <p class="section-sub fade-up">ひとり社長が「AIと働く経営」を実現するための4ステップ</p>
-    <div class="chapter-list">
 
-      <div class="chapter-item fade-up">
-        <div class="chapter-num">
-          <div class="ch-label">CHAPTER</div>
-          <div class="ch-n">01</div>
-          <div class="ch-title">なぜ<br>ChatGPTでは<br>変わらないのか</div>
-        </div>
-        <div class="chapter-body">
-          <h3>「使うAI」から「働かせるAI」へ——思考の転換</h3>
-          <p>ChatGPT・Geminiで満足できない理由は、「ツールを使っているだけ」だから。ClaudeCodeは、あなたの業務に合わせてAI自身が動く仕組みを作れる唯一のツールです。</p>
-          <ul class="chapter-points">
-            <li>ChatGPTとClaudeCodeの決定的な違い</li>
-            <li>「AI社員」とはどういう概念か</li>
-            <li>ひとり社長が最初に自動化すべき業務とは</li>
-          </ul>
-        </div>
+    <div class="chapter-item fade-up">
+      <div class="chapter-head">
+        <span class="ch-num">CHAPTER 02</span>
+        <span class="ch-title-head">マーケ&amp;業務効率化をAI化する</span>
       </div>
-
-      <div class="chapter-item fade-up">
-        <div class="chapter-num">
-          <div class="ch-label">CHAPTER</div>
-          <div class="ch-n">02</div>
-          <div class="ch-title">マーケ&amp;<br>業務効率化を<br>AI化する</div>
-        </div>
-        <div class="chapter-body">
-          <h3>マーケも業務も——ClaudeCodeで全部まるごと自動化</h3>
-          <p>SNS投稿・メール対応・顧客フォロー・資料作成……ひとり社長が抱えるマーケ・業務効率化の悩みをClaudeCodeでまとめて解決する方法を解説します。</p>
-          <ul class="chapter-points">
-            <li>マーケ業務（集客・SNS・メール）のAI化</li>
-            <li>業務効率化（資料・管理・顧客対応）のAI化</li>
-            <li>全部を「AI社員」に任せる設計の作り方</li>
-          </ul>
-        </div>
+      <div class="chapter-body">
+        <h3>マーケも業務も——まるごと自動化する方法</h3>
+        <p>SNS投稿・メール対応・顧客フォロー・資料作成……ひとり社長が抱える全業務をClaudeCodeでまとめて解決する方法を解説します。</p>
+        <ul class="chapter-points">
+          <li>マーケ業務（集客・SNS・メール）のAI化</li>
+          <li>業務効率化（資料・管理・顧客対応）のAI化</li>
+          <li>全業務を「AI社員」に任せる設計の作り方</li>
+        </ul>
       </div>
-
-      <div class="chapter-item fade-up">
-        <div class="chapter-num">
-          <div class="ch-label">CHAPTER</div>
-          <div class="ch-n">03</div>
-          <div class="ch-title">AI社員の<br>設計・構築<br>ステップ</div>
-        </div>
-        <div class="chapter-body">
-          <h3>「自分の業務課題」をAI社員に変換する方法</h3>
-          <p>業務棚卸しシートをもとに、あなたの会社に合ったAI社員を設計する方法を解説。エンジニア不要で、自分の言葉でAIと対話するだけで構築できます。</p>
-          <ul class="chapter-points">
-            <li>業務棚卸しの方法とAI化の優先順位</li>
-            <li>AI社員の設計テンプレート公開</li>
-            <li>実際の構築事例（リファーラルAI・コミュニティ運営など）</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="chapter-item fade-up">
-        <div class="chapter-num">
-          <div class="ch-label">CHAPTER</div>
-          <div class="ch-n">04</div>
-          <div class="ch-title">実務に<br>組み込む<br>デプロイ術</div>
-        </div>
-        <div class="chapter-body">
-          <h3>作って終わりにしない——AI社員を実際の業務で動かす</h3>
-          <p>構築したAI社員を実際の業務フローに組み込み、自走させる方法を解説。ClaudeCodeを実務に定着させることで、経営そのものがAI前提に変わります。</p>
-          <ul class="chapter-points">
-            <li>完成したAI社員の実際のデプロイ方法</li>
-            <li>AI社員を継続的に改善するサイクル</li>
-            <li>次のステップ：AI前提の経営設計へ</li>
-          </ul>
-        </div>
-      </div>
-
     </div>
-    <div style="text-align:center;margin-top:48px" class="fade-up">
-      <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-primary" target="_blank" rel="noopener">
-        無料体験会に申し込む →
-      </a>
-      <p style="font-size:12px;color:var(--muted);margin-top:12px;font-weight:500">完全無料 / しつこい勧誘は一切なし</p>
+
+    <div class="chapter-item fade-up">
+      <div class="chapter-head">
+        <span class="ch-num">CHAPTER 03</span>
+        <span class="ch-title-head">AI社員の設計・構築ステップ</span>
+      </div>
+      <div class="chapter-body">
+        <h3>「自分の業務課題」をAI社員に変換する方法</h3>
+        <p>業務棚卸しシートをもとに、あなたの会社に合ったAI社員を設計します。エンジニア不要で、自分の言葉でAIと対話するだけで構築できます。</p>
+        <ul class="chapter-points">
+          <li>業務棚卸しとAI化の優先順位の決め方</li>
+          <li>AI社員の設計テンプレート公開</li>
+          <li>実際の構築事例（リファーラルAI等）</li>
+        </ul>
+      </div>
     </div>
+
+    <div class="chapter-item fade-up">
+      <div class="chapter-head">
+        <span class="ch-num">CHAPTER 04</span>
+        <span class="ch-title-head">実務に組み込むデプロイ術</span>
+      </div>
+      <div class="chapter-body">
+        <h3>作って終わりにしない——AI社員を実際の業務で動かす</h3>
+        <p>構築したAI社員を実際の業務フローに組み込み、自走させる方法を解説。経営そのものをAI前提に切り替えます。</p>
+        <ul class="chapter-points">
+          <li>完成したAI社員の実際のデプロイ方法</li>
+          <li>AI社員を継続的に改善するサイクル</li>
+          <li>AI前提の経営設計へのステップ</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="fade-up" style="margin-top:28px">
+    <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-orange" target="_blank" rel="noopener">無料体験会に申し込む</a>
+    <p style="font-size:11px;color:#888;text-align:center;margin-top:10px">完全無料 / しつこい勧誘は一切なし</p>
   </div>
 </section>
 
 <!-- ===== 講師紹介 ===== -->
 <section id="instructor">
-  <div class="container">
-    <div class="fade-up" style="text-align:center;margin-bottom:8px">
-      <span class="sec-label">INSTRUCTOR</span>
+  <div class="fade-up" style="text-align:center;margin-bottom:24px">
+    <span class="sec-label">INSTRUCTOR</span>
+    <h2 class="section-title">講師紹介</h2>
+    <p class="section-sub">現役エンジニアが、経営者目線で実践的にサポートします</p>
+  </div>
+  <div class="inst-card fade-up">
+    <div class="inst-head">
+      <img class="inst-photo" src="../assets/shimizu-profile-new.png" alt="清水 勝紀">
+      <div class="inst-head-info">
+        <div class="inst-role">代表 / エンジニア・AI支援</div>
+        <div class="inst-name">清水 勝紀</div>
+        <div class="inst-yomi">Katsunori Shimizu</div>
+      </div>
     </div>
-    <h2 class="section-title fade-up">講師紹介</h2>
-    <p class="section-sub fade-up">現役エンジニアが、経営者目線で実践的にサポートします</p>
-    <div class="inst-wrap fade-up">
-      <div>
-        <img class="inst-photo" src="../assets/shimizu-profile-new.png" alt="清水 勝紀">
-      </div>
-      <div>
-        <p class="inst-role">代表 ／ エンジニア・AI支援</p>
-        <p class="inst-name">清水 勝紀</p>
-        <p class="inst-yomi">Katsunori Shimizu</p>
-        <div class="inst-tags">
-          <span class="inst-tag">現役エンジニア</span>
-          <span class="inst-tag">AIセミナー多数登壇</span>
-          <span class="inst-tag">ClaudeCode実践支援</span>
-          <span class="inst-tag">セキュリティ支援</span>
-        </div>
-        <p class="inst-desc">
-          忙しい経営者こそ、AIでリソースの限界を無くすことが大切だと考えています。<br><br>
-          私はエンジニアとして、多くの企業やコミュニティでAI活用支援を行ってきました。その中で強く感じるのは、<strong>AIを「学ぶだけ」では経営は変わらない</strong>ということ。<br><br>
-          必要なのは、自分の業務課題に合わせてAIを実装し、実際に使い続けること。このセミナーでは、ChatGPTでは実現できない<strong>「AI社員を作る」という発想</strong>を体験していただきます。
-        </p>
-      </div>
+    <div class="inst-tags">
+      <span class="inst-tag">現役エンジニア</span>
+      <span class="inst-tag">AIセミナー多数登壇</span>
+      <span class="inst-tag">ClaudeCode実践支援</span>
+      <span class="inst-tag">セキュリティ支援</span>
+    </div>
+    <div class="inst-desc">
+      忙しい経営者こそ、AIでリソースの限界を無くすことが大切だと考えています。<br><br>
+      私はエンジニアとして、多くの企業やコミュニティでAI活用支援を行ってきました。その中で強く感じるのは、<strong>AIを「学ぶだけ」では経営は変わらない</strong>ということ。<br><br>
+      自分の業務課題に合わせてAIを実装し、実際に使い続けること——このセミナーでは、ChatGPTでは実現できない<strong>「AI社員を作る」という発想</strong>を体験していただきます。
     </div>
   </div>
 </section>
 
 <!-- ===== 参加者の声 ===== -->
 <section class="sec-alt" id="voice">
-  <div class="container">
-    <div class="fade-up" style="text-align:center;margin-bottom:8px">
-      <span class="sec-label">VOICE</span>
-    </div>
-    <h2 class="section-title fade-up">参加者の<span class="accent">声</span></h2>
-    <p class="section-sub fade-up">実際にセミナーへ参加した方々の感想です</p>
-    <div class="voices-grid">
-      <div class="voice-card fade-up">
-        <div class="voice-stars">★★★★★</div>
-        <p class="voice-text">「ChatGPTで何か変わるかも」と期待してはいたものの、結局使いこなせずにいました。このセミナーで、そもそもアプローチが違うことを理解できました。ClaudeCodeで初めてAIが「動いてくれている」感覚になりました。</p>
-        <div class="voice-meta">
-          <div class="voice-avatar">👤</div>
-          <div class="voice-info"><strong>コンサルタント（40代・男性）</strong>個人事業主 / 1人経営</div>
-        </div>
-      </div>
-      <div class="voice-card fade-up">
-        <div class="voice-stars">★★★★★</div>
-        <p class="voice-text">毎回自分でAIに指示するのが面倒で、結局メール返信も自分でやっていました。セミナーで仕組みの作り方を知って、実際に業務に組み込めそうなイメージが持てました。</p>
-        <div class="voice-meta">
-          <div class="voice-avatar">👤</div>
-          <div class="voice-info"><strong>オンラインサロン運営（30代・女性）</strong>個人事業主</div>
-        </div>
-      </div>
-      <div class="voice-card fade-up">
-        <div class="voice-stars">★★★★★</div>
-        <p class="voice-text">エンジニアじゃないので不安でしたが、自分の言葉でAIに指示するだけで動くので驚きました。「人を増やす前にAIに働いてもらう」という発想が刺さりました。</p>
-        <div class="voice-meta">
-          <div class="voice-avatar">👤</div>
-          <div class="voice-info"><strong>飲食店経営（40代・男性）</strong>法人代表</div>
-        </div>
-      </div>
-      <div class="voice-card fade-up">
-        <div class="voice-stars">★★★★★</div>
-        <p class="voice-text">ChatGPTで何度もプロンプトを試行錯誤していましたが、根本的なアプローチが違うと理解できました。業務棚卸しシートがすごく使いやすく、すぐに自社で活用できました。</p>
-        <div class="voice-meta">
-          <div class="voice-avatar">👤</div>
-          <div class="voice-info"><strong>士業（50代・男性）</strong>個人事務所 / 1人経営</div>
-        </div>
-      </div>
-    </div>
-    <p class="voice-disclaimer">※ 上記は参加者の個人的な体験・感想です。効果には個人差があります。</p>
+  <div class="fade-up" style="text-align:center;margin-bottom:24px">
+    <span class="sec-label">VOICE</span>
+    <h2 class="section-title">参加者の<span class="accent">声</span></h2>
+    <p class="section-sub">実際にセミナーへ参加した方々の感想です</p>
   </div>
+  <div class="voice-list">
+    <div class="voice-card fade-up">
+      <div class="voice-stars">★★★★★</div>
+      <p class="voice-text">「ChatGPTで何か変わるかも」と期待してはいたものの、結局使いこなせずにいました。このセミナーで、そもそもアプローチが違うことを理解できました。ClaudeCodeで初めてAIが「動いてくれている」感覚になりました。</p>
+      <div class="voice-meta">
+        <div class="voice-avatar"></div>
+        <div class="voice-info">
+          <strong>コンサルタント（40代・男性）</strong>
+          <span>個人事業主 / 1人経営</span>
+        </div>
+      </div>
+    </div>
+    <div class="voice-card fade-up">
+      <div class="voice-stars">★★★★★</div>
+      <p class="voice-text">毎回自分でAIに指示するのが面倒で、結局メール返信も自分でやっていました。セミナーで仕組みの作り方を知って、実際に業務に組み込めそうなイメージが持てました。</p>
+      <div class="voice-meta">
+        <div class="voice-avatar"></div>
+        <div class="voice-info">
+          <strong>オンラインサロン運営（30代・女性）</strong>
+          <span>個人事業主</span>
+        </div>
+      </div>
+    </div>
+    <div class="voice-card fade-up">
+      <div class="voice-stars">★★★★★</div>
+      <p class="voice-text">エンジニアじゃないので不安でしたが、自分の言葉でAIに指示するだけで動くので驚きました。「人を増やす前にAIに働いてもらう」という発想が刺さりました。</p>
+      <div class="voice-meta">
+        <div class="voice-avatar"></div>
+        <div class="voice-info">
+          <strong>飲食店経営（40代・男性）</strong>
+          <span>法人代表</span>
+        </div>
+      </div>
+    </div>
+    <div class="voice-card fade-up">
+      <div class="voice-stars">★★★★★</div>
+      <p class="voice-text">ChatGPTで何度もプロンプトを試行錯誤していましたが、根本的なアプローチが違うと理解できました。業務棚卸しシートがすごく使いやすく、すぐに自社で活用できました。</p>
+      <div class="voice-meta">
+        <div class="voice-avatar"></div>
+        <div class="voice-info">
+          <strong>士業（50代・男性）</strong>
+          <span>個人事務所 / 1人経営</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="voice-disclaimer">※ 上記は参加者の個人的な体験・感想です。効果には個人差があります。</p>
 </section>
 
 <!-- ===== FAQ ===== -->
 <section id="faq">
-  <div class="container" style="max-width:760px">
-    <div class="fade-up" style="text-align:center;margin-bottom:8px">
-      <span class="sec-label">FAQ</span>
+  <div class="fade-up" style="text-align:center;margin-bottom:24px">
+    <span class="sec-label">FAQ</span>
+    <h2 class="section-title">よくある質問</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item fade-up">
+      <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">AI初心者でも参加できますか？</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">はい、まったく問題ありません。ChatGPTを使ったことがある程度で十分です。プログラミングや技術的な知識は不要で、自分の業務課題をお持ちであれば誰でも参加いただけます。</div></div>
     </div>
-    <h2 class="section-title fade-up">よくある質問</h2>
-    <p class="section-sub fade-up"></p>
-    <div class="faq-list">
-      <div class="faq-item fade-up">
-        <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">AI初心者でも参加できますか？</span><span class="faq-toggle">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">はい、まったく問題ありません。ChatGPTを使ったことがある程度で十分です。プログラミングや技術的な知識は不要で、自分の業務課題をお持ちであれば誰でも参加いただけます。</div></div>
-      </div>
-      <div class="faq-item fade-up">
-        <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">エンジニアでなくても大丈夫ですか？</span><span class="faq-toggle">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">問題ありません。このセミナーはひとり社長・個人事業主向けに設計しています。コードを書く必要はなく、AIと「自分の言葉」で対話するだけで業務ツールが作れます。</div></div>
-      </div>
-      <div class="faq-item fade-up">
-        <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">ClaudeCodeの契約は事前に必要ですか？</span><span class="faq-toggle">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">セミナー参加には不要です。まずは内容を体験し、自分に合うかどうか確認してから契約いただけます。セミナー内でセットアップ手順もご案内します。</div></div>
-      </div>
-      <div class="faq-item fade-up">
-        <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">どんな業種の経営者が対象ですか？</span><span class="faq-toggle">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">士業・コンサル・講師業・コミュニティ運営・制作会社・EC・サロン経営など、幅広い業種に対応しています。「業種」より「業務課題があるかどうか」が参加の基準です。</div></div>
-      </div>
-      <div class="faq-item fade-up">
-        <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">参加後に高額な勧誘はありますか？</span><span class="faq-toggle">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">しつこい営業は一切行いません。セミナー後に継続支援プランをご案内する場合がありますが、強引な勧誘は行わず、参加者が判断できる環境を大切にしています。</div></div>
-      </div>
-      <div class="faq-item fade-up">
-        <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">法人・チームでの参加はできますか？</span><span class="faq-toggle">+</span></div>
-        <div class="faq-a"><div class="faq-a-inner">可能です。社内AI研修・リスキリングにも対応しております。複数名での参加やチーム向けの内容については、お申込み後の無料相談にてご相談ください。</div></div>
-      </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">エンジニアでなくても大丈夫ですか？</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">問題ありません。コードを書く必要はなく、AIと「自分の言葉」で対話するだけで業務ツールが作れます。ひとり社長・個人事業主向けに設計しています。</div></div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">ClaudeCodeの契約は事前に必要ですか？</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">不要です。まずは内容を体験し、自分に合うかどうか確認してから契約いただけます。セミナー内でセットアップ手順もご案内します。</div></div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">どんな業種が対象ですか？</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">士業・コンサル・講師業・コミュニティ運営・制作会社・EC・サロン経営など幅広く対応しています。「業種」より「業務課題があるかどうか」が参加の基準です。</div></div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">参加後に高額な勧誘はありますか？</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">しつこい営業は一切行いません。セミナー後に継続支援プランをご案内する場合がありますが、強引な勧誘は行わず、参加者が自分で判断できる環境を大切にしています。</div></div>
     </div>
   </div>
 </section>
 
 <!-- ===== Final CTA ===== -->
 <section class="final-cta">
-  <div class="final-cta-inner fade-up">
-    <h2>
-      マーケ&amp;業務効率化を、<br>
-      <span class="hl">ClaudeCodeで全部やる。</span><br>
-      まずは無料で体験してください。
-    </h2>
-    <p>
-      ChatGPT・Geminiで感じていたモヤモヤが、ClaudeCodeで解決する理由を<br>
-      このセミナーで体験してください。
-    </p>
-    <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-primary" target="_blank" rel="noopener">
-      無料体験会に申し込む →
-    </a>
+  <div class="fade-up">
+    <h2>マーケ&amp;業務効率化を、<br>ClaudeCodeで全部やる。<br>まずは無料で体験してください。</h2>
+    <p>ChatGPT・Geminiで感じていたモヤモヤが、ClaudeCodeで解決する理由をこのセミナーで体験してください。</p>
+    <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-green" target="_blank" rel="noopener">今すぐセミナーに申し込む</a>
     <p class="final-note">完全無料・しつこい勧誘は一切なし</p>
   </div>
 </section>
 
-<!-- ===== 日程調整フォーム（フッター直前） ===== -->
+<!-- ===== 日程フォーム（フッター直前） ===== -->
 <div class="schedule-sec">
-  <div class="schedule-inner fade-up">
-    <h2>日程を選んで申し込む</h2>
-    <p class="schedule-sub">ご都合の良い日程をクリックして申し込みページへ進んでください</p>
+  <div class="fade-up">
+    <div class="sec-label">日程選択</div>
+    <h2 class="section-title">日程を選んで申し込む</h2>
+    <p class="schedule-sub">ご都合の良い日程を選んで申し込みページへ進んでください</p>
     <div class="schedule-dates">
       <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="sdate" target="_blank" rel="noopener">
-        <div class="sd-day">火曜日</div>
-        <div class="sd-date">6月3日</div>
-        <div class="sd-time">20:00〜21:00</div>
-        <div class="sd-badge">残席あり</div>
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">6月3日（火）</div>
+            <div class="sdate-time">20:00 〜 21:00</div>
+          </div>
+        </div>
+        <div class="sdate-badge">残席あり</div>
       </a>
       <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="sdate" target="_blank" rel="noopener">
-        <div class="sd-day">土曜日</div>
-        <div class="sd-date">6月7日</div>
-        <div class="sd-time">10:00〜11:00</div>
-        <div class="sd-badge">残席あり</div>
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">6月7日（土）</div>
+            <div class="sdate-time">10:00 〜 11:00</div>
+          </div>
+        </div>
+        <div class="sdate-badge">残席あり</div>
       </a>
       <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="sdate" target="_blank" rel="noopener">
-        <div class="sd-day">火曜日</div>
-        <div class="sd-date">6月10日</div>
-        <div class="sd-time">20:00〜21:00</div>
-        <div class="sd-badge">残席あり</div>
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">6月10日（火）</div>
+            <div class="sdate-time">20:00 〜 21:00</div>
+          </div>
+        </div>
+        <div class="sdate-badge">残席あり</div>
       </a>
     </div>
-    <p class="schedule-or">希望日程がない場合は →</p>
-    <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-sub" target="_blank" rel="noopener">日程をリクエストする</a>
+    <p class="schedule-or">希望日程がない場合は</p>
+    <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-outline" target="_blank" rel="noopener">日程をリクエストする</a>
   </div>
 </div>
 
@@ -680,21 +1045,21 @@ h2.section-title .accent-orange{color:var(--orange)}
     <a href="../tokushoho">特定商取引法に基づく表記</a>
     <a href="mailto:katsunori.shimizu@sk-techlab.com">お問い合わせ</a>
   </div>
-  <div class="footer-right">
-    <p class="footer-copy">© 2025 清水勝紀 / ClaudeCode 実践セミナー</p>
-  </div>
+  <p class="footer-copy">© 2025 清水勝紀 / ClaudeCode 実践セミナー</p>
 </footer>
+
+</div><!-- /page-wrap -->
 
 <script>
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-up, .fade-in').forEach((el, i) => {
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.fade-up').forEach((el, i) => {
   const siblings = Array.from(el.parentElement.querySelectorAll(':scope > .fade-up'));
   const idx = siblings.indexOf(el);
-  if (idx > 0) el.style.transitionDelay = (idx * 0.08) + 's';
+  if (idx > 0) el.style.transitionDelay = (idx * 0.07) + 's';
   observer.observe(el);
 });
 
@@ -707,6 +1072,5 @@ document.querySelectorAll('.faq-q').forEach(q => {
   });
 });
 </script>
-
 </body>
 </html>
