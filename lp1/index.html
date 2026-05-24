@@ -109,6 +109,10 @@ h2.section-title .accent{color:var(--orange)}
 .btn-green:active{background:var(--green-cta-dark)}
 
 /* ===== Sticky CTA ===== */
+@keyframes cta-pulse{
+  0%,100%{transform:translateX(-50%) scale(1)}
+  50%{transform:translateX(-50%) scale(1.06)}
+}
 .sticky-cta{
   position:fixed;
   bottom:16px;
@@ -130,6 +134,7 @@ h2.section-title .accent{color:var(--orange)}
   justify-content:center;
   gap:10px;
   font-family:inherit;
+  animation:cta-pulse 2.4s ease-in-out infinite;
 }
 .sticky-cta:active{background:var(--green-cta-dark)}
 .sticky-cta .arrow{
@@ -168,26 +173,62 @@ h2.section-title .accent{color:var(--orange)}
 }
 .hero-label-sub{
   display:block;
-  font-size:11px;
-  font-weight:700;
-  color:#aaa;
-  letter-spacing:.1em;
-  margin-bottom:4px;
+  font-size:12px;
+  font-weight:900;
+  color:var(--orange);
+  letter-spacing:.12em;
+  margin-bottom:6px;
+  text-emphasis:filled circle;
+  text-emphasis-color:var(--orange-dark);
+  -webkit-text-emphasis:filled circle;
+  -webkit-text-emphasis-color:var(--orange-dark);
 }
 .hero-label-main{
   display:block;
   font-size:22px;
   font-weight:900;
-  color:var(--orange);
+  color:var(--ink);
   letter-spacing:.02em;
   line-height:1.2;
+}
+
+/* ===== Claude Logo ===== */
+.hero-tool{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:12px;
+}
+.hero-tool-label{
+  font-size:10px;
+  color:rgba(255,255,255,.6);
+  font-weight:700;
+  letter-spacing:.06em;
+  flex-shrink:0;
+}
+.claude-logo-wrap{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:20px;
+  padding:5px 12px 5px 8px;
+}
+.claude-logo-name{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:16px;
+  font-weight:400;
+  color:#fff;
+  letter-spacing:.01em;
+  line-height:1;
 }
 .hero-title{
   font-size:clamp(32px,9vw,48px);
   font-weight:900;
   color:#fff;
   line-height:1.15;
-  padding:4px 14px 0;
+  padding:4px 0 0;
   margin:0 0 20px;
   letter-spacing:-.02em;
 }
@@ -680,6 +721,28 @@ h2.section-title .accent{color:var(--orange)}
       <span class="hero-badge">オンライン（Zoom）</span>
       <span class="hero-badge">参加費：無料</span>
       <span class="hero-badge">ひとり社長対象</span>
+    </div>
+    <div class="hero-tool">
+      <span class="hero-tool-label">使用ツール</span>
+      <div class="claude-logo-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="20" height="20">
+          <g transform="translate(14,14)">
+            <rect x="-1.8" y="-12" width="3.6" height="9" rx="1.8" fill="#CF7B5E" transform="rotate(0)"/>
+            <rect x="-1.8" y="-12" width="3.6" height="9" rx="1.8" fill="#CF7B5E" transform="rotate(30)"/>
+            <rect x="-1.8" y="-12" width="3.6" height="9" rx="1.8" fill="#CF7B5E" transform="rotate(60)"/>
+            <rect x="-1.8" y="-12" width="3.6" height="9" rx="1.8" fill="#CF7B5E" transform="rotate(90)"/>
+            <rect x="-1.8" y="-12" width="3.6" height="9" rx="1.8" fill="#CF7B5E" transform="rotate(120)"/>
+            <rect x="-1.8" y="-12" width="3.6" height="9" rx="1.8" fill="#CF7B5E" transform="rotate(150)"/>
+            <rect x="-1.8" y="-12" width="3.6" height="9" rx="1.8" fill="#CF7B5E" transform="rotate(180)"/>
+            <rect x="-1.8" y="-12" width="3.6" height="9" rx="1.8" fill="#CF7B5E" transform="rotate(210)"/>
+            <rect x="-1.8" y="-12" width="3.6" height="9" rx="1.8" fill="#CF7B5E" transform="rotate(240)"/>
+            <rect x="-1.8" y="-12" width="3.6" height="9" rx="1.8" fill="#CF7B5E" transform="rotate(270)"/>
+            <rect x="-1.8" y="-12" width="3.6" height="9" rx="1.8" fill="#CF7B5E" transform="rotate(300)"/>
+            <rect x="-1.8" y="-12" width="3.6" height="9" rx="1.8" fill="#CF7B5E" transform="rotate(330)"/>
+          </g>
+        </svg>
+        <span class="claude-logo-name">Claude</span>
+      </div>
     </div>
   </div>
   <div class="hero-img fade-up">
