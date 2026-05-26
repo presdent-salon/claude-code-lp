@@ -1,0 +1,69 @@
+{
+  "lp1": [
+    {
+      "dayOfWeek": "水",
+      "month": 5,
+      "day": 27,
+      "time": "13:00",
+      "display": "5月27日（水）"
+    },
+    {
+      "dayOfWeek": "金",
+      "month": 6,
+      "day": 5,
+      "time": "13:00",
+      "display": "6月5日（金）"
+    },
+    {
+      "dayOfWeek": "木",
+      "month": 6,
+      "day": 18,
+      "time": "14:00",
+      "display": "6月18日（木）"
+    },
+    {
+      "dayOfWeek": "土",
+      "month": 6,
+      "day": 20,
+      "time": "10:00",
+      "display": "6月20日（土）"
+    },
+    {
+      "dayOfWeek": "水",
+      "month": 6,
+      "day": 24,
+      "time": "13:00",
+      "display": "6月24日（水）"
+    }
+  ],
+  "lp2": [
+    {
+      "dayOfWeek": "土",
+      "month": 6,
+      "day": 6,
+      "time": "10:00",
+      "display": "6月6日（土）"
+    },
+    {
+      "dayOfWeek": "月",
+      "month": 6,
+      "day": 8,
+      "time": "16:00",
+      "display": "6月8日（月）"
+    },
+    {
+      "dayOfWeek": "月",
+      "month": 6,
+      "day": 22,
+      "time": "13:00",
+      "display": "6月22日（月）"
+    },
+    {
+      "dayOfWeek": "木",
+      "month": 6,
+      "day": 25,
+      "time": "13:00",
+      "display": "6月25日（木）"
+    }
+  ]
+}
