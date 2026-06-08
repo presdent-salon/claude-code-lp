@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72">
+  <circle cx="36" cy="36" r="36" fill="#EAF1FE"/>
+  <!-- body -->
+  <rect x="18" y="46" width="36" height="22" rx="10" fill="#1E5BE6"/>
+  <!-- head -->
+  <circle cx="36" cy="30" r="14" fill="#FDDBB4"/>
+  <!-- hair -->
+  <path d="M22 24 Q22 14 36 14 Q50 14 50 24 Q46 18 36 18 Q26 18 22 24Z" fill="#3B4A63"/>
+  <!-- code symbol on shirt -->
+  <text x="36" y="60" text-anchor="middle" font-size="11" font-weight="900" fill="#fff" font-family="monospace">&lt;/&gt;</text>
+</svg>
