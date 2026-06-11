@@ -18,248 +18,719 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   gtag('config', 'G-DV0M4WXYDV');
 </script>
-<title>ClaudeCode講座 — マンツーマン伴走</title>
+<title>マーケ&業務効率化をClaudeCodeで全部やる｜無料体験セミナー</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ChatGPT・Geminiを使っているのに業務が変わらない。ClaudeCodeで解決する無料体験セミナー。講師：清水勝紀。">
+<meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
 <style>
-  :root{
-    --blue:#1E5BE6;
-    --blue-deep:#1648BD;
-    --blue-soft:#EAF1FE;
-    --blue-soft-2:#F4F8FF;
-    --ink:#15233A;
-    --ink-2:#3B4A63;
-    --muted:#6B7891;
-    --line:#E1E8F2;
-    --bg:#FFFFFF;
-    --page:#F2F6FC;
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:#fff;font-family:"Noto Sans JP",system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
-  img{display:block;max-width:100%}
+/* ===== Reset ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+img{display:block;max-width:100%}
+a{text-decoration:none}
 
-  /* Top nav */
-  .topnav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;border-bottom:1px solid var(--line);background:#fff}
-  .brand{display:flex;align-items:center;gap:10px}
-  .brand img{height:72px;width:auto}
-  .nav-links{display:flex;gap:28px;font-size:13px;color:var(--ink-2);font-weight:500}
-  .nav-links a{color:inherit;text-decoration:none}
-  .nav-links a:hover{color:var(--blue)}
-  .btn-primary{background:var(--blue);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-family:inherit;box-shadow:0 2px 0 rgba(22,72,189,.15);text-decoration:none}
-  .btn-primary:hover{background:var(--blue-deep)}
-  .btn-outline{background:#fff;color:var(--blue);border:1.5px solid var(--blue);padding:10px 18px;border-radius:8px;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-family:inherit;text-decoration:none}
-  .btn-outline:hover{background:var(--blue-soft)}
+/* ===== Color Tokens ===== */
+:root{
+  --orange:#FF6600;
+  --orange-dark:#E55500;
+  --orange-soft:#FFF3E8;
+  --ink:#111111;
+  --white:#ffffff;
+  --green-cta:#3DB851;
+  --green-cta-dark:#2FA044;
+}
 
-  /* Hero */
-  .hero{position:relative;background:linear-gradient(180deg,#F4F8FF 0%, #EAF1FE 100%);padding:56px 64px 60px;overflow:hidden}
-  .hero::before{content:"";position:absolute;inset:0;background:
-    radial-gradient(800px 400px at 80% 20%, rgba(30,91,230,.08), transparent 60%),
-    radial-gradient(600px 300px at 10% 90%, rgba(30,91,230,.06), transparent 60%);
-    pointer-events:none}
-  .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr 1fr;gap:32px;align-items:center;max-width:1080px;margin:0 auto}
-  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);font-weight:700;font-size:12px;padding:7px 16px;border-radius:999px;border:1.5px solid var(--blue);margin-bottom:22px}
-  .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue)}
-  h1.hero-title{font-size:46px;line-height:1.25;margin:0 0 22px;font-weight:900;letter-spacing:-.01em}
-  h1.hero-title .accent{color:var(--blue)}
-  .hero-sub{font-size:14px;line-height:1.9;color:var(--ink-2);margin:0 0 28px;font-weight:500}
-  .hero-cta{display:flex;gap:12px;margin-bottom:22px;flex-wrap:wrap}
-  .hero-cta .btn-primary,.hero-cta .btn-outline{padding:14px 22px;font-size:14px}
-  .hero-meta{display:flex;gap:22px;font-size:12px;color:var(--ink-2);font-weight:600;flex-wrap:wrap}
-  .hero-meta span{display:inline-flex;align-items:center;gap:6px}
-  .hero-meta span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue);display:inline-block}
-  .portrait-wrap{position:relative;display:flex;justify-content:center;align-items:center}
-  .portrait-bg{position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle, rgba(30,91,230,.12), rgba(30,91,230,0) 70%)}
-  .portrait-wrap img,.portrait-wrap .hero-illust{position:relative;width:440px;height:auto;filter:drop-shadow(0 18px 40px rgba(30,60,140,.08))}
+/* ===== Base ===== */
+body{
+  font-family:"Noto Sans JP",sans-serif;
+  color:var(--ink);
+  background:#ffffff;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:80px;
+}
 
-  /* Section */
-  section{padding:64px 64px}
-  .container{max-width:1080px;margin:0 auto}
-  h2.section-title{font-size:28px;font-weight:900;text-align:center;margin:0 0 10px;letter-spacing:-.005em}
-  .section-sub{text-align:center;color:var(--muted);font-size:13px;margin:0 0 40px;font-weight:500}
+/* ===== Page Wrapper（540px中央寄せ） ===== */
+.page-wrap{
+  max-width:540px;
+  margin:0 auto;
+  overflow-x:hidden;
+}
 
-  /* Feature cards */
-  .features{background:#F7FAFE}
-  .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .feat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 20px;text-align:center;transition:transform .2s,box-shadow .2s}
-  .feat:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(20,50,120,.08)}
-  .feat .icon-wrap{width:64px;height:64px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;border-radius:14px;background:var(--blue-soft)}
-  .feat img{height:48px;width:auto}
-  .feat h3{font-size:14px;margin:0 0 10px;font-weight:700;color:var(--ink)}
-  .feat p{font-size:12px;color:var(--muted);line-height:1.7;margin:0;font-weight:500}
+/* ===== Animations ===== */
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)}
+.fade-up.visible{opacity:1;transform:none}
 
-  /* Process */
-  .process{background:#fff}
-  .steps{display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr 28px 1fr;gap:6px;align-items:start;margin-top:18px}
-  .step{text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
-  .step-icon{width:72px;height:72px;background:#EAF1FE;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .step-icon svg{width:40px;height:40px}
-  .step-label{display:flex;align-items:center;gap:6px;justify-content:center;flex-wrap:wrap}
-  .step-num{color:var(--blue);font-weight:900;font-size:13px}
-  .step-title{font-weight:800;font-size:13px;color:var(--ink)}
-  .step-desc{font-size:11px;color:var(--muted);line-height:1.75;margin:0;font-weight:500}
-  .arrow{display:flex;align-items:center;justify-content:center;color:#A8BBE0;padding-top:16px}
-  .arrow svg{width:24px;height:24px}
 
-  /* Two col plans */
-  .plans{background:#F7FAFE}
-  .plans-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:28px;align-items:start}
-  .plan-list h3{font-size:18px;font-weight:800;margin:0 0 22px}
-  .plan-list ol{list-style:none;padding:0;margin:0;counter-reset:p}
-  .plan-list li{counter-increment:p;display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line);font-size:15px;font-weight:600;color:var(--ink)}
-  .plan-list li::before{content:counter(p);color:var(--blue);font-weight:900;font-size:22px;min-width:28px;font-family:"Noto Sans JP"}
-  .plan-list .note{font-size:11px;color:var(--muted);line-height:1.8;margin-top:18px;font-weight:500}
+/* ===== Sections ===== */
+section{padding:52px 24px}
+.sec-alt{background:var(--orange-soft)}
 
-  .price-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;display:grid;grid-template-columns:1fr 1.1fr;gap:24px}
-  .price-left{background:#EAF1FE;border-radius:12px;padding:22px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-  .price-left .tag{background:#fff;color:var(--blue);font-weight:700;font-size:11px;padding:5px 12px;border-radius:999px;margin-bottom:14px}
-  .price-num{font-size:34px;font-weight:900;color:var(--blue);letter-spacing:-.01em}
-  .price-num small{font-size:14px;font-weight:700;margin-left:4px}
-  .price-checks{display:flex;flex-direction:column;gap:10px;margin-top:14px;width:100%}
-  .price-checks li{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--ink);font-weight:600}
-  .price-checks li::before{content:"";width:14px;height:14px;background:var(--blue);mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;display:inline-block}
-  .price-right h4{font-size:13px;margin:0 0 14px;font-weight:800}
-  .price-right ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
-  .price-right li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink);font-weight:600}
-  .price-actions{grid-column:1/-1;display:flex;gap:14px;justify-content:center;margin-top:28px;flex-wrap:wrap}
-  .btn-lg{padding:16px 32px;font-size:15px;border-radius:10px}
-  .price-right li::before{content:"";width:16px;height:16px;background:var(--blue);mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;flex-shrink:0}
+.sec-label{
+  display:inline-block;
+  background:var(--orange);
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  padding:4px 12px;
+  border-radius:2px;
+  margin-bottom:14px;
+  letter-spacing:.08em;
+}
+h2.section-title{
+  font-size:22px;
+  font-weight:900;
+  color:var(--ink);
+  margin:0 0 8px;
+  line-height:1.4;
+}
+h2.section-title .accent{color:var(--orange)}
+.section-sub{
+  font-size:13px;
+  color:#555;
+  margin:0 0 32px;
+  line-height:1.8;
+}
 
-  /* Can Make */
-  .can-make{background:var(--page)}
-  .can-make-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .cm-item{background:#fff;border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;overflow:hidden;transition:transform .2s,box-shadow .2s}
-  .cm-item:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(20,50,120,.07)}
-  .cm-num{width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-weight:900;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .cm-mock{width:100%;height:120px;overflow:hidden;border-bottom:1px solid var(--line);flex-shrink:0}
-  .cm-mock svg{width:100%;height:100%;display:block}
-  .cm-body{padding:14px 16px;display:flex;flex-direction:column;gap:8px}
-  .cm-body-top{display:flex;align-items:center;gap:8px}
-  .cm-body h3{font-size:13px;font-weight:800;margin:0;color:var(--ink)}
-  .cm-body p{font-size:11px;color:var(--ink-2);line-height:1.85;margin:0;font-weight:500}
+/* ===== Buttons ===== */
+.btn-orange{
+  display:block;
+  width:100%;
+  background:var(--orange);
+  color:#fff;
+  font-size:17px;
+  font-weight:900;
+  padding:18px 20px;
+  border-radius:8px;
+  text-align:center;
+  font-family:inherit;
+  box-shadow:0 4px 14px rgba(255,102,0,.35);
+}
+.btn-orange:active{background:var(--orange-dark)}
+.btn-green{
+  display:block;
+  width:100%;
+  background:var(--green-cta);
+  color:#fff;
+  font-size:17px;
+  font-weight:900;
+  padding:18px 20px;
+  border-radius:8px;
+  text-align:center;
+  font-family:inherit;
+  box-shadow:0 4px 14px rgba(61,184,81,.35);
+}
+.btn-green:active{background:var(--green-cta-dark)}
 
-  /* Profile */
-  .profile{background:#fff}
-  .profile-grid{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:24px;align-items:center}
-  .profile-photo{width:160px;height:160px;border-radius:50%;background:#F4F8FF;overflow:hidden;margin:0 auto}
-  .profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
-  .profile-info h3{margin:0 0 6px;font-size:14px;color:var(--blue);font-weight:800}
-  .profile-info .role{font-size:18px;font-weight:800;margin:0 0 14px}
-  .profile-info p{font-size:12px;color:var(--ink-2);line-height:1.85;margin:0;font-weight:500}
-  .profile-bullets{display:flex;flex-direction:column;gap:14px}
-  .pb{display:flex;gap:12px;align-items:flex-start;background:#F7FAFE;border-radius:12px;padding:14px 16px}
-  .pb-icon{width:32px;height:32px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-  .pb-icon img{width:28px;height:28px}
-  .pb h4{margin:0 0 4px;font-size:13px;font-weight:800;color:var(--blue)}
-  .pb p{margin:0;font-size:11px;color:var(--ink-2);line-height:1.7;font-weight:500}
+/* ===== Sticky CTA ===== */
+@keyframes cta-pulse{
+  0%,100%{transform:translateX(-50%) scale(1)}
+  50%{transform:translateX(-50%) scale(1.06)}
+}
+.sticky-cta{
+  position:fixed;
+  bottom:16px;
+  left:50%;
+  transform:translateX(-50%);
+  width:calc(100% - 32px);
+  max-width:508px;
+  background:var(--green-cta);
+  color:#fff;
+  font-size:18px;
+  font-weight:900;
+  padding:17px 20px;
+  border-radius:10px;
+  text-align:center;
+  z-index:500;
+  box-shadow:0 6px 24px rgba(61,184,81,.45);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-family:inherit;
+  background:linear-gradient(135deg,#52D467 0%,#3DB851 50%,#2FA044 100%);
+  animation:cta-pulse 1.2s ease-in-out infinite;
+}
+.sticky-cta:active{background:var(--green-cta-dark)}
+.sticky-cta .arrow{
+  width:24px;
+  height:24px;
+  background:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.sticky-cta .arrow::after{
+  content:"";
+  border:solid var(--green-cta);
+  border-width:0 3px 3px 0;
+  padding:4px;
+  transform:rotate(-45deg);
+  margin-left:-2px;
+}
 
-  /* Testimonials */
-  .testimonials{background:#F7FAFE}
-  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .testi-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:14px;transition:transform .2s,box-shadow .2s}
-  .testi-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(20,50,120,.08)}
-  .testi-stars{color:#F59E0B;font-size:16px;letter-spacing:2px}
-  .testi-comment{font-size:13px;color:var(--ink-2);line-height:1.85;margin:0;font-weight:500;flex:1}
-  .testi-author{display:flex;align-items:center;gap:12px;margin-top:4px}
-  .testi-avatar{width:48px;height:48px;border-radius:50%;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--blue);flex-shrink:0;overflow:hidden}
-  .testi-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
-  .testi-name{font-size:13px;font-weight:700;color:var(--ink);margin:0}
-  .testi-role{font-size:11px;color:var(--muted);font-weight:500;margin:0}
-  .testi-featured{background:#fff;border:1.5px solid var(--blue);border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:14px;margin:0 auto 24px;box-shadow:0 4px 24px rgba(30,91,230,.1);max-width:640px}
-  .testi-tag{display:inline-flex;align-items:center;gap:6px;background:var(--blue-soft);color:var(--blue);font-weight:700;font-size:12px;padding:6px 14px;border-radius:999px;width:fit-content}
-  .testi-profile-top{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:2px}
-  .testi-avatar-sq{width:400px;max-width:100%;aspect-ratio:1/1;border-radius:16px;overflow:hidden;flex-shrink:0}
-  .testi-avatar-sq img{width:100%;height:100%;object-fit:cover;object-position:center top}
-  .testi-name-center{font-size:15px;font-weight:700;color:var(--ink);margin:0;text-align:center}
-  .testi-role-center{font-size:12px;color:var(--muted);font-weight:500;margin:0;text-align:center}
+/* ===== Hero ===== */
+.hero{
+  background:var(--orange);
+  padding:40px 0 0;
+  overflow:hidden;
+}
+.hero-pad{padding:0 24px}
+.hero-label{
+  display:block;
+  background:#fff;
+  border-radius:8px;
+  padding:14px 20px;
+  margin-bottom:24px;
+  text-align:center;
+}
+.hero-label-sub{
+  display:block;
+  font-size:14px;
+  font-weight:900;
+  color:var(--orange);
+  letter-spacing:.12em;
+  margin-bottom:6px;
+  text-emphasis:filled circle;
+  text-emphasis-color:var(--orange-dark);
+  -webkit-text-emphasis:filled circle;
+  -webkit-text-emphasis-color:var(--orange-dark);
+}
+.hero-label-main{
+  display:block;
+  font-size:22px;
+  font-weight:900;
+  color:var(--ink);
+  letter-spacing:.02em;
+  line-height:1.2;
+}
 
-  /* Footer CTA */
-  .footer-cta{background:#EAF1FE;padding:40px 64px}
-  .fc-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center}
-  .fc-title{font-size:18px;font-weight:800;margin:0 0 16px}
-  .fc-buttons{display:flex;gap:12px;flex-wrap:wrap}
-  .fc-buttons .btn-primary,.fc-buttons .btn-outline{padding:14px 20px;font-size:14px}
-  .fc-side{background:#fff;border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:14px;border:1px solid var(--line)}
-  .fc-side .badge{width:40px;height:40px;border-radius:8px;background:#EAF1FE;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .fc-side .badge img{width:24px;height:24px}
-  .fc-side h5{margin:0 0 4px;font-size:13px;font-weight:800;color:var(--blue)}
-  .fc-side p{margin:0;font-size:11px;color:var(--muted);font-weight:500;line-height:1.6}
+/* ===== Claude Logo ===== */
+.hero-tool{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:12px;
+}
+.hero-tool-label{
+  font-size:10px;
+  color:rgba(255,255,255,.6);
+  font-weight:700;
+  letter-spacing:.06em;
+  flex-shrink:0;
+}
+.claude-logo-wrap{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:20px;
+  padding:5px 12px 5px 8px;
+}
+.claude-logo-name{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:16px;
+  font-weight:400;
+  color:#fff;
+  letter-spacing:.01em;
+  line-height:1;
+}
+.hero-title{
+  font-size:clamp(34px,9.5vw,52px);
+  font-weight:900;
+  color:#fff;
+  line-height:1.15;
+  padding:4px 16px 0;
+  margin:0 0 20px;
+  letter-spacing:-.02em;
+}
+.hero-sub{
+  font-size:14px;
+  color:rgba(255,255,255,.9);
+  line-height:1.9;
+  margin:0 0 24px;
+  font-weight:500;
+}
+.hero-cta{margin-bottom:16px}
+.hero-note{
+  font-size:11px;
+  color:rgba(255,255,255,.7);
+  text-align:center;
+  margin-bottom:28px;
+}
+.hero-badges{
+  display:flex;
+  gap:8px;
+  margin-bottom:28px;
+}
+.hero-badge{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.4);
+  border-radius:8px;
+  padding:12px 6px;
+  font-size:13px;
+  font-weight:700;
+  color:#fff;
+  text-align:center;
+}
+.hero-instructor{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:24px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:8px;
+  padding:12px 16px;
+}
+.hero-inst-photo{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,.6);
+  flex-shrink:0;
+}
+.hero-inst-role{font-size:10px;color:rgba(255,255,255,.7);font-weight:700;margin-bottom:2px}
+.hero-inst-name{font-size:16px;font-weight:900;color:#fff;margin-bottom:1px}
+.hero-inst-yomi{font-size:10px;color:rgba(255,255,255,.6);font-weight:400}
+.hero-img{
+  display:flex;
+  justify-content:center;
+  margin:0 -24px;
+  padding-bottom:10px;
+}
+.hero-img img{
+  width:80%;
+  max-width:360px;
+  height:auto;
+}
 
-  footer.copyright{background:#fff;text-align:center;padding:18px;font-size:11px;color:var(--muted)}
+/* ===== 日程フォーム ===== */
+.schedule-sec{
+  background:var(--orange-soft);
+  padding:48px 24px;
+  border-top:4px solid var(--orange);
+}
+.schedule-sec h2{
+  font-size:20px;
+  font-weight:900;
+  color:var(--ink);
+  margin-bottom:6px;
+}
+.schedule-sub{
+  font-size:13px;
+  color:#555;
+  margin-bottom:22px;
+  line-height:1.7;
+}
+.schedule-dates{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:22px;
+}
+.sdate{
+  background:#fff;
+  border:2px solid var(--orange);
+  border-radius:8px;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  cursor:pointer;
+}
+.sdate-info{display:flex;align-items:center;gap:16px}
+.sdate-date{font-size:18px;font-weight:900;color:var(--ink)}
+.sdate-day{font-size:12px;color:#555;font-weight:500}
+.sdate-time{font-size:13px;font-weight:700;color:var(--orange)}
+.sdate-badge{
+  background:var(--orange);
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  padding:4px 10px;
+  border-radius:4px;
+  flex-shrink:0;
+}
+.schedule-or{
+  font-size:12px;
+  color:#555;
+  text-align:center;
+  margin-bottom:12px;
+}
+.btn-outline{
+  display:block;
+  width:100%;
+  border:2px solid var(--orange);
+  color:var(--orange);
+  background:#fff;
+  font-size:15px;
+  font-weight:700;
+  padding:14px 20px;
+  border-radius:8px;
+  text-align:center;
+  font-family:inherit;
+}
 
-  .ic-cal,.ic-chat{width:18px;height:18px}
+/* ===== Pain ===== */
+.pain-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:28px;
+}
+.pain-card{
+  background:#fff;
+  border-left:4px solid var(--orange);
+  border-radius:0 8px 8px 0;
+  padding:14px 16px;
+  font-size:14px;
+  font-weight:700;
+  color:var(--ink);
+  line-height:1.55;
+}
+.pain-card span{
+  display:block;
+  font-size:12px;
+  font-weight:400;
+  color:#555;
+  margin-top:4px;
+}
+.pain-resolve{
+  background:var(--orange);
+  border-radius:8px;
+  padding:24px 20px;
+  text-align:center;
+  color:#fff;
+}
+.pain-resolve h3{font-size:17px;font-weight:900;margin-bottom:10px;line-height:1.5}
+.pain-resolve p{font-size:13px;opacity:.9;line-height:1.8;font-weight:500}
 
-  /* Hamburger */
-  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px}
-  .hamburger svg{display:block}
+/* ===== For You ===== */
+.foryou-list{display:flex;flex-direction:column;gap:18px}
+.foryou-item{display:flex;gap:14px;align-items:flex-start;font-size:15px;font-weight:700;line-height:1.6;color:var(--ink)}
+.foryou-check{width:30px;height:30px;background:var(--orange);border-radius:5px;flex-shrink:0;margin-top:3px;position:relative}
+.foryou-check::after{content:"";position:absolute;top:50%;left:50%;width:9px;height:6px;border-left:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:translate(-50%,-60%) rotate(-45deg)}
+.foryou-item .hi{color:var(--orange)}
 
-  /* ---- Responsive ---- */
-  @media(max-width:900px){
-    .can-make-list{grid-template-columns:repeat(2,1fr)}
-    /* Nav */
-    .topnav{padding:12px 20px;position:relative}
-    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px 0;border-bottom:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:100}
-    .nav-links.open{display:flex}
-    .nav-links a{padding:12px 24px;border-bottom:1px solid var(--line)}
-    .nav-links a:last-child{border-bottom:none}
-    .topnav>.btn-primary{display:none}
-    .hamburger{display:block}
+/* ===== 参加特典 ===== */
+.benefit-list{display:flex;flex-direction:column;gap:14px}
+.benefit-card{
+  background:#fff;
+  border-radius:8px;
+  padding:20px;
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  border:1px solid #e0e0e0;
+}
+.benefit-num{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:var(--orange);
+  color:#fff;
+  font-size:16px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.benefit-body h3{font-size:15px;font-weight:900;margin-bottom:6px;color:var(--ink)}
+.benefit-body p{font-size:13px;color:#555;line-height:1.7;font-weight:400}
+.setup-note{
+  margin-top:20px;
+  background:#fff;
+  border:2px solid var(--orange);
+  border-radius:8px;
+  padding:18px 20px;
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+.setup-note-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.setup-note strong{font-size:14px;font-weight:900;color:var(--ink);display:block;margin-bottom:6px}
+.setup-note p{font-size:13px;color:#555;line-height:1.7;margin:0}
+.benefit-tag{
+  display:inline-block;
+  background:var(--orange);
+  color:#fff;
+  font-size:10px;
+  font-weight:700;
+  padding:2px 8px;
+  border-radius:2px;
+  margin-bottom:6px;
+}
 
-    /* Hero */
-    .hero{padding:40px 24px 36px}
-    .hero-grid{grid-template-columns:1fr;text-align:center}
-    h1.hero-title{font-size:32px}
-    .hero-sub{font-size:13px}
-    .hero-cta{justify-content:center}
-    .hero-meta{justify-content:center}
-    .portrait-wrap{order:-1;margin-bottom:8px}
-    .portrait-wrap .hero-illust{width:280px}
-    .portrait-bg{width:240px;height:240px}
+/* ===== Overview ===== */
+.overview-list{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  background:#fff;
+  border-radius:8px;
+  border:1px solid #e0e0e0;
+  overflow:hidden;
+  margin-bottom:20px;
+}
+.overview-row{
+  display:flex;
+  border-bottom:1px solid #e0e0e0;
+}
+.overview-row:last-child{border-bottom:none}
+.ov-label{
+  background:var(--orange-soft);
+  font-size:13px;
+  font-weight:700;
+  color:var(--orange);
+  padding:14px 16px;
+  min-width:100px;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+}
+.ov-val{
+  font-size:14px;
+  font-weight:500;
+  color:var(--ink);
+  padding:14px 16px;
+  line-height:1.6;
+}
+.ov-val strong{font-weight:900}
 
-    /* Section */
-    section{padding:40px 20px}
+/* ===== Chapters ===== */
+.chapter-list{display:flex;flex-direction:column;gap:16px}
+.chapter-item{
+  background:#fff;
+  border-radius:8px;
+  border:1px solid #e0e0e0;
+  overflow:hidden;
+}
+.chapter-head{
+  background:var(--orange);
+  color:#fff;
+  padding:12px 16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.ch-num{font-size:11px;font-weight:700;letter-spacing:.1em;opacity:.85}
+.ch-title-head{font-size:15px;font-weight:900}
+.chapter-body{padding:18px 16px}
+.chapter-body h3{font-size:14px;font-weight:900;margin-bottom:10px;line-height:1.5;color:var(--ink)}
+.chapter-body p{font-size:13px;color:#555;line-height:1.85;margin-bottom:12px;font-weight:400}
+.chapter-points{list-style:none;display:flex;flex-direction:column;gap:8px}
+.chapter-points li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:13px;
+  font-weight:600;
+  color:var(--ink);
+}
+.chapter-points li::before{
+  content:"";
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:var(--orange);
+  flex-shrink:0;
+  margin-top:1px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:center;
+}
 
-    /* Features */
-    .feat-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+/* ===== Instructor ===== */
+.inst-card{
+  background:#fff;
+  border-radius:8px;
+  border:1px solid #e0e0e0;
+  overflow:hidden;
+}
+.inst-head{
+  background:var(--orange);
+  padding:20px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.inst-photo{
+  width:80px;
+  height:80px;
+  border-radius:16px;
+  object-fit:cover;
+  border:3px solid #fff;
+  flex-shrink:0;
+}
+.inst-head-info .inst-role{font-size:11px;color:rgba(255,255,255,.8);font-weight:700;margin-bottom:2px}
+.inst-head-info .inst-name{font-size:20px;font-weight:900;color:#fff;margin-bottom:2px}
+.inst-head-info .inst-yomi{font-size:11px;color:rgba(255,255,255,.7);font-weight:500}
+.inst-tags{display:flex;flex-wrap:wrap;gap:6px;padding:14px 16px;border-bottom:1px solid #e0e0e0}
+.inst-tag{
+  background:var(--orange-soft);
+  border:1px solid var(--orange);
+  color:var(--orange);
+  font-size:11px;
+  font-weight:700;
+  padding:3px 10px;
+  border-radius:2px;
+}
+.inst-desc{
+  padding:16px;
+  font-size:13px;
+  color:#333;
+  line-height:2;
+  font-weight:400;
+}
+.inst-desc strong{font-weight:900;color:var(--ink)}
 
-    /* Process steps */
-    .steps{grid-template-columns:1fr;gap:0;justify-items:center}
-    .step{width:100%;max-width:220px}
-    .arrow{transform:rotate(90deg);padding:4px 0;padding-top:4px}
+/* ===== Voices ===== */
+.voice-list{display:flex;flex-direction:column;gap:14px}
+.voice-card{
+  background:#fff;
+  border-radius:8px;
+  border:1px solid #e0e0e0;
+  padding:18px 16px;
+}
+.voice-stars{
+  color:var(--orange);
+  font-size:14px;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+.voice-text{
+  font-size:13px;
+  color:#333;
+  line-height:1.9;
+  margin-bottom:14px;
+  font-weight:400;
+}
+.voice-meta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  border-top:1px solid #f0f0f0;
+  padding-top:12px;
+}
+.voice-avatar{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:var(--orange);
+  flex-shrink:0;
+}
+.voice-info strong{display:block;font-size:13px;color:var(--ink);font-weight:700}
+.voice-info span{font-size:11px;color:#777;font-weight:400}
+.voice-score{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  background:#fff;
+  border:2px solid var(--orange);
+  border-radius:12px;
+  padding:18px 24px;
+  margin-bottom:20px;
+  text-align:center;
+}
+.voice-score-num{
+  font-size:52px;
+  font-weight:900;
+  color:var(--orange);
+  line-height:1;
+  letter-spacing:-.02em;
+}
+.voice-score-unit{
+  font-size:22px;
+  font-weight:700;
+  color:var(--orange);
+}
+.voice-score-label{
+  font-size:13px;
+  font-weight:700;
+  color:#555;
+  margin-top:6px;
+}
+.voice-disclaimer{font-size:11px;color:#888;text-align:center;margin-top:16px}
 
-    /* Plans */
-    .plans-grid{grid-template-columns:1fr}
-    .price-card{grid-template-columns:1fr}
+/* ===== FAQ ===== */
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid #e0e0e0}
+.faq-item:first-child{border-top:1px solid #e0e0e0}
+.faq-q{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:18px 4px;
+  cursor:pointer;
+  user-select:none;
+}
+.faq-q-badge{
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:var(--orange);
+  color:#fff;
+  font-size:13px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.faq-q-text{flex:1;font-size:14px;font-weight:700;color:var(--ink);line-height:1.5}
+.faq-toggle{font-size:22px;color:#aaa;transition:transform .25s;width:24px;text-align:center;font-weight:300}
+.faq-a{display:none;padding:0 4px 18px 38px}
+.faq-a-inner{font-size:13px;color:#444;line-height:1.9;font-weight:400}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-toggle{transform:rotate(45deg)}
 
-    /* Profile */
-    .profile-grid{grid-template-columns:1fr}
-    .profile-photo{margin-bottom:8px}
-    .profile-info{text-align:center}
-    h2.section-title[style]{text-align:center!important}
+/* ===== Final CTA ===== */
+.final-cta{
+  background:var(--orange);
+  padding:56px 24px;
+  text-align:center;
+  color:#fff;
+}
+.final-cta h2{
+  font-size:22px;
+  font-weight:900;
+  margin-bottom:12px;
+  line-height:1.45;
+}
+.final-cta p{
+  font-size:13px;
+  opacity:.9;
+  margin-bottom:28px;
+  line-height:1.8;
+  font-weight:400;
+}
+.final-note{font-size:11px;opacity:.65;margin-top:12px}
 
-    /* Testimonials */
-    .testi-grid{grid-template-columns:1fr}
-
-    /* Footer CTA */
-    .footer-cta{padding:32px 20px}
-    .fc-grid{grid-template-columns:1fr}
-    .fc-title{font-size:16px}
-  }
-
-  @media(max-width:480px){
-    .can-make-list{grid-template-columns:1fr}
-    h1.hero-title{font-size:26px}
-    .pill{font-size:11px;padding:6px 12px}
-    .feat-grid{grid-template-columns:1fr}
-    .hero-cta{flex-direction:column;align-items:center}
-    .hero-cta .btn-primary,.hero-cta .btn-outline{width:100%;justify-content:center}
-    .fc-buttons{flex-direction:column}
-    .fc-buttons .btn-primary,.fc-buttons .btn-outline{width:100%;justify-content:center}
-    .price-actions{flex-direction:column;align-items:center}
-    .price-actions .btn-lg{width:100%;justify-content:center}
-    .price-num{font-size:28px}
-  }
+/* ===== Footer ===== */
+.footer{
+  background:var(--ink);
+  padding:24px 20px;
+}
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-bottom:12px;
+}
+.footer-links a{font-size:11px;color:rgba(255,255,255,.5);font-weight:400}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
 </style>
 </head>
 <body>
@@ -268,636 +739,468 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Top nav -->
-  <nav class="topnav">
-    <div class="brand">
-      <img src="assets/02_logo_claudecode.png" alt="ClaudeCode講座">
+<!-- ===== Sticky CTA ===== -->
+<a href="https://peatix.com/event/5021235/view" class="sticky-cta" target="_blank" rel="noopener">
+  今すぐセミナーに申し込む
+  <span class="arrow"></span>
+</a>
+
+<div class="page-wrap">
+
+
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="hero-pad fade-up">
+    <div class="hero-label">
+      <span class="hero-label-sub">ひとり社長のための</span>
+      <span class="hero-label-main">ClaudeCode実践セミナー</span>
     </div>
-    <div class="nav-links">
+  </div>
+  <h1 class="hero-title fade-up">
+    マーケ&amp;業務効率化を<br>
+    ClaudeCodeで<br>全部やる。
+  </h1>
+  <div class="hero-pad fade-up">
+    <p class="hero-sub">
+      ひとり社長の最大の問題は「自分の時間が増えないこと」。<br>
+      ChatGPTで毎回指示するたびに消耗していませんか？<br>
+      ClaudeCodeは違います。あなたの業務を<br>
+      代わりに動いてくれる「AI社員」を、このセミナーで実際に作ります。
+    </p>
+    <div class="hero-badges">
+      <span class="hero-badge">オンライン（Zoom）</span>
+      <span class="hero-badge">参加費：無料</span>
+      <span class="hero-badge">ひとり社長対象</span>
     </div>
-    <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-primary" target="_blank" rel="noopener">無料相談に申し込む</a>
-    <button class="hamburger" aria-label="メニュー" onclick="document.querySelector('.nav-links').classList.toggle('open')">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
-    </button>
-  </nav>
+  </div>
+  <div class="hero-img fade-up">
+    <img src="./assets/shimizu-fv.png" alt="清水勝紀">
+  </div>
+</section>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-grid">
-      <div>
-        <span class="pill">3ヶ月で8回のマンツーマン伴走</span>
-        <h1 class="hero-title">
-          ClaudeCode基礎を<br>
-          <span class="accent">3ヶ月</span>でマスターする<br>
-          マンツーマン講座
-        </h1>
-        <p class="hero-sub">
-          作りたいものをベースで学ぶから、手が止まらない。<br>
-          あなたの目標に向けて、専門サポートと一緒に形にします。
-        </p>
-        <div class="hero-cta">
-          <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-primary" target="_blank" rel="noopener">
-            <svg class="ic-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="8 14 11 17 16 12"/></svg>
-            無料相談に申し込む
-          </a>
-          <button class="btn-outline">
-            <svg class="ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="13" cy="11" r="1" fill="currentColor"/><circle cx="17" cy="11" r="1" fill="currentColor"/></svg>
-            チャットで質問する
-          </button>
+<!-- ===== 日程フォーム（FV直下） ===== -->
+<div class="schedule-sec" id="schedule">
+  <div class="fade-up">
+    <div class="sec-label">日程選択</div>
+    <h2 class="section-title">日程を選んで申し込む</h2>
+    <p class="schedule-sub">ご都合の良い日程を選んで申し込みページへ進んでください</p>
+    <div class="schedule-dates">
+      
+      <a href="https://peatix.com/event/5021235/view" class="sdate" target="_blank" rel="noopener">
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">5月27日（水）</div>
+            <div class="sdate-time">13:00〜</div>
+          </div>
         </div>
-        <div class="hero-meta">
-          <span>2ヶ月／全8回</span>
-          <span>マンツーマン伴走</span>
-          <span>チャットサポート付き</span>
+        <div class="sdate-badge">残席あり</div>
+      </a>
+      <a href="https://peatix.com/event/5021235/view" class="sdate" target="_blank" rel="noopener">
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">6月5日（金）</div>
+            <div class="sdate-time">13:00〜</div>
+          </div>
         </div>
-      </div>
-      <div class="portrait-wrap">
-        <div class="portrait-bg"></div>
-        <svg class="hero-illust" viewBox="0 0 460 420" xmlns="http://www.w3.org/2000/svg" aria-label="ClaudeCode学習イメージ">
-          <defs>
-            <linearGradient id="g-win" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#FFFFFF"/>
-              <stop offset="1" stop-color="#F4F8FF"/>
-            </linearGradient>
-            <linearGradient id="g-blue" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#3F7CF0"/>
-              <stop offset="1" stop-color="#1E5BE6"/>
-            </linearGradient>
-            <linearGradient id="g-blob" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#EAF1FE"/>
-              <stop offset="1" stop-color="#D6E4FC"/>
-            </linearGradient>
-            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#1E3C8C" flood-opacity="0.16"/>
-            </filter>
-            <filter id="shadow-sm" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1E3C8C" flood-opacity="0.18"/>
-            </filter>
-          </defs>
+        <div class="sdate-badge">残席あり</div>
+      </a>
+      <a href="https://peatix.com/event/5021235/view" class="sdate" target="_blank" rel="noopener">
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">6月18日（木）</div>
+            <div class="sdate-time">14:00〜</div>
+          </div>
+        </div>
+        <div class="sdate-badge">残席あり</div>
+      </a>
+      <a href="https://peatix.com/event/5021235/view" class="sdate" target="_blank" rel="noopener">
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">6月20日（土）</div>
+            <div class="sdate-time">10:00〜</div>
+          </div>
+        </div>
+        <div class="sdate-badge">残席あり</div>
+      </a>
+      <a href="https://peatix.com/event/5021235/view" class="sdate" target="_blank" rel="noopener">
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">6月24日（水）</div>
+            <div class="sdate-time">13:00〜</div>
+          </div>
+        </div>
+        <div class="sdate-badge">残席あり</div>
+      </a>
+    </div>
+  </div>
+</div>
 
-          <!-- Soft background blob -->
-          <path d="M 80 230 Q 30 130 140 80 Q 250 30 340 90 Q 430 150 410 260 Q 390 370 270 380 Q 150 390 100 330 Q 50 290 80 230 Z" fill="url(#g-blob)" opacity="0.7"/>
+<!-- ===== こんな方へ ===== -->
+<section id="foryou">
+  <div class="fade-up" style="text-align:center;margin-bottom:28px">
+    <h2 class="section-title" style="font-size:26px">正直に言います。<br><span class="accent">こんな人に届けたいセミナーです。</span></h2>
+    <p class="section-sub">ひとつでも「あ、自分だ」と思ったらぜひ来てください</p>
+  </div>
+  <div class="foryou-list">
+    <div class="foryou-item fade-up">
+      <span class="foryou-check"></span>
+      <span>ChatGPTに毎回説明するのが面倒で、<span class="hi">「なんで覚えてくれないんだ」</span>とため息をついたことがある</span>
+    </div>
+    <div class="foryou-item fade-up">
+      <span class="foryou-check"></span>
+      <span>ひとりで経営しているので、<span class="hi">「もう1人の自分」が欲しい</span>とずっと思っている</span>
+    </div>
+    <div class="foryou-item fade-up">
+      <span class="foryou-check"></span>
+      <span>採用はコストもリスクも高くて踏み切れない。<span class="hi">人を雇わずに仕事量を増やす方法</span>を探している</span>
+    </div>
+    <div class="foryou-item fade-up">
+      <span class="foryou-check"></span>
+      <span>プログラミングはわからないけど、<span class="hi">自分専用のAIツールを自分で作ってみたい</span></span>
+    </div>
+    <div class="foryou-item fade-up">
+      <span class="foryou-check"></span>
+      <span>AIの話を聞くたびに、<span class="hi">「で、自分の仕事にどう使うの？」</span>が疑問のまま終わっている</span>
+    </div>
+    <div class="foryou-item fade-up">
+      <span class="foryou-check"></span>
+      <span>セミナーや本ではなく、<span class="hi">実際に動いている現場の画面をリアルタイムで見たい</span></span>
+    </div>
+  </div>
+</section>
 
-          <!-- Main editor window -->
-          <g filter="url(#shadow)">
-            <rect x="60" y="80" width="320" height="220" rx="14" fill="url(#g-win)" stroke="#E1E8F2" stroke-width="1"/>
-            <rect x="60" y="80" width="320" height="32" rx="14" fill="#F4F8FF"/>
-            <rect x="60" y="100" width="320" height="12" fill="#F4F8FF"/>
-            <circle cx="78" cy="96" r="4" fill="#FF5F57"/>
-            <circle cx="92" cy="96" r="4" fill="#FEBC2E"/>
-            <circle cx="106" cy="96" r="4" fill="#28C840"/>
-            <rect x="180" y="89" width="100" height="14" rx="7" fill="#E1E8F2"/>
-            <rect x="60" y="112" width="60" height="188" fill="#F7FAFE"/>
-            <rect x="72" y="128" width="36" height="6" rx="3" fill="#C9D6EC"/>
-            <rect x="72" y="144" width="28" height="6" rx="3" fill="#C9D6EC"/>
-            <rect x="72" y="160" width="32" height="6" rx="3" fill="#1E5BE6" opacity="0.85"/>
-            <rect x="72" y="176" width="24" height="6" rx="3" fill="#C9D6EC"/>
-            <rect x="72" y="192" width="34" height="6" rx="3" fill="#C9D6EC"/>
-            <g font-family="ui-monospace, Menlo, monospace" font-size="10">
-              <text x="134" y="138" fill="#9AA8C2">01</text>
-              <rect x="154" y="130" width="40" height="8" rx="2" fill="#1E5BE6"/>
-              <rect x="200" y="130" width="60" height="8" rx="2" fill="#3B4A63" opacity="0.5"/>
-              <rect x="266" y="130" width="36" height="8" rx="2" fill="#C9D6EC"/>
-              <text x="134" y="158" fill="#9AA8C2">02</text>
-              <rect x="164" y="150" width="30" height="8" rx="2" fill="#9AA8C2"/>
-              <rect x="200" y="150" width="80" height="8" rx="2" fill="#3B4A63" opacity="0.6"/>
-              <rect x="286" y="150" width="20" height="8" rx="2" fill="#1E5BE6"/>
-              <text x="134" y="178" fill="#9AA8C2">03</text>
-              <rect x="174" y="170" width="50" height="8" rx="2" fill="#3B4A63" opacity="0.55"/>
-              <rect x="230" y="170" width="40" height="8" rx="2" fill="#1E5BE6"/>
-              <text x="134" y="198" fill="#9AA8C2">04</text>
-              <rect x="164" y="190" width="80" height="8" rx="2" fill="#3B4A63" opacity="0.5"/>
-              <rect x="250" y="190" width="48" height="8" rx="2" fill="#9AA8C2"/>
-              <text x="134" y="218" fill="#9AA8C2">05</text>
-              <rect x="174" y="210" width="36" height="8" rx="2" fill="#1E5BE6"/>
-              <rect x="216" y="210" width="60" height="8" rx="2" fill="#3B4A63" opacity="0.5"/>
-              <text x="134" y="238" fill="#9AA8C2">06</text>
-              <rect x="154" y="230" width="40" height="8" rx="2" fill="#9AA8C2"/>
-              <rect x="200" y="230" width="80" height="8" rx="2" fill="#3B4A63" opacity="0.55"/>
-              <text x="134" y="258" fill="#9AA8C2">07</text>
-              <rect x="164" y="250" width="60" height="8" rx="2" fill="#3B4A63" opacity="0.5"/>
-              <rect x="230" y="250" width="40" height="8" rx="2" fill="#1E5BE6"/>
-            </g>
-            <rect x="134" y="272" width="6" height="12" fill="#1E5BE6">
-              <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
-            </rect>
-            <rect x="146" y="272" width="120" height="12" rx="2" fill="#9AA8C2" opacity="0.4"/>
-          </g>
-
-          <!-- Floating chat bubble (mentor) -->
-          <g filter="url(#shadow-sm)" transform="translate(290, 50)">
-            <rect x="0" y="0" width="130" height="70" rx="14" fill="#FFFFFF" stroke="#E1E8F2"/>
-            <path d="M 18 70 L 26 82 L 34 70 Z" fill="#FFFFFF"/>
-            <circle cx="22" cy="22" r="10" fill="url(#g-blue)"/>
-            <path d="M 22 17 L 24 21 L 28 22 L 25 25 L 26 29 L 22 27 L 18 29 L 19 25 L 16 22 L 20 21 Z" fill="#fff"/>
-            <rect x="40" y="14" width="76" height="6" rx="3" fill="#15233A"/>
-            <rect x="40" y="26" width="60" height="5" rx="2.5" fill="#9AA8C2"/>
-            <rect x="40" y="36" width="80" height="5" rx="2.5" fill="#9AA8C2"/>
-            <rect x="40" y="46" width="50" height="5" rx="2.5" fill="#9AA8C2"/>
-          </g>
-
-          <!-- Floating "C" mark badge -->
-          <g filter="url(#shadow-sm)" transform="translate(40, 300)">
-            <circle cx="36" cy="36" r="36" fill="#FFFFFF" stroke="#E1E8F2"/>
-            <path d="M 50 22 A 18 18 0 1 0 50 50" stroke="url(#g-blue)" stroke-width="6" fill="none" stroke-linecap="round"/>
-          </g>
-
-          <!-- Floating check / progress card -->
-          <g filter="url(#shadow-sm)" transform="translate(290, 280)">
-            <rect x="0" y="0" width="140" height="84" rx="14" fill="#FFFFFF" stroke="#E1E8F2"/>
-            <circle cx="22" cy="24" r="12" fill="#EAF1FE"/>
-            <path d="M 16 24 L 21 29 L 28 20" stroke="#1E5BE6" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <rect x="42" y="18" width="80" height="6" rx="3" fill="#15233A"/>
-            <rect x="42" y="30" width="60" height="5" rx="2.5" fill="#9AA8C2"/>
-            <rect x="14" y="52" width="112" height="8" rx="4" fill="#EAF1FE"/>
-            <rect x="14" y="52" width="78" height="8" rx="4" fill="url(#g-blue)"/>
-            <text x="14" y="76" font-family="ui-sans-serif, system-ui" font-size="10" font-weight="700" fill="#1E5BE6">学習進捗 70%</text>
-          </g>
-
-          <!-- Sparkle dots -->
-          <circle cx="430" cy="120" r="4" fill="#1E5BE6" opacity="0.5"/>
-          <circle cx="420" cy="200" r="3" fill="#1E5BE6" opacity="0.3"/>
-          <circle cx="30" cy="160" r="3" fill="#1E5BE6" opacity="0.4"/>
-          <circle cx="20" cy="250" r="4" fill="#1E5BE6" opacity="0.3"/>
-        </svg>
+<!-- ===== 参加特典 ===== -->
+<section class="sec-alt" id="benefit">
+  <div class="fade-up" style="text-align:center;margin-bottom:24px">
+    <span class="sec-label">BENEFIT</span>
+    <h2 class="section-title">このセミナーに<span class="accent">参加すると…</span></h2>
+    <p class="section-sub">こんな成果を持ち帰れます</p>
+  </div>
+  <div class="benefit-list">
+    <div class="benefit-card fade-up">
+      <div class="benefit-num">1</div>
+      <div class="benefit-body">
+        <div class="benefit-tag">成果①</div>
+        <h3>ClaudeCodeの全体像が理解できる</h3>
+        <p>ChatGPTとの違いや何ができるかが明確になります。AI活用の視野が広がります。</p>
       </div>
     </div>
-  </section>
-
-  <!-- Features -->
-  <section class="features" id="features">
-    <div class="container">
-      <div class="feat-grid">
-        <div class="feat">
-          <div class="icon-wrap"><img src="assets/07_icon_target.png" alt=""></div>
-          <h3>作りたいものベース</h3>
-          <p>あなたの作りたいものを起点に<br>ゴールを一緒に定義します</p>
-        </div>
-        <div class="feat">
-          <div class="icon-wrap"><img src="assets/08_icon_people.png" alt=""></div>
-          <h3>マンツーマン伴走</h3>
-          <p>2ヶ月で全8回のマンツーマン<br>で手厚くサポート</p>
-        </div>
-        <div class="feat">
-          <div class="icon-wrap"><img src="assets/09_icon_chat_bubble.png" alt=""></div>
-          <h3>チャットサポート</h3>
-          <p>いつでも質問できるチャット<br>サポート付き</p>
-        </div>
-        <div class="feat">
-          <div class="icon-wrap"><img src="assets/10_icon_shield.png" alt=""></div>
-          <h3>セキュリティ・公開まで支援</h3>
-          <p>セキュリティ対策からチャット<br>公開まで丁寧にサポート</p>
-        </div>
+    <div class="benefit-card fade-up">
+      <div class="benefit-num">2</div>
+      <div class="benefit-body">
+        <div class="benefit-tag">成果②</div>
+        <h3>実際にツールが作れる</h3>
+        <p>セミナー中に、自分だけの業務ツールをその場で作成します。「自分にも作れた」という体験が自信になります。</p>
       </div>
     </div>
-  </section>
-
-  <!-- Process -->
-  <section class="process" id="process">
-    <div class="container">
-      <h2 class="section-title">学習ループを作ることが大事</h2>
-      <p class="section-sub">5ステップの循環型プロセスで、確実にスキルと成果を積み上げていきます。</p>
-      <div class="steps">
-        <div class="step">
-          <div class="step-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="4" width="36" height="40" rx="4" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="6" y1="16" x2="42" y2="16" stroke="#1E5BE6" stroke-width="2"/>
-              <line x1="24" y1="16" x2="24" y2="44" stroke="#1E5BE6" stroke-width="2"/>
-              <rect x="28" y="7" width="4" height="7" rx="1" fill="#1E5BE6"/>
-              <rect x="34" y="9" width="4" height="5" rx="1" fill="#1E5BE6" opacity="0.45"/>
-              <line x1="10" y1="24" x2="20" y2="24" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="10" y1="30" x2="18" y2="30" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="10" y1="36" x2="20" y2="36" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="28" y1="24" x2="38" y2="24" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="28" y1="30" x2="36" y2="30" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="step-label"><span class="step-num">01</span><span class="step-title">要件整理</span></div>
-          <p class="step-desc">お客様と話しながらゴールから決めて整理していきます</p>
-        </div>
-        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></div>
-        <div class="step">
-          <div class="step-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <polygon points="24,8 40,16 24,24 8,16" fill="#EAF1FE" stroke="#1E5BE6" stroke-width="2" stroke-linejoin="round"/>
-              <polyline points="8,22 24,30 40,22" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <polyline points="8,30 24,38 40,30" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
-            </svg>
-          </div>
-          <div class="step-label"><span class="step-num">02</span><span class="step-title">手を動かす</span></div>
-          <p class="step-desc">ClaudeCodeを使って、実際に形にするものにしていきます</p>
-        </div>
-        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></div>
-        <div class="step">
-          <div class="step-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="8" width="40" height="30" rx="4" stroke="#1E5BE6" stroke-width="2"/>
-              <line x1="4" y1="18" x2="44" y2="18" stroke="#1E5BE6" stroke-width="2"/>
-              <circle cx="10" cy="13" r="2" fill="#1E5BE6"/>
-              <circle cx="17" cy="13" r="2" fill="#1E5BE6"/>
-              <polyline points="16,26 11,31 16,36" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <polyline points="32,26 37,31 32,36" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="22" y1="24" x2="26" y2="38" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="step-label"><span class="step-num">03</span><span class="step-title">フィードバック</span></div>
-          <p class="step-desc">マンツーマンで改善点を見つけフィードバックを受けます</p>
-        </div>
-        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></div>
-        <div class="step">
-          <div class="step-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="4" width="26" height="36" rx="4" stroke="#1E5BE6" stroke-width="2"/>
-              <line x1="12" y1="14" x2="26" y2="14" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="12" y1="21" x2="26" y2="21" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="12" y1="28" x2="20" y2="28" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M 30 30 L 40 20 L 44 24 L 34 34 Z" fill="#EAF1FE" stroke="#1E5BE6" stroke-width="2" stroke-linejoin="round"/>
-              <line x1="40" y1="20" x2="44" y2="24" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round"/>
-              <line x1="30" y1="30" x2="28" y2="40" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round"/>
-              <line x1="34" y1="34" x2="28" y2="40" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="step-label"><span class="step-num">04</span><span class="step-title">改善点を洗い出す</span></div>
-          <p class="step-desc">フィードバックをもとに改善ポイントを洗い出します</p>
-        </div>
-        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></div>
-        <div class="step">
-          <div class="step-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="10" width="32" height="34" rx="4" stroke="#1E5BE6" stroke-width="2"/>
-              <rect x="16" y="6" width="16" height="10" rx="3" fill="#EAF1FE" stroke="#1E5BE6" stroke-width="2"/>
-              <rect x="13" y="22" width="7" height="7" rx="1.5" stroke="#1E5BE6" stroke-width="1.5"/>
-              <polyline points="14.5,25.5 16.5,27.5 19,23.5" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="24" y1="25.5" x2="34" y2="25.5" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
-              <rect x="13" y="33" width="7" height="7" rx="1.5" stroke="#1E5BE6" stroke-width="1.5"/>
-              <polyline points="14.5,36.5 16.5,38.5 19,34.5" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="24" y1="36.5" x2="34" y2="36.5" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="step-label"><span class="step-num">05</span><span class="step-title">改善</span></div>
-          <p class="step-desc">実際に改善していきます</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Plans -->
-  <section class="plans" id="curriculum">
-    <div class="container">
-      <div class="plans-grid">
-        <div class="plan-list">
-          <h3>講座カリキュラム</h3>
-          <ol>
-            <li>作りたいものを決める</li>
-            <li>伴走支援を受けながら形にする</li>
-            <li>セキュリティ対策・ネット公開</li>
-          </ol>
-          <p class="note">※随時、柔軟性ある立てっていての実施も可能です。必要に応じて柔軟に進められます。</p>
-        </div>
-        <div class="price-card">
-          <div class="price-left">
-            <span class="tag">2ヶ月／全8回</span>
-            <div class="price-num">398,000<small>円(税込)</small></div>
-            <ul class="price-checks">
-              <li>マンツーマン伴走でしっかり学べる</li>
-              <li>作りたいものを一緒に形にする</li>
-              <li>チャットサポートで安心</li>
-            </ul>
-          </div>
-          <div class="price-right">
-            <h4>サポート内容</h4>
-            <ul>
-              <li>作りたいものをゴールから一緒に定義</li>
-              <li>マンツーマンで一緒に作る</li>
-              <li>チャットサポートでいつでも質問できる</li>
-              <li>セキュリティ・公開までサポート</li>
-            </ul>
-          </div>
-        </div>
-        <div class="price-actions">
-          <a href="https://buy.stripe.com/9B6eVc49hbh57NxcGK00006" class="btn-primary btn-lg" target="_blank" rel="noopener">今すぐ申し込む</a>
-          <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-outline btn-lg" target="_blank" rel="noopener">まずは無料相談する</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Can Make -->
-  <section class="can-make">
-    <div class="container">
-      <p class="section-sub" style="margin-bottom:4px">たった2ヶ月で</p>
-      <h2 class="section-title" style="margin-bottom:10px">こんなものが作れるようになります</h2>
-      <p class="section-sub">ClaudeCodeを使えば、あなたのビジネスや業務に役立つシステムをゼロから開発できます。</p>
-      <div class="can-make-list">
-
-        <div class="cm-item">
-          <div class="cm-mock">
-            <svg viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
-              <rect width="180" height="110" fill="#F4F8FF"/>
-              <rect width="180" height="22" fill="#1E5BE6"/>
-              <rect x="8" y="8" width="60" height="6" rx="3" fill="white" opacity="0.9"/>
-              <rect x="152" y="7" width="20" height="8" rx="4" fill="white" opacity="0.7"/>
-              <rect x="8" y="28" width="164" height="14" rx="2" fill="#EAF1FE"/>
-              <rect x="12" y="32" width="20" height="6" rx="2" fill="#1E5BE6" opacity="0.5"/>
-              <rect x="44" y="32" width="36" height="6" rx="2" fill="#1E5BE6" opacity="0.5"/>
-              <rect x="92" y="32" width="48" height="6" rx="2" fill="#1E5BE6" opacity="0.5"/>
-              <rect x="150" y="32" width="18" height="6" rx="2" fill="#1E5BE6" opacity="0.5"/>
-              <rect x="8" y="46" width="164" height="13" rx="2" fill="white"/>
-              <rect x="12" y="50" width="16" height="5" rx="2" fill="#9AA8C2"/>
-              <rect x="44" y="50" width="28" height="5" rx="2" fill="#9AA8C2"/>
-              <rect x="92" y="50" width="52" height="5" rx="2" fill="#9AA8C2"/>
-              <rect x="149" y="49" width="20" height="7" rx="3.5" fill="#1E5BE6"/>
-              <rect x="8" y="61" width="164" height="13" rx="2" fill="#F7FAFE"/>
-              <rect x="12" y="65" width="20" height="5" rx="2" fill="#9AA8C2"/>
-              <rect x="44" y="65" width="32" height="5" rx="2" fill="#9AA8C2"/>
-              <rect x="92" y="65" width="44" height="5" rx="2" fill="#9AA8C2"/>
-              <rect x="149" y="64" width="20" height="7" rx="3.5" fill="#9AA8C2"/>
-              <rect x="8" y="76" width="164" height="13" rx="2" fill="white"/>
-              <rect x="12" y="80" width="18" height="5" rx="2" fill="#9AA8C2"/>
-              <rect x="44" y="80" width="30" height="5" rx="2" fill="#9AA8C2"/>
-              <rect x="92" y="80" width="48" height="5" rx="2" fill="#9AA8C2"/>
-              <rect x="149" y="79" width="20" height="7" rx="3.5" fill="#1E5BE6"/>
-              <rect x="8" y="96" width="70" height="8" rx="4" fill="#1E5BE6"/>
-            </svg>
-          </div>
-          <div class="cm-body">
-            <div class="cm-body-top"><div class="cm-num">1</div><h3>顧客管理システム</h3></div>
-            <p>スプレッドシートの顧客情報をもとに、メール一括送信や売上分析ができるシステムを開発できます。</p>
-          </div>
-        </div>
-
-        <div class="cm-item">
-          <div class="cm-mock">
-            <svg viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
-              <rect width="180" height="110" fill="#F4F8FF"/>
-              <rect x="20" y="8" width="140" height="94" rx="6" fill="white" stroke="#E1E8F2" stroke-width="1"/>
-              <rect x="30" y="16" width="50" height="8" rx="3" fill="#1E5BE6"/>
-              <rect x="110" y="14" width="40" height="5" rx="2" fill="#9AA8C2"/>
-              <rect x="110" y="22" width="30" height="5" rx="2" fill="#9AA8C2"/>
-              <line x1="30" y1="32" x2="150" y2="32" stroke="#E1E8F2" stroke-width="1"/>
-              <rect x="30" y="38" width="70" height="5" rx="2" fill="#C9D6EC"/>
-              <rect x="130" y="38" width="24" height="5" rx="2" fill="#3B4A63" opacity="0.6"/>
-              <rect x="30" y="48" width="60" height="5" rx="2" fill="#C9D6EC"/>
-              <rect x="130" y="48" width="24" height="5" rx="2" fill="#3B4A63" opacity="0.6"/>
-              <rect x="30" y="58" width="80" height="5" rx="2" fill="#C9D6EC"/>
-              <rect x="130" y="58" width="24" height="5" rx="2" fill="#3B4A63" opacity="0.6"/>
-              <line x1="30" y1="68" x2="150" y2="68" stroke="#E1E8F2" stroke-width="1"/>
-              <rect x="90" y="72" width="24" height="5" rx="2" fill="#9AA8C2"/>
-              <rect x="128" y="70" width="28" height="8" rx="2" fill="#1E5BE6"/>
-              <rect x="30" y="88" width="50" height="10" rx="5" fill="#EAF1FE" stroke="#1E5BE6" stroke-width="1"/>
-              <rect x="36" y="91" width="38" height="4" rx="2" fill="#1E5BE6"/>
-            </svg>
-          </div>
-          <div class="cm-body">
-            <div class="cm-body-top"><div class="cm-num">2</div><h3>請求書・見積書作成ツール</h3></div>
-            <p>品目・金額を入力するだけでPDF出力できる、請求書や見積書の作成ツールを開発できます。</p>
-          </div>
-        </div>
-
-        <div class="cm-item">
-          <div class="cm-mock">
-            <svg viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
-              <rect width="180" height="110" rx="6" fill="#F4F8FF"/>
-              <rect width="180" height="16" rx="6" fill="#E1E8F2"/>
-              <rect y="10" width="180" height="6" fill="#E1E8F2"/>
-              <circle cx="10" cy="8" r="3" fill="#FF5F57"/>
-              <circle cx="20" cy="8" r="3" fill="#FEBC2E"/>
-              <circle cx="30" cy="8" r="3" fill="#28C840"/>
-              <rect x="50" y="4" width="80" height="8" rx="4" fill="white"/>
-              <rect x="0" y="16" width="180" height="38" fill="#1E5BE6"/>
-              <rect x="12" y="24" width="60" height="8" rx="3" fill="white" opacity="0.9"/>
-              <rect x="12" y="36" width="44" height="5" rx="2" fill="white" opacity="0.5"/>
-              <rect x="130" y="22" width="36" height="26" rx="4" fill="white" opacity="0.15"/>
-              <rect x="12" y="60" width="48" height="14" rx="4" fill="white" stroke="#E1E8F2" stroke-width="1"/>
-              <rect x="67" y="60" width="48" height="14" rx="4" fill="white" stroke="#E1E8F2" stroke-width="1"/>
-              <rect x="122" y="60" width="48" height="14" rx="4" fill="white" stroke="#E1E8F2" stroke-width="1"/>
-              <rect x="40" y="82" width="100" height="6" rx="3" fill="#C9D6EC"/>
-              <rect x="60" y="92" width="60" height="8" rx="4" fill="#1E5BE6"/>
-            </svg>
-          </div>
-          <div class="cm-body">
-            <div class="cm-body-top"><div class="cm-num">3</div><h3>自社LP・ホームページ</h3></div>
-            <p>サービスを訴求するランディングページや企業サイトをゼロから制作・公開できます。</p>
-          </div>
-        </div>
-
-        <div class="cm-item">
-          <div class="cm-mock">
-            <svg viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
-              <rect width="180" height="110" fill="#F4F8FF"/>
-              <rect width="180" height="22" fill="#1E5BE6"/>
-              <rect x="8" y="8" width="50" height="6" rx="3" fill="white" opacity="0.9"/>
-              <rect x="8" y="28" width="40" height="6" rx="3" fill="#1E5BE6" opacity="0.4"/>
-              <rect x="8" y="38" width="164" height="10" rx="2" fill="#EAF1FE"/>
-              <rect x="12" y="41" width="14" height="4" rx="2" fill="#9AA8C2"/>
-              <rect x="35" y="41" width="14" height="4" rx="2" fill="#9AA8C2"/>
-              <rect x="58" y="41" width="14" height="4" rx="2" fill="#9AA8C2"/>
-              <rect x="81" y="41" width="14" height="4" rx="2" fill="#9AA8C2"/>
-              <rect x="104" y="41" width="14" height="4" rx="2" fill="#9AA8C2"/>
-              <circle cx="19" cy="56" r="7" fill="#EAF1FE"/>
-              <path d="M 15 56 L 18 59 L 23 52" stroke="#1E5BE6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <circle cx="42" cy="56" r="7" fill="#EAF1FE"/>
-              <path d="M 38 56 L 41 59 L 46 52" stroke="#1E5BE6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <circle cx="65" cy="56" r="7" fill="#EAF1FE"/>
-              <path d="M 61 56 L 64 59 L 69 52" stroke="#1E5BE6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <circle cx="88" cy="56" r="7" fill="#EAF1FE"/>
-              <path d="M 84 56 L 87 59 L 92 52" stroke="#1E5BE6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <circle cx="111" cy="56" r="7" fill="#EAF1FE"/>
-              <path d="M 107 56 L 110 59 L 115 52" stroke="#1E5BE6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <circle cx="19" cy="72" r="7" fill="#EAF1FE"/>
-              <path d="M 15 72 L 18 75 L 23 68" stroke="#1E5BE6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <circle cx="42" cy="72" r="7" fill="#EAF1FE"/>
-              <path d="M 38 72 L 41 75 L 46 68" stroke="#1E5BE6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <circle cx="65" cy="72" r="7" fill="#EAF1FE"/>
-              <circle cx="88" cy="72" r="7" fill="#1E5BE6"/>
-              <path d="M 84 72 L 87 75 L 92 68" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              <rect x="8" y="85" width="164" height="18" rx="6" fill="white" stroke="#E1E8F2" stroke-width="1"/>
-              <rect x="16" y="90" width="8" height="8" rx="2" fill="#1E5BE6" opacity="0.3"/>
-              <rect x="28" y="92" width="30" height="4" rx="2" fill="#9AA8C2"/>
-              <rect x="80" y="90" width="8" height="8" rx="2" fill="#28C840" opacity="0.5"/>
-              <rect x="92" y="92" width="24" height="4" rx="2" fill="#9AA8C2"/>
-              <rect x="130" y="90" width="8" height="8" rx="2" fill="#1E5BE6" opacity="0.2"/>
-              <rect x="142" y="92" width="20" height="4" rx="2" fill="#9AA8C2"/>
-            </svg>
-          </div>
-          <div class="cm-body">
-            <div class="cm-body-top"><div class="cm-num">4</div><h3>社内向けの勤怠管理システム</h3></div>
-            <p>出退勤の打刻・月次集計・有給管理まで対応した、社内専用の勤怠管理アプリを構築できます。</p>
-          </div>
-        </div>
-
-        <div class="cm-item">
-          <div class="cm-mock">
-            <svg viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
-              <rect width="180" height="110" fill="#F4F8FF"/>
-              <rect width="180" height="18" fill="#1E5BE6"/>
-              <rect x="8" y="6" width="44" height="6" rx="3" fill="white" opacity="0.9"/>
-              <rect x="150" y="5" width="22" height="8" rx="4" fill="white" opacity="0.7"/>
-              <rect x="8" y="22" width="100" height="58" rx="6" fill="#15233A"/>
-              <circle cx="58" cy="51" r="12" fill="white" opacity="0.2"/>
-              <path d="M 54 46 L 54 56 L 64 51 Z" fill="white"/>
-              <rect x="8" y="84" width="100" height="4" rx="2" fill="#3B4A63"/>
-              <rect x="8" y="84" width="60" height="4" rx="2" fill="#1E5BE6"/>
-              <rect x="116" y="22" width="56" height="12" rx="4" fill="#1E5BE6"/>
-              <rect x="120" y="26" width="36" height="4" rx="2" fill="white" opacity="0.9"/>
-              <rect x="116" y="37" width="56" height="12" rx="4" fill="white" stroke="#E1E8F2" stroke-width="1"/>
-              <rect x="120" y="41" width="36" height="4" rx="2" fill="#9AA8C2"/>
-              <rect x="116" y="52" width="56" height="12" rx="4" fill="white" stroke="#E1E8F2" stroke-width="1"/>
-              <rect x="120" y="56" width="36" height="4" rx="2" fill="#9AA8C2"/>
-              <rect x="116" y="67" width="56" height="12" rx="4" fill="white" stroke="#E1E8F2" stroke-width="1"/>
-              <rect x="120" y="71" width="36" height="4" rx="2" fill="#9AA8C2"/>
-              <rect x="116" y="84" width="56" height="8" rx="4" fill="#EAF1FE"/>
-              <rect x="116" y="84" width="38" height="8" rx="4" fill="#1E5BE6" opacity="0.7"/>
-            </svg>
-          </div>
-          <div class="cm-body">
-            <div class="cm-body-top"><div class="cm-num">5</div><h3>講座受講プラットフォーム</h3></div>
-            <p>動画・教材配信や受講者の進捗管理ができるオンライン学習プラットフォームを構築できます。</p>
-          </div>
-        </div>
-
-        <div class="cm-item">
-          <div class="cm-mock">
-            <svg viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
-              <rect width="180" height="110" fill="#F4F8FF"/>
-              <rect width="180" height="20" fill="#1E5BE6"/>
-              <rect x="8" y="7" width="50" height="6" rx="3" fill="white" opacity="0.9"/>
-              <rect x="8" y="26" width="120" height="12" rx="6" fill="white" stroke="#E1E8F2" stroke-width="1"/>
-              <rect x="16" y="30" width="6" height="4" rx="2" fill="#9AA8C2"/>
-              <rect x="26" y="30" width="50" height="4" rx="2" fill="#C9D6EC"/>
-              <rect x="135" y="26" width="36" height="12" rx="6" fill="#EAF1FE" stroke="#1E5BE6" stroke-width="1"/>
-              <rect x="143" y="30" width="20" height="4" rx="2" fill="#1E5BE6"/>
-              <rect x="8" y="44" width="164" height="12" rx="3" fill="white" stroke="#E1E8F2" stroke-width="1"/>
-              <circle cx="17" cy="50" r="5" fill="#EAF1FE"/>
-              <rect x="27" y="47" width="50" height="4" rx="2" fill="#15233A" opacity="0.7"/>
-              <rect x="90" y="47" width="40" height="4" rx="2" fill="#9AA8C2"/>
-              <rect x="144" y="47" width="22" height="6" rx="3" fill="#1E5BE6"/>
-              <rect x="8" y="58" width="164" height="12" rx="3" fill="#F7FAFE" stroke="#E1E8F2" stroke-width="1"/>
-              <circle cx="17" cy="64" r="5" fill="#EAF1FE"/>
-              <rect x="27" y="61" width="44" height="4" rx="2" fill="#15233A" opacity="0.7"/>
-              <rect x="90" y="61" width="36" height="4" rx="2" fill="#9AA8C2"/>
-              <rect x="144" y="61" width="22" height="6" rx="3" fill="#9AA8C2"/>
-              <rect x="8" y="72" width="164" height="12" rx="3" fill="white" stroke="#E1E8F2" stroke-width="1"/>
-              <circle cx="17" cy="78" r="5" fill="#EAF1FE"/>
-              <rect x="27" y="75" width="56" height="4" rx="2" fill="#15233A" opacity="0.7"/>
-              <rect x="90" y="75" width="44" height="4" rx="2" fill="#9AA8C2"/>
-              <rect x="144" y="75" width="22" height="6" rx="3" fill="#1E5BE6"/>
-              <rect x="8" y="86" width="164" height="12" rx="3" fill="#F7FAFE" stroke="#E1E8F2" stroke-width="1"/>
-              <circle cx="17" cy="92" r="5" fill="#EAF1FE"/>
-              <rect x="27" y="89" width="48" height="4" rx="2" fill="#15233A" opacity="0.7"/>
-              <rect x="90" y="89" width="40" height="4" rx="2" fill="#9AA8C2"/>
-              <rect x="144" y="89" width="22" height="6" rx="3" fill="#1E5BE6"/>
-            </svg>
-          </div>
-          <div class="cm-body">
-            <div class="cm-body-top"><div class="cm-num">6</div><h3>営業リスト作成ツール</h3></div>
-            <p>条件を指定するだけでターゲット企業・担当者の営業リストを自動収集・整理するツールを作れます。</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials" id="testimonials">
-    <div class="container">
-      <h2 class="section-title">受講生の声</h2>
-      <p class="section-sub">実際に受講いただいた方々からの声をご紹介します。</p>
-
-      <div class="testi-featured">
-        <div class="testi-profile-top">
-          <div class="testi-avatar-sq">
-            <img src="assets/kajiya_profile.jpg" alt="梶屋さん">
-          </div>
-          <p class="testi-name-center">梶屋 さん</p>
-          <p class="testi-role-center">株式会社AIRSTAY｜140以上の民泊運営</p>
-        </div>
-        <p style="font-size:22px;font-weight:900;color:var(--blue);text-align:center;margin:0;line-height:1.4">民泊物件の価格調整ツール</p>
-        <p class="testi-comment">Claude Codeでホームページ制作やツール開発ができることは知っていましたが、実際に自分のPCでどう環境構築し、どうプロンプトを打ち、外部連携や公開まで進めるのかが分かっていませんでした。今回のコンサルでは、民泊運営の価格調整業務を題材に、実際の価格調整ツールを開発。これまで140件の物件を確認しながら4〜5時間かけて行っていた作業を、一瞬で実行できるレベルまで改善できました。初心者でも理解できるよう丁寧に解説しながら伴走していただけたので、学びながら実務成果まで出せたのが非常に良かったです。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Profile -->
-  <section class="profile" id="profile">
-    <div class="container">
-      <h2 class="section-title" style="text-align:left;margin-bottom:32px">代表プロフィール</h2>
-      <div class="profile-grid">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
-          <div class="profile-photo">
-            <img src="assets/01_portrait.png" alt="代表ポートレート">
-          </div>
-          <p style="text-align:center;margin:0;font-size:15px;font-weight:800;color:var(--ink)">清水 勝紀<span style="display:block;font-size:11px;font-weight:500;color:var(--muted);margin-top:2px">しみず かつのり</span></p>
-        </div>
-        <div class="profile-info">
-          <h3>代表 /</h3>
-          <p class="role">AIサポートエンジニア</p>
-          <p>本サービスの代表として、受講生一人ひとりの目標達成に向けた学習設計とサポート体制の構築を行っています。<br><br>カリキュラム設計・品質管理・学習体験の改善に責任を持ち、安心して学べる場づくりに取り組んでいます。<br><br>※実際の担当は、内容や日程に応じて最適なサポートスタッフをご案内する場合があります。</p>
-        </div>
-        <div class="profile-bullets">
-          <div class="pb">
-            <div class="pb-icon"><img src="assets/16_icon_user_settings.png" alt=""></div>
-            <div>
-              <h4>サービス設計・品質管理</h4>
-              <p>カリキュラム設計やサポート体制の整備を担当</p>
-            </div>
-          </div>
-          <div class="pb">
-            <div class="pb-icon"><img src="assets/17_icon_gear.png" alt=""></div>
-            <div>
-              <h4>学習体験の改善</h4>
-              <p>受講生の声をもとに、より良い体験を追求</p>
-            </div>
-          </div>
-          <div class="pb">
-            <div class="pb-icon"><img src="assets/18_icon_chat_dots.png" alt=""></div>
-            <div>
-              <h4>サポート体制の構築</h4>
-              <p>安心して学べる環境とサポートを提供</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer CTA -->
-  <div class="footer-cta">
-    <div class="fc-grid">
-      <div>
-        <h3 class="fc-title">まずは無料相談で、あなたの作りたいものをお聞かせください</h3>
-        <p style="font-size:11px;color:var(--muted);margin:0 0 16px;font-weight:500">講座の内容や進め方について、お気軽にご相談ください。</p>
-        <div class="fc-buttons">
-          <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-primary" target="_blank" rel="noopener">
-            <svg class="ic-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="8 14 11 17 16 12"/></svg>
-            無料相談に申し込む
-          </a>
-          <button class="btn-outline">
-            <svg class="ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            チャットで質問する
-          </button>
-        </div>
-      </div>
-      <div class="fc-side">
-        <div class="badge"><img src="assets/19_icon_shield_check.png" alt=""></div>
-        <div>
-          <h5>無理な営業は一切ありません</h5>
-          <p>安心してお気軽にご相談ください</p>
-        </div>
+    <div class="benefit-card fade-up">
+      <div class="benefit-num">3</div>
+      <div class="benefit-body">
+        <div class="benefit-tag">成果③</div>
+        <h3>AI活用の第一歩を踏み出せる</h3>
+        <p>「難しそう」という不安が解消され、初歩的な操作ができるようになります。業務効率化のイメージが具体的になります。</p>
       </div>
     </div>
   </div>
-
-  <footer class="copyright">
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:8px">
-      <a href="why-claude-code.html" style="color:var(--muted);text-decoration:none;font-size:11px;font-weight:500">なぜClaudeCode？</a>
-      <a href="privacy.html" style="color:var(--muted);text-decoration:none;font-size:11px;font-weight:500">プライバシーポリシー</a>
-      <a href="tokushoho.html" style="color:var(--muted);text-decoration:none;font-size:11px;font-weight:500">特定商取引法に基づく表記</a>
+  <div class="setup-note fade-up">
+    <div class="setup-note-icon">📋</div>
+    <div>
+      <strong>PCでの参加を推奨しています</strong>
+      <p>初心者歓迎・完全初心者OK・事前準備不要・その場で質問可能。「まず触ってみたい」という方に向けた内容です。</p>
     </div>
-    &copy; 2026 ClaudeCode講座
-  </footer>
+  </div>
+</section>
 
+<!-- ===== 開催概要 ===== -->
+<section>
+  <div class="fade-up" style="text-align:center;margin-bottom:24px">
+    <span class="sec-label">概要</span>
+    <h2 class="section-title">セミナー<span class="accent">開催概要</span></h2>
+  </div>
+  <div class="overview-list fade-up">
+    <div class="overview-row">
+      <div class="ov-label">開催形式</div>
+      <div class="ov-val"><strong>オンライン（Zoom）</strong><br>URLはお申込み後にお送りします</div>
+    </div>
+    <div class="overview-row">
+      <div class="ov-label">参加費</div>
+      <div class="ov-val"><strong>無料</strong></div>
+    </div>
+    <div class="overview-row">
+      <div class="ov-label">対象</div>
+      <div class="ov-val">ChatGPT等を使っているが成果が出ていないひとり社長・個人事業主</div>
+    </div>
+    <div class="overview-row">
+      <div class="ov-label">時間</div>
+      <div class="ov-val">約120分</div>
+    </div>
+  </div>
+  <div class="fade-up" style="margin-top:20px">
+    <a href="https://peatix.com/event/5021235/view" class="btn-orange" target="_blank" rel="noopener">今すぐ無料で申し込む</a>
+  </div>
+</section>
+
+<!-- ===== セミナー内容 ===== -->
+<section class="sec-alt" id="content">
+  <div class="fade-up" style="text-align:center;margin-bottom:24px">
+    <span class="sec-label">SEMINAR</span>
+    <h2 class="section-title">セミナー<span class="accent">内容</span></h2>
+    <p class="section-sub">解説＋ハンズオンの120分。知識と体験を同時に持ち帰れます</p>
+  </div>
+  <div class="chapter-list">
+
+    <div class="chapter-item fade-up">
+      <div class="chapter-head">
+        <span class="ch-num">前半 60分</span>
+        <span class="ch-title-head">ClaudeCodeとは何か——解説パート</span>
+      </div>
+      <div class="chapter-body">
+        <h3>「使うAI」から「働かせるAI」へ。思考をアップデートする</h3>
+        <p>ChatGPT・Geminiとの決定的な違いから、ClaudeCodeでAIが自律的に動く仕組みまでを丁寧に解説します。ひとり社長がなぜ今ClaudeCodeを使うべきなのかが、この60分でクリアになります。</p>
+        <ul class="chapter-points">
+          <li>ChatGPTとClaudeCodeの根本的な違い</li>
+          <li>「AI社員」という概念と経営への活かし方</li>
+          <li>マーケ・業務効率化をAI化する全体像</li>
+          <li>ClaudeCode Skillsの仕組みと使い方</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chapter-item fade-up">
+      <div class="chapter-head">
+        <span class="ch-num">後半 60分</span>
+        <span class="ch-title-head">ハンズオン——実際に業務効率化ツールを作る</span>
+      </div>
+      <div class="chapter-body">
+        <h3>画面を見ながら、一緒に手を動かす実践パート</h3>
+        <p>講師がリアルタイムでClaudeCodeを操作し、業務効率化ツールを実際に構築します。今回のイベントでは<strong>経営ダッシュボード</strong>を題材に、ゼロから動くものを作る過程を体験できます。※テーマはイベントごとに変わります。</p>
+        <ul class="chapter-points">
+          <li>ClaudeCodeを使ったツール構築の実演</li>
+          <li>エンジニア不要——自分の言葉で指示するだけ</li>
+          <li>参加者からの質問にリアルタイムで回答</li>
+          <li>完成したツールのデプロイまで一気に体験</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="fade-up" style="margin-top:28px">
+    <a href="https://peatix.com/event/5021235/view" class="btn-orange" target="_blank" rel="noopener">今すぐ無料で申し込む</a>
+  </div>
+</section>
+
+<!-- ===== 講師紹介 ===== -->
+<section id="instructor">
+  <div class="fade-up" style="text-align:center;margin-bottom:24px">
+    <span class="sec-label">INSTRUCTOR</span>
+    <h2 class="section-title">講師紹介</h2>
+    <p class="section-sub">ClaudeCode専門家が、リアルな実践ノウハウをそのまま公開します</p>
+  </div>
+  <div class="inst-card fade-up">
+    <div class="inst-head">
+      <img class="inst-photo" src="./assets/shimizu-fv.png" alt="清水 勝紀">
+      <div class="inst-head-info">
+        <div class="inst-role">代表 / エンジニア・AI支援</div>
+        <div class="inst-name">清水 勝紀</div>
+        <div class="inst-yomi">Katsunori Shimizu</div>
+      </div>
+    </div>
+    <div class="inst-tags">
+      <span class="inst-tag">現役エンジニア</span>
+      <span class="inst-tag">AIセミナー多数登壇</span>
+      <span class="inst-tag">ClaudeCode実践支援</span>
+      <span class="inst-tag">セキュリティ支援</span>
+    </div>
+    <div class="inst-desc">
+      忙しい経営者こそ、AIでリソースの限界を無くすことが大切だと考えています。<br><br>
+      私はエンジニアとして、多くの企業やコミュニティでAI活用支援を行ってきました。その中で強く感じるのは、<strong>AIを「学ぶだけ」では経営は変わらない</strong>ということ。<br><br>
+      自分の業務課題に合わせてAIを実装し、実際に使い続けること——このセミナーでは、ChatGPTでは実現できない<strong>「AI社員を作る」という発想</strong>を体験していただきます。
+    </div>
+  </div>
+</section>
+
+<!-- ===== 参加者の声 ===== -->
+<section class="sec-alt" id="voice">
+  <div class="fade-up" style="text-align:center;margin-bottom:24px">
+    <span class="sec-label">VOICE</span>
+    <h2 class="section-title">参加者の<span class="accent">声</span></h2>
+    <p class="section-sub">実際にセミナーへ参加した方々の感想です</p>
+  </div>
+  <div class="voice-list">
+    <div class="voice-card fade-up">
+
+      <p class="voice-text">インストールからToDoリスト作成まで、セミナーの中で完結できました。「最初の大きな壁」を一緒に越えられた感覚があって、終わったあとは次のステップへの意欲が自然と湧いてきました。</p>
+    </div>
+    <div class="voice-card fade-up">
+
+      <p class="voice-text">セットアップを無事に完了できました。「自分の業務に合わせたアプリが作れる」と実感したときの驚きは大きかったです。もっと深く学びたい気持ちが抑えられなくなりました。</p>
+    </div>
+    <div class="voice-card fade-up">
+
+      <p class="voice-text">ITが得意なわけではないのに、置いてけぼりにならず最後まで理解できました。業務効率化の具体的なやり方をもっと知りたくなったので、次のステップも絶対に参加しようと思っています。</p>
+    </div>
+    <div class="voice-card fade-up">
+
+      <p class="voice-text">サポートが丁寧で、セットアップをスムーズに終えられました。一人でやっていたら確実にどこかでつまずいていたと思います。この場で一緒にやれて本当によかったです。</p>
+    </div>
+    <div class="voice-card fade-up">
+
+      <p class="voice-text">事前のフォローも含めてサポートが手厚く、ClaudeCodeの導入をスムーズに終えられました。「自分でもちゃんとできた」という体験が自信になりました。これからの活動に活かせそうです。</p>
+    </div>
+  </div>
+  <div class="voice-score fade-up">
+    <div class="voice-score-num">9.0<span class="voice-score-unit">/10</span></div>
+    <div class="voice-score-label">参加者満足度（平均）</div>
+  </div>
+  <p class="voice-disclaimer">※ 上記は参加者の個人的な体験・感想です。効果には個人差があります。</p>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="fade-up" style="text-align:center;margin-bottom:24px">
+    <span class="sec-label">FAQ</span>
+    <h2 class="section-title">よくある質問</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item fade-up">
+      <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">AI初心者でも参加できますか？</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">はい、まったく問題ありません。ChatGPTを使ったことがある程度で十分です。プログラミングや技術的な知識は不要で、自分の業務課題をお持ちであれば誰でも参加いただけます。</div></div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">エンジニアでなくても大丈夫ですか？</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">問題ありません。コードを書く必要はなく、AIと「自分の言葉」で対話するだけで業務ツールが作れます。ひとり社長・個人事業主向けに設計しています。</div></div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">ClaudeCodeの契約は事前に必要ですか？</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">ハンズオンに参加するには、事前に<strong>ClaudeのProプラン以上への課金</strong>が必要です。セミナー参加前にご準備をお願いします。セットアップ手順はセミナー内でもご案内します。</div></div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">どんな業種が対象ですか？</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">士業・コンサル・講師業・コミュニティ運営・制作会社・EC・サロン経営など幅広く対応しています。「業種」より「業務課題があるかどうか」が参加の基準です。</div></div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q"><span class="faq-q-badge">Q</span><span class="faq-q-text">参加後に高額な勧誘はありますか？</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">しつこい営業は一切行いません。セミナー後に継続支援プランをご案内する場合がありますが、強引な勧誘は行わず、参加者が自分で判断できる環境を大切にしています。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Final CTA ===== -->
+<section class="final-cta">
+  <div class="fade-up">
+    <h2>ひとり社長こそ、<br>AIに働かせるべきです。</h2>
+    <p>時間も人手も限られているからこそ、ClaudeCodeがあなたの経営を変えます。理屈より実物を見てください。120分で、全部お見せします。</p>
+    <a href="https://peatix.com/event/5021235/view" class="btn-green" target="_blank" rel="noopener">今すぐ無料で申し込む</a>
+  </div>
+</section>
+
+<!-- ===== 日程フォーム（フッター直前） ===== -->
+<div class="schedule-sec">
+  <div class="fade-up">
+    <div class="sec-label">日程選択</div>
+    <h2 class="section-title">日程を選んで申し込む</h2>
+    <p class="schedule-sub">ご都合の良い日程を選んで申し込みページへ進んでください</p>
+    <div class="schedule-dates">
+      
+      <a href="https://peatix.com/event/5021235/view" class="sdate" target="_blank" rel="noopener">
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">5月27日（水）</div>
+            <div class="sdate-time">13:00〜</div>
+          </div>
+        </div>
+        <div class="sdate-badge">残席あり</div>
+      </a>
+      <a href="https://peatix.com/event/5021235/view" class="sdate" target="_blank" rel="noopener">
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">6月5日（金）</div>
+            <div class="sdate-time">13:00〜</div>
+          </div>
+        </div>
+        <div class="sdate-badge">残席あり</div>
+      </a>
+      <a href="https://peatix.com/event/5021235/view" class="sdate" target="_blank" rel="noopener">
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">6月18日（木）</div>
+            <div class="sdate-time">14:00〜</div>
+          </div>
+        </div>
+        <div class="sdate-badge">残席あり</div>
+      </a>
+      <a href="https://peatix.com/event/5021235/view" class="sdate" target="_blank" rel="noopener">
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">6月20日（土）</div>
+            <div class="sdate-time">10:00〜</div>
+          </div>
+        </div>
+        <div class="sdate-badge">残席あり</div>
+      </a>
+      <a href="https://peatix.com/event/5021235/view" class="sdate" target="_blank" rel="noopener">
+        <div class="sdate-info">
+          <div>
+            <div class="sdate-date">6月24日（水）</div>
+            <div class="sdate-time">13:00〜</div>
+          </div>
+        </div>
+        <div class="sdate-badge">残席あり</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="tokushoho.html">特定商取引法に基づく表記</a>
+
+  </div>
+  <p class="footer-copy">© 2026 ClaudeCode 実践セミナー</p>
+</footer>
+
+</div><!-- /page-wrap -->
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.fade-up').forEach((el, i) => {
+  const siblings = Array.from(el.parentElement.querySelectorAll(':scope > .fade-up'));
+  const idx = siblings.indexOf(el);
+  if (idx > 0) el.style.transitionDelay = (idx * 0.07) + 's';
+  observer.observe(el);
+});
+
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// 過去の日程を自動削除
+(function() {
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  document.querySelectorAll('.sdate').forEach(el => {
+    const text = (el.querySelector('.sdate-date') || {}).textContent || '';
+    const m = text.match(/(\d+)月(\d+)日/);
+    if (!m) return;
+    const month = parseInt(m[1]) - 1;
+    const day = parseInt(m[2]);
+    const year = month < today.getMonth() ? today.getFullYear() + 1 : today.getFullYear();
+    const date = new Date(year, month, day);
+    if (date < today) el.remove();
+  });
+})();
+</script>
 </body>
 </html>

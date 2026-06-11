@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PK67KLM2');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DV0M4WXYDV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DV0M4WXYDV');
+</script>
+<title>ClaudeCode講座 — マンツーマン伴走</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<style>
+  :root{
+    --blue:#1E5BE6;
+    --blue-deep:#1648BD;
+    --blue-soft:#EAF1FE;
+    --blue-soft-2:#F4F8FF;
+    --ink:#15233A;
+    --ink-2:#3B4A63;
+    --muted:#6B7891;
+    --line:#E1E8F2;
+    --bg:#FFFFFF;
+    --page:#F2F6FC;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff;font-family:"Noto Sans JP",system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+
+  /* Top nav */
+  .topnav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;border-bottom:1px solid var(--line);background:#fff}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand img{height:72px;width:auto}
+  .nav-links{display:flex;gap:28px;font-size:13px;color:var(--ink-2);font-weight:500}
+  .nav-links a{color:inherit;text-decoration:none}
+  .nav-links a:hover{color:var(--blue)}
+  .btn-primary{background:var(--blue);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-family:inherit;box-shadow:0 2px 0 rgba(22,72,189,.15);text-decoration:none}
+  .btn-primary:hover{background:var(--blue-deep)}
+  .btn-outline{background:#fff;color:var(--blue);border:1.5px solid var(--blue);padding:10px 18px;border-radius:8px;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-family:inherit;text-decoration:none}
+  .btn-outline:hover{background:var(--blue-soft)}
+
+  /* Hero */
+  .hero{position:relative;background:linear-gradient(180deg,#F4F8FF 0%, #EAF1FE 100%);padding:56px 64px 60px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(800px 400px at 80% 20%, rgba(30,91,230,.08), transparent 60%),
+    radial-gradient(600px 300px at 10% 90%, rgba(30,91,230,.06), transparent 60%);
+    pointer-events:none}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr 1fr;gap:32px;align-items:center;max-width:1080px;margin:0 auto}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);font-weight:700;font-size:12px;padding:7px 16px;border-radius:999px;border:1.5px solid var(--blue);margin-bottom:22px}
+  .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue)}
+  h1.hero-title{font-size:46px;line-height:1.25;margin:0 0 22px;font-weight:900;letter-spacing:-.01em}
+  h1.hero-title .accent{color:var(--blue)}
+  .hero-sub{font-size:14px;line-height:1.9;color:var(--ink-2);margin:0 0 28px;font-weight:500}
+  .hero-cta{display:flex;gap:12px;margin-bottom:22px;flex-wrap:wrap}
+  .hero-cta .btn-primary,.hero-cta .btn-outline{padding:14px 22px;font-size:14px}
+  .hero-meta{display:flex;gap:22px;font-size:12px;color:var(--ink-2);font-weight:600;flex-wrap:wrap}
+  .hero-meta span{display:inline-flex;align-items:center;gap:6px}
+  .hero-meta span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue);display:inline-block}
+  .portrait-wrap{position:relative;display:flex;justify-content:center;align-items:center}
+  .portrait-bg{position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle, rgba(30,91,230,.12), rgba(30,91,230,0) 70%)}
+  .portrait-wrap img,.portrait-wrap .hero-illust{position:relative;width:440px;height:auto;filter:drop-shadow(0 18px 40px rgba(30,60,140,.08))}
+
+  /* Section */
+  section{padding:64px 64px}
+  .container{max-width:1080px;margin:0 auto}
+  h2.section-title{font-size:28px;font-weight:900;text-align:center;margin:0 0 10px;letter-spacing:-.005em}
+  .section-sub{text-align:center;color:var(--muted);font-size:13px;margin:0 0 40px;font-weight:500}
+
+  /* Feature cards */
+  .features{background:#F7FAFE}
+  .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .feat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 20px;text-align:center;transition:transform .2s,box-shadow .2s}
+  .feat:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(20,50,120,.08)}
+  .feat .icon-wrap{width:64px;height:64px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;border-radius:14px;background:var(--blue-soft)}
+  .feat img{height:48px;width:auto}
+  .feat h3{font-size:14px;margin:0 0 10px;font-weight:700;color:var(--ink)}
+  .feat p{font-size:12px;color:var(--muted);line-height:1.7;margin:0;font-weight:500}
+
+  /* Process */
+  .process{background:#fff}
+  .steps{display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr 28px 1fr;gap:6px;align-items:start;margin-top:18px}
+  .step{text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .step-icon{width:72px;height:72px;background:#EAF1FE;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .step-icon svg{width:40px;height:40px}
+  .step-label{display:flex;align-items:center;gap:6px;justify-content:center;flex-wrap:wrap}
+  .step-num{color:var(--blue);font-weight:900;font-size:13px}
+  .step-title{font-weight:800;font-size:13px;color:var(--ink)}
+  .step-desc{font-size:11px;color:var(--muted);line-height:1.75;margin:0;font-weight:500}
+  .arrow{display:flex;align-items:center;justify-content:center;color:#A8BBE0;padding-top:16px}
+  .arrow svg{width:24px;height:24px}
+
+  /* Two col plans */
+  .plans{background:#F7FAFE}
+  .plans-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:28px;align-items:start}
+  .plan-list h3{font-size:18px;font-weight:800;margin:0 0 22px}
+  .plan-list ol{list-style:none;padding:0;margin:0;counter-reset:p}
+  .plan-list li{counter-increment:p;display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line);font-size:15px;font-weight:600;color:var(--ink)}
+  .plan-list li::before{content:counter(p);color:var(--blue);font-weight:900;font-size:22px;min-width:28px;font-family:"Noto Sans JP"}
+  .plan-list .note{font-size:11px;color:var(--muted);line-height:1.8;margin-top:18px;font-weight:500}
+
+  .price-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;display:grid;grid-template-columns:1fr 1.1fr;gap:24px}
+  .price-left{background:#EAF1FE;border-radius:12px;padding:22px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .price-left .tag{background:#fff;color:var(--blue);font-weight:700;font-size:11px;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+  .price-num{font-size:34px;font-weight:900;color:var(--blue);letter-spacing:-.01em}
+  .price-num small{font-size:14px;font-weight:700;margin-left:4px}
+  .price-checks{display:flex;flex-direction:column;gap:10px;margin-top:14px;width:100%}
+  .price-checks li{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--ink);font-weight:600}
+  .price-checks li::before{content:"";width:14px;height:14px;background:var(--blue);mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;display:inline-block}
+  .price-right h4{font-size:13px;margin:0 0 14px;font-weight:800}
+  .price-right ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+  .price-right li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink);font-weight:600}
+  .price-actions{grid-column:1/-1;display:flex;gap:14px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+  .btn-lg{padding:16px 32px;font-size:15px;border-radius:10px}
+  .price-right li::before{content:"";width:16px;height:16px;background:var(--blue);mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/></svg>") center/contain no-repeat;flex-shrink:0}
+
+  /* Can Make */
+  .can-make{background:var(--page)}
+  .can-make-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .cm-item{background:#fff;border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;overflow:hidden;transition:transform .2s,box-shadow .2s}
+  .cm-item:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(20,50,120,.07)}
+  .cm-num{width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-weight:900;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .cm-mock{width:100%;height:120px;overflow:hidden;border-bottom:1px solid var(--line);flex-shrink:0}
+  .cm-mock svg{width:100%;height:100%;display:block}
+  .cm-body{padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+  .cm-body-top{display:flex;align-items:center;gap:8px}
+  .cm-body h3{font-size:13px;font-weight:800;margin:0;color:var(--ink)}
+  .cm-body p{font-size:11px;color:var(--ink-2);line-height:1.85;margin:0;font-weight:500}
+
+  /* Profile */
+  .profile{background:#fff}
+  .profile-grid{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:24px;align-items:center}
+  .profile-photo{width:160px;height:160px;border-radius:50%;background:#F4F8FF;overflow:hidden;margin:0 auto}
+  .profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .profile-info h3{margin:0 0 6px;font-size:14px;color:var(--blue);font-weight:800}
+  .profile-info .role{font-size:18px;font-weight:800;margin:0 0 14px}
+  .profile-info p{font-size:12px;color:var(--ink-2);line-height:1.85;margin:0;font-weight:500}
+  .profile-bullets{display:flex;flex-direction:column;gap:14px}
+  .pb{display:flex;gap:12px;align-items:flex-start;background:#F7FAFE;border-radius:12px;padding:14px 16px}
+  .pb-icon{width:32px;height:32px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+  .pb-icon img{width:28px;height:28px}
+  .pb h4{margin:0 0 4px;font-size:13px;font-weight:800;color:var(--blue)}
+  .pb p{margin:0;font-size:11px;color:var(--ink-2);line-height:1.7;font-weight:500}
+
+  /* Testimonials */
+  .testimonials{background:#F7FAFE}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .testi-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:14px;transition:transform .2s,box-shadow .2s}
+  .testi-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(20,50,120,.08)}
+  .testi-stars{color:#F59E0B;font-size:16px;letter-spacing:2px}
+  .testi-comment{font-size:13px;color:var(--ink-2);line-height:1.85;margin:0;font-weight:500;flex:1}
+  .testi-author{display:flex;align-items:center;gap:12px;margin-top:4px}
+  .testi-avatar{width:48px;height:48px;border-radius:50%;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--blue);flex-shrink:0;overflow:hidden}
+  .testi-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .testi-name{font-size:13px;font-weight:700;color:var(--ink);margin:0}
+  .testi-role{font-size:11px;color:var(--muted);font-weight:500;margin:0}
+  .testi-featured{background:#fff;border:1.5px solid var(--blue);border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:14px;margin:0 auto 24px;box-shadow:0 4px 24px rgba(30,91,230,.1);max-width:640px}
+  .testi-tag{display:inline-flex;align-items:center;gap:6px;background:var(--blue-soft);color:var(--blue);font-weight:700;font-size:12px;padding:6px 14px;border-radius:999px;width:fit-content}
+  .testi-profile-top{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:2px}
+  .testi-avatar-sq{width:400px;max-width:100%;aspect-ratio:1/1;border-radius:16px;overflow:hidden;flex-shrink:0}
+  .testi-avatar-sq img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .testi-name-center{font-size:15px;font-weight:700;color:var(--ink);margin:0;text-align:center}
+  .testi-role-center{font-size:12px;color:var(--muted);font-weight:500;margin:0;text-align:center}
+
+  /* Footer CTA */
+  .footer-cta{background:#EAF1FE;padding:40px 64px}
+  .fc-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center}
+  .fc-title{font-size:18px;font-weight:800;margin:0 0 16px}
+  .fc-buttons{display:flex;gap:12px;flex-wrap:wrap}
+  .fc-buttons .btn-primary,.fc-buttons .btn-outline{padding:14px 20px;font-size:14px}
+  .fc-side{background:#fff;border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:14px;border:1px solid var(--line)}
+  .fc-side .badge{width:40px;height:40px;border-radius:8px;background:#EAF1FE;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .fc-side .badge img{width:24px;height:24px}
+  .fc-side h5{margin:0 0 4px;font-size:13px;font-weight:800;color:var(--blue)}
+  .fc-side p{margin:0;font-size:11px;color:var(--muted);font-weight:500;line-height:1.6}
+
+  footer.copyright{background:#fff;text-align:center;padding:18px;font-size:11px;color:var(--muted)}
+
+  .ic-cal,.ic-chat{width:18px;height:18px}
+
+  /* Hamburger */
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px}
+  .hamburger svg{display:block}
+
+  /* ---- Responsive ---- */
+  @media(max-width:900px){
+    .can-make-list{grid-template-columns:repeat(2,1fr)}
+    /* Nav */
+    .topnav{padding:12px 20px;position:relative}
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px 0;border-bottom:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:100}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 24px;border-bottom:1px solid var(--line)}
+    .nav-links a:last-child{border-bottom:none}
+    .topnav>.btn-primary{display:none}
+    .hamburger{display:block}
+
+    /* Hero */
+    .hero{padding:40px 24px 36px}
+    .hero-grid{grid-template-columns:1fr;text-align:center}
+    h1.hero-title{font-size:32px}
+    .hero-sub{font-size:13px}
+    .hero-cta{justify-content:center}
+    .hero-meta{justify-content:center}
+    .portrait-wrap{order:-1;margin-bottom:8px}
+    .portrait-wrap .hero-illust{width:280px}
+    .portrait-bg{width:240px;height:240px}
+
+    /* Section */
+    section{padding:40px 20px}
+
+    /* Features */
+    .feat-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+
+    /* Process steps */
+    .steps{grid-template-columns:1fr;gap:0;justify-items:center}
+    .step{width:100%;max-width:220px}
+    .arrow{transform:rotate(90deg);padding:4px 0;padding-top:4px}
+
+    /* Plans */
+    .plans-grid{grid-template-columns:1fr}
+    .price-card{grid-template-columns:1fr}
+
+    /* Profile */
+    .profile-grid{grid-template-columns:1fr}
+    .profile-photo{margin-bottom:8px}
+    .profile-info{text-align:center}
+    h2.section-title[style]{text-align:center!important}
+
+    /* Testimonials */
+    .testi-grid{grid-template-columns:1fr}
+
+    /* Footer CTA */
+    .footer-cta{padding:32px 20px}
+    .fc-grid{grid-template-columns:1fr}
+    .fc-title{font-size:16px}
+  }
+
+  @media(max-width:480px){
+    .can-make-list{grid-template-columns:1fr}
+    h1.hero-title{font-size:26px}
+    .pill{font-size:11px;padding:6px 12px}
+    .feat-grid{grid-template-columns:1fr}
+    .hero-cta{flex-direction:column;align-items:center}
+    .hero-cta .btn-primary,.hero-cta .btn-outline{width:100%;justify-content:center}
+    .fc-buttons{flex-direction:column}
+    .fc-buttons .btn-primary,.fc-buttons .btn-outline{width:100%;justify-content:center}
+    .price-actions{flex-direction:column;align-items:center}
+    .price-actions .btn-lg{width:100%;justify-content:center}
+    .price-num{font-size:28px}
+  }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PK67KLM2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- Top nav -->
+  <nav class="topnav">
+    <div class="brand">
+      <img src="assets/02_logo_claudecode.png" alt="ClaudeCode講座">
+    </div>
+    <div class="nav-links">
+    </div>
+    <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-primary" target="_blank" rel="noopener">無料相談に申し込む</a>
+    <button class="hamburger" aria-label="メニュー" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="pill">3ヶ月で8回のマンツーマン伴走</span>
+        <h1 class="hero-title">
+          ClaudeCode基礎を<br>
+          <span class="accent">3ヶ月</span>でマスターする<br>
+          マンツーマン講座
+        </h1>
+        <p class="hero-sub">
+          作りたいものをベースで学ぶから、手が止まらない。<br>
+          あなたの目標に向けて、専門サポートと一緒に形にします。
+        </p>
+        <div class="hero-cta">
+          <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-primary" target="_blank" rel="noopener">
+            <svg class="ic-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="8 14 11 17 16 12"/></svg>
+            無料相談に申し込む
+          </a>
+          <button class="btn-outline">
+            <svg class="ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="13" cy="11" r="1" fill="currentColor"/><circle cx="17" cy="11" r="1" fill="currentColor"/></svg>
+            チャットで質問する
+          </button>
+        </div>
+        <div class="hero-meta">
+          <span>2ヶ月／全8回</span>
+          <span>マンツーマン伴走</span>
+          <span>チャットサポート付き</span>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <div class="portrait-bg"></div>
+        <svg class="hero-illust" viewBox="0 0 460 420" xmlns="http://www.w3.org/2000/svg" aria-label="ClaudeCode学習イメージ">
+          <defs>
+            <linearGradient id="g-win" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFFFFF"/>
+              <stop offset="1" stop-color="#F4F8FF"/>
+            </linearGradient>
+            <linearGradient id="g-blue" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#3F7CF0"/>
+              <stop offset="1" stop-color="#1E5BE6"/>
+            </linearGradient>
+            <linearGradient id="g-blob" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#EAF1FE"/>
+              <stop offset="1" stop-color="#D6E4FC"/>
+            </linearGradient>
+            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#1E3C8C" flood-opacity="0.16"/>
+            </filter>
+            <filter id="shadow-sm" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1E3C8C" flood-opacity="0.18"/>
+            </filter>
+          </defs>
+
+          <!-- Soft background blob -->
+          <path d="M 80 230 Q 30 130 140 80 Q 250 30 340 90 Q 430 150 410 260 Q 390 370 270 380 Q 150 390 100 330 Q 50 290 80 230 Z" fill="url(#g-blob)" opacity="0.7"/>
+
+          <!-- Main editor window -->
+          <g filter="url(#shadow)">
+            <rect x="60" y="80" width="320" height="220" rx="14" fill="url(#g-win)" stroke="#E1E8F2" stroke-width="1"/>
+            <rect x="60" y="80" width="320" height="32" rx="14" fill="#F4F8FF"/>
+            <rect x="60" y="100" width="320" height="12" fill="#F4F8FF"/>
+            <circle cx="78" cy="96" r="4" fill="#FF5F57"/>
+            <circle cx="92" cy="96" r="4" fill="#FEBC2E"/>
+            <circle cx="106" cy="96" r="4" fill="#28C840"/>
+            <rect x="180" y="89" width="100" height="14" rx="7" fill="#E1E8F2"/>
+            <rect x="60" y="112" width="60" height="188" fill="#F7FAFE"/>
+            <rect x="72" y="128" width="36" height="6" rx="3" fill="#C9D6EC"/>
+            <rect x="72" y="144" width="28" height="6" rx="3" fill="#C9D6EC"/>
+            <rect x="72" y="160" width="32" height="6" rx="3" fill="#1E5BE6" opacity="0.85"/>
+            <rect x="72" y="176" width="24" height="6" rx="3" fill="#C9D6EC"/>
+            <rect x="72" y="192" width="34" height="6" rx="3" fill="#C9D6EC"/>
+            <g font-family="ui-monospace, Menlo, monospace" font-size="10">
+              <text x="134" y="138" fill="#9AA8C2">01</text>
+              <rect x="154" y="130" width="40" height="8" rx="2" fill="#1E5BE6"/>
+              <rect x="200" y="130" width="60" height="8" rx="2" fill="#3B4A63" opacity="0.5"/>
+              <rect x="266" y="130" width="36" height="8" rx="2" fill="#C9D6EC"/>
+              <text x="134" y="158" fill="#9AA8C2">02</text>
+              <rect x="164" y="150" width="30" height="8" rx="2" fill="#9AA8C2"/>
+              <rect x="200" y="150" width="80" height="8" rx="2" fill="#3B4A63" opacity="0.6"/>
+              <rect x="286" y="150" width="20" height="8" rx="2" fill="#1E5BE6"/>
+              <text x="134" y="178" fill="#9AA8C2">03</text>
+              <rect x="174" y="170" width="50" height="8" rx="2" fill="#3B4A63" opacity="0.55"/>
+              <rect x="230" y="170" width="40" height="8" rx="2" fill="#1E5BE6"/>
+              <text x="134" y="198" fill="#9AA8C2">04</text>
+              <rect x="164" y="190" width="80" height="8" rx="2" fill="#3B4A63" opacity="0.5"/>
+              <rect x="250" y="190" width="48" height="8" rx="2" fill="#9AA8C2"/>
+              <text x="134" y="218" fill="#9AA8C2">05</text>
+              <rect x="174" y="210" width="36" height="8" rx="2" fill="#1E5BE6"/>
+              <rect x="216" y="210" width="60" height="8" rx="2" fill="#3B4A63" opacity="0.5"/>
+              <text x="134" y="238" fill="#9AA8C2">06</text>
+              <rect x="154" y="230" width="40" height="8" rx="2" fill="#9AA8C2"/>
+              <rect x="200" y="230" width="80" height="8" rx="2" fill="#3B4A63" opacity="0.55"/>
+              <text x="134" y="258" fill="#9AA8C2">07</text>
+              <rect x="164" y="250" width="60" height="8" rx="2" fill="#3B4A63" opacity="0.5"/>
+              <rect x="230" y="250" width="40" height="8" rx="2" fill="#1E5BE6"/>
+            </g>
+            <rect x="134" y="272" width="6" height="12" fill="#1E5BE6">
+              <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="146" y="272" width="120" height="12" rx="2" fill="#9AA8C2" opacity="0.4"/>
+          </g>
+
+          <!-- Floating chat bubble (mentor) -->
+          <g filter="url(#shadow-sm)" transform="translate(290, 50)">
+            <rect x="0" y="0" width="130" height="70" rx="14" fill="#FFFFFF" stroke="#E1E8F2"/>
+            <path d="M 18 70 L 26 82 L 34 70 Z" fill="#FFFFFF"/>
+            <circle cx="22" cy="22" r="10" fill="url(#g-blue)"/>
+            <path d="M 22 17 L 24 21 L 28 22 L 25 25 L 26 29 L 22 27 L 18 29 L 19 25 L 16 22 L 20 21 Z" fill="#fff"/>
+            <rect x="40" y="14" width="76" height="6" rx="3" fill="#15233A"/>
+            <rect x="40" y="26" width="60" height="5" rx="2.5" fill="#9AA8C2"/>
+            <rect x="40" y="36" width="80" height="5" rx="2.5" fill="#9AA8C2"/>
+            <rect x="40" y="46" width="50" height="5" rx="2.5" fill="#9AA8C2"/>
+          </g>
+
+          <!-- Floating "C" mark badge -->
+          <g filter="url(#shadow-sm)" transform="translate(40, 300)">
+            <circle cx="36" cy="36" r="36" fill="#FFFFFF" stroke="#E1E8F2"/>
+            <path d="M 50 22 A 18 18 0 1 0 50 50" stroke="url(#g-blue)" stroke-width="6" fill="none" stroke-linecap="round"/>
+          </g>
+
+          <!-- Floating check / progress card -->
+          <g filter="url(#shadow-sm)" transform="translate(290, 280)">
+            <rect x="0" y="0" width="140" height="84" rx="14" fill="#FFFFFF" stroke="#E1E8F2"/>
+            <circle cx="22" cy="24" r="12" fill="#EAF1FE"/>
+            <path d="M 16 24 L 21 29 L 28 20" stroke="#1E5BE6" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="42" y="18" width="80" height="6" rx="3" fill="#15233A"/>
+            <rect x="42" y="30" width="60" height="5" rx="2.5" fill="#9AA8C2"/>
+            <rect x="14" y="52" width="112" height="8" rx="4" fill="#EAF1FE"/>
+            <rect x="14" y="52" width="78" height="8" rx="4" fill="url(#g-blue)"/>
+            <text x="14" y="76" font-family="ui-sans-serif, system-ui" font-size="10" font-weight="700" fill="#1E5BE6">学習進捗 70%</text>
+          </g>
+
+          <!-- Sparkle dots -->
+          <circle cx="430" cy="120" r="4" fill="#1E5BE6" opacity="0.5"/>
+          <circle cx="420" cy="200" r="3" fill="#1E5BE6" opacity="0.3"/>
+          <circle cx="30" cy="160" r="3" fill="#1E5BE6" opacity="0.4"/>
+          <circle cx="20" cy="250" r="4" fill="#1E5BE6" opacity="0.3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="feat-grid">
+        <div class="feat">
+          <div class="icon-wrap"><img src="assets/07_icon_target.png" alt=""></div>
+          <h3>作りたいものベース</h3>
+          <p>あなたの作りたいものを起点に<br>ゴールを一緒に定義します</p>
+        </div>
+        <div class="feat">
+          <div class="icon-wrap"><img src="assets/08_icon_people.png" alt=""></div>
+          <h3>マンツーマン伴走</h3>
+          <p>2ヶ月で全8回のマンツーマン<br>で手厚くサポート</p>
+        </div>
+        <div class="feat">
+          <div class="icon-wrap"><img src="assets/09_icon_chat_bubble.png" alt=""></div>
+          <h3>チャットサポート</h3>
+          <p>いつでも質問できるチャット<br>サポート付き</p>
+        </div>
+        <div class="feat">
+          <div class="icon-wrap"><img src="assets/10_icon_shield.png" alt=""></div>
+          <h3>セキュリティ・公開まで支援</h3>
+          <p>セキュリティ対策からチャット<br>公開まで丁寧にサポート</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="process" id="process">
+    <div class="container">
+      <h2 class="section-title">学習ループを作ることが大事</h2>
+      <p class="section-sub">5ステップの循環型プロセスで、確実にスキルと成果を積み上げていきます。</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="4" width="36" height="40" rx="4" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="6" y1="16" x2="42" y2="16" stroke="#1E5BE6" stroke-width="2"/>
+              <line x1="24" y1="16" x2="24" y2="44" stroke="#1E5BE6" stroke-width="2"/>
+              <rect x="28" y="7" width="4" height="7" rx="1" fill="#1E5BE6"/>
+              <rect x="34" y="9" width="4" height="5" rx="1" fill="#1E5BE6" opacity="0.45"/>
+              <line x1="10" y1="24" x2="20" y2="24" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="10" y1="30" x2="18" y2="30" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="10" y1="36" x2="20" y2="36" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="28" y1="24" x2="38" y2="24" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="28" y1="30" x2="36" y2="30" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="step-label"><span class="step-num">01</span><span class="step-title">要件整理</span></div>
+          <p class="step-desc">お客様と話しながらゴールから決めて整理していきます</p>
+        </div>
+        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></div>
+        <div class="step">
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="24,8 40,16 24,24 8,16" fill="#EAF1FE" stroke="#1E5BE6" stroke-width="2" stroke-linejoin="round"/>
+              <polyline points="8,22 24,30 40,22" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="8,30 24,38 40,30" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
+            </svg>
+          </div>
+          <div class="step-label"><span class="step-num">02</span><span class="step-title">手を動かす</span></div>
+          <p class="step-desc">ClaudeCodeを使って、実際に形にするものにしていきます</p>
+        </div>
+        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></div>
+        <div class="step">
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="8" width="40" height="30" rx="4" stroke="#1E5BE6" stroke-width="2"/>
+              <line x1="4" y1="18" x2="44" y2="18" stroke="#1E5BE6" stroke-width="2"/>
+              <circle cx="10" cy="13" r="2" fill="#1E5BE6"/>
+              <circle cx="17" cy="13" r="2" fill="#1E5BE6"/>
+              <polyline points="16,26 11,31 16,36" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="32,26 37,31 32,36" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="22" y1="24" x2="26" y2="38" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="step-label"><span class="step-num">03</span><span class="step-title">フィードバック</span></div>
+          <p class="step-desc">マンツーマンで改善点を見つけフィードバックを受けます</p>
+        </div>
+        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></div>
+        <div class="step">
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="4" width="26" height="36" rx="4" stroke="#1E5BE6" stroke-width="2"/>
+              <line x1="12" y1="14" x2="26" y2="14" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="12" y1="21" x2="26" y2="21" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="12" y1="28" x2="20" y2="28" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M 30 30 L 40 20 L 44 24 L 34 34 Z" fill="#EAF1FE" stroke="#1E5BE6" stroke-width="2" stroke-linejoin="round"/>
+              <line x1="40" y1="20" x2="44" y2="24" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round"/>
+              <line x1="30" y1="30" x2="28" y2="40" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round"/>
+              <line x1="34" y1="34" x2="28" y2="40" stroke="#1E5BE6" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="step-label"><span class="step-num">04</span><span class="step-title">改善点を洗い出す</span></div>
+          <p class="step-desc">フィードバックをもとに改善ポイントを洗い出します</p>
+        </div>
+        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></div>
+        <div class="step">
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="10" width="32" height="34" rx="4" stroke="#1E5BE6" stroke-width="2"/>
+              <rect x="16" y="6" width="16" height="10" rx="3" fill="#EAF1FE" stroke="#1E5BE6" stroke-width="2"/>
+              <rect x="13" y="22" width="7" height="7" rx="1.5" stroke="#1E5BE6" stroke-width="1.5"/>
+              <polyline points="14.5,25.5 16.5,27.5 19,23.5" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="24" y1="25.5" x2="34" y2="25.5" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
+              <rect x="13" y="33" width="7" height="7" rx="1.5" stroke="#1E5BE6" stroke-width="1.5"/>
+              <polyline points="14.5,36.5 16.5,38.5 19,34.5" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="24" y1="36.5" x2="34" y2="36.5" stroke="#1E5BE6" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="step-label"><span class="step-num">05</span><span class="step-title">改善</span></div>
+          <p class="step-desc">実際に改善していきます</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section class="plans" id="curriculum">
+    <div class="container">
+      <div class="plans-grid">
+        <div class="plan-list">
+          <h3>講座カリキュラム</h3>
+          <ol>
+            <li>作りたいものを決める</li>
+            <li>伴走支援を受けながら形にする</li>
+            <li>セキュリティ対策・ネット公開</li>
+          </ol>
+          <p class="note">※随時、柔軟性ある立てっていての実施も可能です。必要に応じて柔軟に進められます。</p>
+        </div>
+        <div class="price-card">
+          <div class="price-left">
+            <span class="tag">2ヶ月／全8回</span>
+            <div class="price-num">398,000<small>円(税込)</small></div>
+            <ul class="price-checks">
+              <li>マンツーマン伴走でしっかり学べる</li>
+              <li>作りたいものを一緒に形にする</li>
+              <li>チャットサポートで安心</li>
+            </ul>
+          </div>
+          <div class="price-right">
+            <h4>サポート内容</h4>
+            <ul>
+              <li>作りたいものをゴールから一緒に定義</li>
+              <li>マンツーマンで一緒に作る</li>
+              <li>チャットサポートでいつでも質問できる</li>
+              <li>セキュリティ・公開までサポート</li>
+            </ul>
+          </div>
+        </div>
+        <div class="price-actions">
+          <a href="https://buy.stripe.com/9B6eVc49hbh57NxcGK00006" class="btn-primary btn-lg" target="_blank" rel="noopener">今すぐ申し込む</a>
+          <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-outline btn-lg" target="_blank" rel="noopener">まずは無料相談する</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Can Make -->
+  <section class="can-make">
+    <div class="container">
+      <p class="section-sub" style="margin-bottom:4px">たった2ヶ月で</p>
+      <h2 class="section-title" style="margin-bottom:10px">こんなものが作れるようになります</h2>
+      <p class="section-sub">ClaudeCodeを使えば、あなたのビジネスや業務に役立つシステムをゼロから開発できます。</p>
+      <div class="can-make-list">
+
+        <div class="cm-item">
+          <div class="cm-mock">
+            <svg viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
+              <rect width="180" height="110" fill="#F4F8FF"/>
+              <rect width="180" height="22" fill="#1E5BE6"/>
+              <rect x="8" y="8" width="60" height="6" rx="3" fill="white" opacity="0.9"/>
+              <rect x="152" y="7" width="20" height="8" rx="4" fill="white" opacity="0.7"/>
+              <rect x="8" y="28" width="164" height="14" rx="2" fill="#EAF1FE"/>
+              <rect x="12" y="32" width="20" height="6" rx="2" fill="#1E5BE6" opacity="0.5"/>
+              <rect x="44" y="32" width="36" height="6" rx="2" fill="#1E5BE6" opacity="0.5"/>
+              <rect x="92" y="32" width="48" height="6" rx="2" fill="#1E5BE6" opacity="0.5"/>
+              <rect x="150" y="32" width="18" height="6" rx="2" fill="#1E5BE6" opacity="0.5"/>
+              <rect x="8" y="46" width="164" height="13" rx="2" fill="white"/>
+              <rect x="12" y="50" width="16" height="5" rx="2" fill="#9AA8C2"/>
+              <rect x="44" y="50" width="28" height="5" rx="2" fill="#9AA8C2"/>
+              <rect x="92" y="50" width="52" height="5" rx="2" fill="#9AA8C2"/>
+              <rect x="149" y="49" width="20" height="7" rx="3.5" fill="#1E5BE6"/>
+              <rect x="8" y="61" width="164" height="13" rx="2" fill="#F7FAFE"/>
+              <rect x="12" y="65" width="20" height="5" rx="2" fill="#9AA8C2"/>
+              <rect x="44" y="65" width="32" height="5" rx="2" fill="#9AA8C2"/>
+              <rect x="92" y="65" width="44" height="5" rx="2" fill="#9AA8C2"/>
+              <rect x="149" y="64" width="20" height="7" rx="3.5" fill="#9AA8C2"/>
+              <rect x="8" y="76" width="164" height="13" rx="2" fill="white"/>
+              <rect x="12" y="80" width="18" height="5" rx="2" fill="#9AA8C2"/>
+              <rect x="44" y="80" width="30" height="5" rx="2" fill="#9AA8C2"/>
+              <rect x="92" y="80" width="48" height="5" rx="2" fill="#9AA8C2"/>
+              <rect x="149" y="79" width="20" height="7" rx="3.5" fill="#1E5BE6"/>
+              <rect x="8" y="96" width="70" height="8" rx="4" fill="#1E5BE6"/>
+            </svg>
+          </div>
+          <div class="cm-body">
+            <div class="cm-body-top"><div class="cm-num">1</div><h3>顧客管理システム</h3></div>
+            <p>スプレッドシートの顧客情報をもとに、メール一括送信や売上分析ができるシステムを開発できます。</p>
+          </div>
+        </div>
+
+        <div class="cm-item">
+          <div class="cm-mock">
+            <svg viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
+              <rect width="180" height="110" fill="#F4F8FF"/>
+              <rect x="20" y="8" width="140" height="94" rx="6" fill="white" stroke="#E1E8F2" stroke-width="1"/>
+              <rect x="30" y="16" width="50" height="8" rx="3" fill="#1E5BE6"/>
+              <rect x="110" y="14" width="40" height="5" rx="2" fill="#9AA8C2"/>
+              <rect x="110" y="22" width="30" height="5" rx="2" fill="#9AA8C2"/>
+              <line x1="30" y1="32" x2="150" y2="32" stroke="#E1E8F2" stroke-width="1"/>
+              <rect x="30" y="38" width="70" height="5" rx="2" fill="#C9D6EC"/>
+              <rect x="130" y="38" width="24" height="5" rx="2" fill="#3B4A63" opacity="0.6"/>
+              <rect x="30" y="48" width="60" height="5" rx="2" fill="#C9D6EC"/>
+              <rect x="130" y="48" width="24" height="5" rx="2" fill="#3B4A63" opacity="0.6"/>
+              <rect x="30" y="58" width="80" height="5" rx="2" fill="#C9D6EC"/>
+              <rect x="130" y="58" width="24" height="5" rx="2" fill="#3B4A63" opacity="0.6"/>
+              <line x1="30" y1="68" x2="150" y2="68" stroke="#E1E8F2" stroke-width="1"/>
+              <rect x="90" y="72" width="24" height="5" rx="2" fill="#9AA8C2"/>
+              <rect x="128" y="70" width="28" height="8" rx="2" fill="#1E5BE6"/>
+              <rect x="30" y="88" width="50" height="10" rx="5" fill="#EAF1FE" stroke="#1E5BE6" stroke-width="1"/>
+              <rect x="36" y="91" width="38" height="4" rx="2" fill="#1E5BE6"/>
+            </svg>
+          </div>
+          <div class="cm-body">
+            <div class="cm-body-top"><div class="cm-num">2</div><h3>請求書・見積書作成ツール</h3></div>
+            <p>品目・金額を入力するだけでPDF出力できる、請求書や見積書の作成ツールを開発できます。</p>
+          </div>
+        </div>
+
+        <div class="cm-item">
+          <div class="cm-mock">
+            <svg viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
+              <rect width="180" height="110" rx="6" fill="#F4F8FF"/>
+              <rect width="180" height="16" rx="6" fill="#E1E8F2"/>
+              <rect y="10" width="180" height="6" fill="#E1E8F2"/>
+              <circle cx="10" cy="8" r="3" fill="#FF5F57"/>
+              <circle cx="20" cy="8" r="3" fill="#FEBC2E"/>
+              <circle cx="30" cy="8" r="3" fill="#28C840"/>
+              <rect x="50" y="4" width="80" height="8" rx="4" fill="white"/>
+              <rect x="0" y="16" width="180" height="38" fill="#1E5BE6"/>
+              <rect x="12" y="24" width="60" height="8" rx="3" fill="white" opacity="0.9"/>
+              <rect x="12" y="36" width="44" height="5" rx="2" fill="white" opacity="0.5"/>
+              <rect x="130" y="22" width="36" height="26" rx="4" fill="white" opacity="0.15"/>
+              <rect x="12" y="60" width="48" height="14" rx="4" fill="white" stroke="#E1E8F2" stroke-width="1"/>
+              <rect x="67" y="60" width="48" height="14" rx="4" fill="white" stroke="#E1E8F2" stroke-width="1"/>
+              <rect x="122" y="60" width="48" height="14" rx="4" fill="white" stroke="#E1E8F2" stroke-width="1"/>
+              <rect x="40" y="82" width="100" height="6" rx="3" fill="#C9D6EC"/>
+              <rect x="60" y="92" width="60" height="8" rx="4" fill="#1E5BE6"/>
+            </svg>
+          </div>
+          <div class="cm-body">
+            <div class="cm-body-top"><div class="cm-num">3</div><h3>自社LP・ホームページ</h3></div>
+            <p>サービスを訴求するランディングページや企業サイトをゼロから制作・公開できます。</p>
+          </div>
+        </div>
+
+        <div class="cm-item">
+          <div class="cm-mock">
+            <svg viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
+              <rect width="180" height="110" fill="#F4F8FF"/>
+              <rect width="180" height="22" fill="#1E5BE6"/>
+              <rect x="8" y="8" width="50" height="6" rx="3" fill="white" opacity="0.9"/>
+              <rect x="8" y="28" width="40" height="6" rx="3" fill="#1E5BE6" opacity="0.4"/>
+              <rect x="8" y="38" width="164" height="10" rx="2" fill="#EAF1FE"/>
+              <rect x="12" y="41" width="14" height="4" rx="2" fill="#9AA8C2"/>
+              <rect x="35" y="41" width="14" height="4" rx="2" fill="#9AA8C2"/>
+              <rect x="58" y="41" width="14" height="4" rx="2" fill="#9AA8C2"/>
+              <rect x="81" y="41" width="14" height="4" rx="2" fill="#9AA8C2"/>
+              <rect x="104" y="41" width="14" height="4" rx="2" fill="#9AA8C2"/>
+              <circle cx="19" cy="56" r="7" fill="#EAF1FE"/>
+              <path d="M 15 56 L 18 59 L 23 52" stroke="#1E5BE6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <circle cx="42" cy="56" r="7" fill="#EAF1FE"/>
+              <path d="M 38 56 L 41 59 L 46 52" stroke="#1E5BE6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <circle cx="65" cy="56" r="7" fill="#EAF1FE"/>
+              <path d="M 61 56 L 64 59 L 69 52" stroke="#1E5BE6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <circle cx="88" cy="56" r="7" fill="#EAF1FE"/>
+              <path d="M 84 56 L 87 59 L 92 52" stroke="#1E5BE6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <circle cx="111" cy="56" r="7" fill="#EAF1FE"/>
+              <path d="M 107 56 L 110 59 L 115 52" stroke="#1E5BE6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <circle cx="19" cy="72" r="7" fill="#EAF1FE"/>
+              <path d="M 15 72 L 18 75 L 23 68" stroke="#1E5BE6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <circle cx="42" cy="72" r="7" fill="#EAF1FE"/>
+              <path d="M 38 72 L 41 75 L 46 68" stroke="#1E5BE6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <circle cx="65" cy="72" r="7" fill="#EAF1FE"/>
+              <circle cx="88" cy="72" r="7" fill="#1E5BE6"/>
+              <path d="M 84 72 L 87 75 L 92 68" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <rect x="8" y="85" width="164" height="18" rx="6" fill="white" stroke="#E1E8F2" stroke-width="1"/>
+              <rect x="16" y="90" width="8" height="8" rx="2" fill="#1E5BE6" opacity="0.3"/>
+              <rect x="28" y="92" width="30" height="4" rx="2" fill="#9AA8C2"/>
+              <rect x="80" y="90" width="8" height="8" rx="2" fill="#28C840" opacity="0.5"/>
+              <rect x="92" y="92" width="24" height="4" rx="2" fill="#9AA8C2"/>
+              <rect x="130" y="90" width="8" height="8" rx="2" fill="#1E5BE6" opacity="0.2"/>
+              <rect x="142" y="92" width="20" height="4" rx="2" fill="#9AA8C2"/>
+            </svg>
+          </div>
+          <div class="cm-body">
+            <div class="cm-body-top"><div class="cm-num">4</div><h3>社内向けの勤怠管理システム</h3></div>
+            <p>出退勤の打刻・月次集計・有給管理まで対応した、社内専用の勤怠管理アプリを構築できます。</p>
+          </div>
+        </div>
+
+        <div class="cm-item">
+          <div class="cm-mock">
+            <svg viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
+              <rect width="180" height="110" fill="#F4F8FF"/>
+              <rect width="180" height="18" fill="#1E5BE6"/>
+              <rect x="8" y="6" width="44" height="6" rx="3" fill="white" opacity="0.9"/>
+              <rect x="150" y="5" width="22" height="8" rx="4" fill="white" opacity="0.7"/>
+              <rect x="8" y="22" width="100" height="58" rx="6" fill="#15233A"/>
+              <circle cx="58" cy="51" r="12" fill="white" opacity="0.2"/>
+              <path d="M 54 46 L 54 56 L 64 51 Z" fill="white"/>
+              <rect x="8" y="84" width="100" height="4" rx="2" fill="#3B4A63"/>
+              <rect x="8" y="84" width="60" height="4" rx="2" fill="#1E5BE6"/>
+              <rect x="116" y="22" width="56" height="12" rx="4" fill="#1E5BE6"/>
+              <rect x="120" y="26" width="36" height="4" rx="2" fill="white" opacity="0.9"/>
+              <rect x="116" y="37" width="56" height="12" rx="4" fill="white" stroke="#E1E8F2" stroke-width="1"/>
+              <rect x="120" y="41" width="36" height="4" rx="2" fill="#9AA8C2"/>
+              <rect x="116" y="52" width="56" height="12" rx="4" fill="white" stroke="#E1E8F2" stroke-width="1"/>
+              <rect x="120" y="56" width="36" height="4" rx="2" fill="#9AA8C2"/>
+              <rect x="116" y="67" width="56" height="12" rx="4" fill="white" stroke="#E1E8F2" stroke-width="1"/>
+              <rect x="120" y="71" width="36" height="4" rx="2" fill="#9AA8C2"/>
+              <rect x="116" y="84" width="56" height="8" rx="4" fill="#EAF1FE"/>
+              <rect x="116" y="84" width="38" height="8" rx="4" fill="#1E5BE6" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="cm-body">
+            <div class="cm-body-top"><div class="cm-num">5</div><h3>講座受講プラットフォーム</h3></div>
+            <p>動画・教材配信や受講者の進捗管理ができるオンライン学習プラットフォームを構築できます。</p>
+          </div>
+        </div>
+
+        <div class="cm-item">
+          <div class="cm-mock">
+            <svg viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
+              <rect width="180" height="110" fill="#F4F8FF"/>
+              <rect width="180" height="20" fill="#1E5BE6"/>
+              <rect x="8" y="7" width="50" height="6" rx="3" fill="white" opacity="0.9"/>
+              <rect x="8" y="26" width="120" height="12" rx="6" fill="white" stroke="#E1E8F2" stroke-width="1"/>
+              <rect x="16" y="30" width="6" height="4" rx="2" fill="#9AA8C2"/>
+              <rect x="26" y="30" width="50" height="4" rx="2" fill="#C9D6EC"/>
+              <rect x="135" y="26" width="36" height="12" rx="6" fill="#EAF1FE" stroke="#1E5BE6" stroke-width="1"/>
+              <rect x="143" y="30" width="20" height="4" rx="2" fill="#1E5BE6"/>
+              <rect x="8" y="44" width="164" height="12" rx="3" fill="white" stroke="#E1E8F2" stroke-width="1"/>
+              <circle cx="17" cy="50" r="5" fill="#EAF1FE"/>
+              <rect x="27" y="47" width="50" height="4" rx="2" fill="#15233A" opacity="0.7"/>
+              <rect x="90" y="47" width="40" height="4" rx="2" fill="#9AA8C2"/>
+              <rect x="144" y="47" width="22" height="6" rx="3" fill="#1E5BE6"/>
+              <rect x="8" y="58" width="164" height="12" rx="3" fill="#F7FAFE" stroke="#E1E8F2" stroke-width="1"/>
+              <circle cx="17" cy="64" r="5" fill="#EAF1FE"/>
+              <rect x="27" y="61" width="44" height="4" rx="2" fill="#15233A" opacity="0.7"/>
+              <rect x="90" y="61" width="36" height="4" rx="2" fill="#9AA8C2"/>
+              <rect x="144" y="61" width="22" height="6" rx="3" fill="#9AA8C2"/>
+              <rect x="8" y="72" width="164" height="12" rx="3" fill="white" stroke="#E1E8F2" stroke-width="1"/>
+              <circle cx="17" cy="78" r="5" fill="#EAF1FE"/>
+              <rect x="27" y="75" width="56" height="4" rx="2" fill="#15233A" opacity="0.7"/>
+              <rect x="90" y="75" width="44" height="4" rx="2" fill="#9AA8C2"/>
+              <rect x="144" y="75" width="22" height="6" rx="3" fill="#1E5BE6"/>
+              <rect x="8" y="86" width="164" height="12" rx="3" fill="#F7FAFE" stroke="#E1E8F2" stroke-width="1"/>
+              <circle cx="17" cy="92" r="5" fill="#EAF1FE"/>
+              <rect x="27" y="89" width="48" height="4" rx="2" fill="#15233A" opacity="0.7"/>
+              <rect x="90" y="89" width="40" height="4" rx="2" fill="#9AA8C2"/>
+              <rect x="144" y="89" width="22" height="6" rx="3" fill="#1E5BE6"/>
+            </svg>
+          </div>
+          <div class="cm-body">
+            <div class="cm-body-top"><div class="cm-num">6</div><h3>営業リスト作成ツール</h3></div>
+            <p>条件を指定するだけでターゲット企業・担当者の営業リストを自動収集・整理するツールを作れます。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">受講生の声</h2>
+      <p class="section-sub">実際に受講いただいた方々からの声をご紹介します。</p>
+
+      <div class="testi-featured">
+        <div class="testi-profile-top">
+          <div class="testi-avatar-sq">
+            <img src="assets/kajiya_profile.jpg" alt="梶屋さん">
+          </div>
+          <p class="testi-name-center">梶屋 さん</p>
+          <p class="testi-role-center">株式会社AIRSTAY｜140以上の民泊運営</p>
+        </div>
+        <p style="font-size:22px;font-weight:900;color:var(--blue);text-align:center;margin:0;line-height:1.4">民泊物件の価格調整ツール</p>
+        <p class="testi-comment">Claude Codeでホームページ制作やツール開発ができることは知っていましたが、実際に自分のPCでどう環境構築し、どうプロンプトを打ち、外部連携や公開まで進めるのかが分かっていませんでした。今回のコンサルでは、民泊運営の価格調整業務を題材に、実際の価格調整ツールを開発。これまで140件の物件を確認しながら4〜5時間かけて行っていた作業を、一瞬で実行できるレベルまで改善できました。初心者でも理解できるよう丁寧に解説しながら伴走していただけたので、学びながら実務成果まで出せたのが非常に良かったです。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile -->
+  <section class="profile" id="profile">
+    <div class="container">
+      <h2 class="section-title" style="text-align:left;margin-bottom:32px">代表プロフィール</h2>
+      <div class="profile-grid">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+          <div class="profile-photo">
+            <img src="assets/01_portrait.png" alt="代表ポートレート">
+          </div>
+          <p style="text-align:center;margin:0;font-size:15px;font-weight:800;color:var(--ink)">清水 勝紀<span style="display:block;font-size:11px;font-weight:500;color:var(--muted);margin-top:2px">しみず かつのり</span></p>
+        </div>
+        <div class="profile-info">
+          <h3>代表 /</h3>
+          <p class="role">AIサポートエンジニア</p>
+          <p>本サービスの代表として、受講生一人ひとりの目標達成に向けた学習設計とサポート体制の構築を行っています。<br><br>カリキュラム設計・品質管理・学習体験の改善に責任を持ち、安心して学べる場づくりに取り組んでいます。<br><br>※実際の担当は、内容や日程に応じて最適なサポートスタッフをご案内する場合があります。</p>
+        </div>
+        <div class="profile-bullets">
+          <div class="pb">
+            <div class="pb-icon"><img src="assets/16_icon_user_settings.png" alt=""></div>
+            <div>
+              <h4>サービス設計・品質管理</h4>
+              <p>カリキュラム設計やサポート体制の整備を担当</p>
+            </div>
+          </div>
+          <div class="pb">
+            <div class="pb-icon"><img src="assets/17_icon_gear.png" alt=""></div>
+            <div>
+              <h4>学習体験の改善</h4>
+              <p>受講生の声をもとに、より良い体験を追求</p>
+            </div>
+          </div>
+          <div class="pb">
+            <div class="pb-icon"><img src="assets/18_icon_chat_dots.png" alt=""></div>
+            <div>
+              <h4>サポート体制の構築</h4>
+              <p>安心して学べる環境とサポートを提供</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer CTA -->
+  <div class="footer-cta">
+    <div class="fc-grid">
+      <div>
+        <h3 class="fc-title">まずは無料相談で、あなたの作りたいものをお聞かせください</h3>
+        <p style="font-size:11px;color:var(--muted);margin:0 0 16px;font-weight:500">講座の内容や進め方について、お気軽にご相談ください。</p>
+        <div class="fc-buttons">
+          <a href="https://app.aitemasu.me/u/ma1998042/requestcopy" class="btn-primary" target="_blank" rel="noopener">
+            <svg class="ic-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="8 14 11 17 16 12"/></svg>
+            無料相談に申し込む
+          </a>
+          <button class="btn-outline">
+            <svg class="ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            チャットで質問する
+          </button>
+        </div>
+      </div>
+      <div class="fc-side">
+        <div class="badge"><img src="assets/19_icon_shield_check.png" alt=""></div>
+        <div>
+          <h5>無理な営業は一切ありません</h5>
+          <p>安心してお気軽にご相談ください</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="copyright">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:8px">
+      <a href="why-claude-code.html" style="color:var(--muted);text-decoration:none;font-size:11px;font-weight:500">なぜClaudeCode？</a>
+      <a href="privacy.html" style="color:var(--muted);text-decoration:none;font-size:11px;font-weight:500">プライバシーポリシー</a>
+      <a href="tokushoho.html" style="color:var(--muted);text-decoration:none;font-size:11px;font-weight:500">特定商取引法に基づく表記</a>
+    </div>
+    &copy; 2026 ClaudeCode講座
+  </footer>
+
+</body>
+</html>

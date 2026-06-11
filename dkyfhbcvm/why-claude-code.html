@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PK67KLM2');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<title>なぜClaudeCodeを学ぶべきか</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<style>
+  :root{
+    --blue:#1E5BE6;
+    --blue-deep:#1648BD;
+    --blue-soft:#EAF1FE;
+    --blue-soft-2:#F4F8FF;
+    --ink:#15233A;
+    --ink-2:#3B4A63;
+    --muted:#6B7891;
+    --line:#E1E8F2;
+    --bg:#FFFFFF;
+    --page:#F2F6FC;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff;font-family:"Noto Sans JP",system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+
+  /* Top nav */
+  .topnav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;border-bottom:1px solid var(--line);background:#fff}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand img{height:28px;width:auto}
+  .nav-links{display:flex;gap:28px;font-size:13px;color:var(--ink-2);font-weight:500}
+  .nav-links a{color:inherit;text-decoration:none}
+  .nav-links a:hover{color:var(--blue)}
+  .btn-primary{background:var(--blue);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-family:inherit;box-shadow:0 2px 0 rgba(22,72,189,.15);text-decoration:none}
+  .btn-primary:hover{background:var(--blue-deep)}
+  .btn-outline{background:#fff;color:var(--blue);border:1.5px solid var(--blue);padding:10px 18px;border-radius:8px;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-family:inherit;text-decoration:none}
+  .btn-outline:hover{background:var(--blue-soft)}
+
+  /* Hero */
+  .hero{position:relative;background:linear-gradient(180deg,#F4F8FF 0%, #EAF1FE 100%);padding:56px 64px 60px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(800px 400px at 80% 20%, rgba(30,91,230,.08), transparent 60%),
+    radial-gradient(600px 300px at 10% 90%, rgba(30,91,230,.06), transparent 60%);
+    pointer-events:none}
+  .hero-inner{position:relative;max-width:1080px;margin:0 auto;text-align:center}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);font-weight:700;font-size:12px;padding:7px 16px;border-radius:999px;border:1.5px solid var(--blue);margin-bottom:22px}
+  .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue)}
+  h1.hero-title{font-size:42px;line-height:1.3;margin:0 0 22px;font-weight:900;letter-spacing:-.01em}
+  h1.hero-title .accent{color:var(--blue)}
+  .hero-sub{font-size:15px;line-height:1.9;color:var(--ink-2);margin:0 0 28px;font-weight:500}
+  .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .hero-cta .btn-primary,.hero-cta .btn-outline{padding:14px 22px;font-size:14px}
+
+  /* Section */
+  section{padding:64px 64px}
+  .container{max-width:1080px;margin:0 auto}
+  h2.section-title{font-size:28px;font-weight:900;text-align:center;margin:0 0 10px;letter-spacing:-.005em}
+  .section-sub{text-align:center;color:var(--muted);font-size:13px;margin:0 0 40px;font-weight:500}
+
+  /* Problem section */
+  .problems{background:#fff}
+  .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .problem-card{background:var(--blue-soft-2);border:1px solid var(--line);border-radius:14px;padding:28px 24px;transition:transform .2s,box-shadow .2s}
+  .problem-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(20,50,120,.08)}
+  .problem-card .num{font-size:32px;font-weight:900;color:var(--blue);margin-bottom:12px;line-height:1}
+  .problem-card h3{font-size:16px;margin:0 0 10px;font-weight:800;color:var(--ink)}
+  .problem-card p{font-size:13px;color:var(--ink-2);line-height:1.8;margin:0;font-weight:500}
+
+  /* Reason section */
+  .reasons{background:#F7FAFE}
+  .reason-list{display:flex;flex-direction:column;gap:24px}
+  .reason-item{display:grid;grid-template-columns:80px 1fr;gap:24px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 28px}
+  .reason-num{font-size:40px;font-weight:900;color:var(--blue);line-height:1}
+  .reason-item h3{font-size:18px;margin:0 0 10px;font-weight:800;color:var(--ink)}
+  .reason-item p{font-size:13px;color:var(--ink-2);line-height:1.9;margin:0;font-weight:500}
+
+  /* Comparison */
+  .comparison{background:#fff}
+  .compare-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  .compare-table th,.compare-table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line)}
+  .compare-table thead th{background:var(--blue-soft);font-weight:800;font-size:13px;color:var(--ink)}
+  .compare-table thead th:first-child{border-radius:10px 0 0 0}
+  .compare-table thead th:last-child{border-radius:0 10px 0 0}
+  .compare-table tbody td{font-weight:500;color:var(--ink-2)}
+  .compare-table tbody td:first-child{font-weight:700;color:var(--ink)}
+  .compare-table .highlight{background:var(--blue-soft-2);color:var(--blue);font-weight:700}
+
+  /* Use cases */
+  .usecases{background:#F7FAFE}
+  .usecase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .usecase{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 24px;transition:transform .2s,box-shadow .2s}
+  .usecase:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(20,50,120,.08)}
+  .usecase .tag{display:inline-block;background:var(--blue-soft);color:var(--blue);font-weight:700;font-size:11px;padding:4px 12px;border-radius:999px;margin-bottom:14px}
+  .usecase h3{font-size:15px;margin:0 0 10px;font-weight:800;color:var(--ink)}
+  .usecase p{font-size:12px;color:var(--ink-2);line-height:1.8;margin:0;font-weight:500}
+
+  /* Voice / Testimony */
+  .voices{background:#fff}
+  .voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .voice{background:var(--blue-soft-2);border:1px solid var(--line);border-radius:14px;padding:28px 24px}
+  .voice .role{font-size:12px;color:var(--blue);font-weight:700;margin-bottom:10px}
+  .voice p{font-size:13px;color:var(--ink-2);line-height:1.9;margin:0 0 14px;font-weight:500}
+  .voice .name{font-size:12px;color:var(--muted);font-weight:600}
+
+  /* CTA section */
+  .cta-section{background:linear-gradient(180deg,#EAF1FE 0%, #D6E4FC 100%);padding:56px 64px}
+  .cta-inner{max-width:720px;margin:0 auto;text-align:center}
+  .cta-inner h2{font-size:26px;font-weight:900;margin:0 0 14px}
+  .cta-inner p{font-size:14px;color:var(--ink-2);margin:0 0 28px;font-weight:500;line-height:1.8}
+  .cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn-lg{padding:16px 32px;font-size:15px;border-radius:10px}
+
+  footer.copyright{background:#fff;text-align:center;padding:18px;font-size:11px;color:var(--muted)}
+
+  .ic-cal,.ic-chat{width:18px;height:18px}
+
+  /* Hamburger */
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px}
+  .hamburger svg{display:block}
+
+  /* ---- Responsive ---- */
+  @media(max-width:900px){
+    .topnav{padding:12px 20px;position:relative}
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px 0;border-bottom:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:100}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 24px;border-bottom:1px solid var(--line)}
+    .nav-links a:last-child{border-bottom:none}
+    .topnav>.btn-primary{display:none}
+    .hamburger{display:block}
+
+    .hero{padding:40px 24px 36px}
+    h1.hero-title{font-size:28px}
+    .hero-sub{font-size:13px}
+
+    section{padding:40px 20px}
+
+    .problem-grid{grid-template-columns:1fr}
+    .reason-item{grid-template-columns:60px 1fr;padding:20px 20px}
+    .usecase-grid{grid-template-columns:1fr}
+    .voice-grid{grid-template-columns:1fr}
+
+    .compare-table{font-size:12px}
+    .compare-table th,.compare-table td{padding:12px 14px}
+
+    .cta-section{padding:40px 20px}
+  }
+
+  @media(max-width:480px){
+    h1.hero-title{font-size:24px}
+    .pill{font-size:11px;padding:6px 12px}
+    .hero-cta{flex-direction:column;align-items:center}
+    .hero-cta .btn-primary,.hero-cta .btn-outline{width:100%;justify-content:center}
+    .cta-buttons{flex-direction:column;align-items:center}
+    .cta-buttons .btn-lg{width:100%;justify-content:center}
+    .reason-item{grid-template-columns:1fr;text-align:center}
+  }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PK67KLM2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- Top nav -->
+  <nav class="topnav">
+    <div class="brand">
+      <span style="font-size:16px;font-weight:900;color:var(--ink);letter-spacing:-.02em">ClaudeCode</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="pill">ひとり社長・フリーランス・中小企業の社長へ</span>
+      <h1 class="hero-title">
+        なぜ今、<span class="accent">ClaudeCode</span>を<br>
+        学ぶべきなのか
+      </h1>
+      <p class="hero-sub">
+        外注に頼らず、自分のアイデアを自分で形にできる時代が来ました。<br>
+        ClaudeCodeは、プログラミング未経験でもWebサービスやツールを作れる「最強の相棒」です。
+      </p>
+    </div>
+  </section>
+
+  <!-- Problems -->
+  <section class="problems">
+    <div class="container">
+      <h2 class="section-title">こんな悩みはありませんか？</h2>
+      <p class="section-sub">経営者・フリーランスが日常的に感じている課題</p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="num">01</div>
+          <h3>外注コストが高すぎる</h3>
+          <p>ちょっとしたWebサイトやツールを作りたいだけなのに、外注すると数十万〜数百万円。費用対効果が合わず、アイデアを諦めていませんか。</p>
+        </div>
+        <div class="problem-card">
+          <div class="num">02</div>
+          <h3>イメージを伝えるのが難しい</h3>
+          <p>外注先に自分の頭の中のイメージを正確に伝えるのは至難の業。何度もやり取りして、結局「思ったのと違う」ものが出来上がる。</p>
+        </div>
+        <div class="problem-card">
+          <div class="num">03</div>
+          <h3>修正・改善のたびにお金がかかる</h3>
+          <p>一度作った後の修正や機能追加にも追加費用が発生。自分でサッと直せたらいいのに、と感じたことがあるはずです。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reasons -->
+  <section class="reasons">
+    <div class="container">
+      <h2 class="section-title">ClaudeCodeを学ぶべき5つの理由</h2>
+      <p class="section-sub">経営者にとっての「最強の武器」になる理由</p>
+      <div class="reason-list">
+        <div class="reason-item">
+          <div class="reason-num">01</div>
+          <div>
+            <h3>外注費を大幅に削減できる</h3>
+            <p>ClaudeCodeを使えば、日本語で「こういうものを作りたい」と伝えるだけでコードを生成できます。これまで外注に50万円かけていたものが、自分の手で作れるようになります。浮いたコストを本業の成長に投資できます。</p>
+          </div>
+        </div>
+        <div class="reason-item">
+          <div class="reason-num">02</div>
+          <div>
+            <h3>アイデアをすぐ形にできる</h3>
+            <p>「こんなツールがあったら便利なのに」と思った瞬間に、自分で作り始められます。企画書を書いて、見積もりを取って、外注先を探して...という時間が不要。スピードが競争力になる時代に、最大の武器になります。</p>
+          </div>
+        </div>
+        <div class="reason-item">
+          <div class="reason-num">03</div>
+          <div>
+            <h3>プログラミング経験は不要</h3>
+            <p>ClaudeCodeはAIが代わりにコードを書いてくれるツールです。あなたがやることは「何を作りたいか」を日本語で伝えること。プログラミングの知識がなくても、Webサイト、業務ツール、自動化スクリプトなどを作れます。</p>
+          </div>
+        </div>
+        <div class="reason-item">
+          <div class="reason-num">04</div>
+          <div>
+            <h3>業務を自動化して時間を生み出す</h3>
+            <p>請求書の作成、データの集計、メールの自動送信...日常の面倒な作業をClaudeCodeで自動化できます。ひとり社長やフリーランスにとって、時間は最も貴重なリソース。それを取り戻す手段がここにあります。</p>
+          </div>
+        </div>
+        <div class="reason-item">
+          <div class="reason-num">05</div>
+          <div>
+            <h3>AI時代に「使う側」に回れる</h3>
+            <p>AIに仕事を奪われる側ではなく、AIを使いこなす側へ。ClaudeCodeを学ぶことは、単にツールの使い方を覚えるだけでなく、AI時代のビジネスリテラシーを身につけることです。今学んでおけば、この先何年も差がつきます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="comparison">
+    <div class="container">
+      <h2 class="section-title">外注 vs 自分で作る を比較</h2>
+      <p class="section-sub">ClaudeCodeを学ぶと、こんなに変わります</p>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>従来（外注）</th>
+            <th class="highlight">ClaudeCodeで自作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>コスト</td>
+            <td>30万〜100万円 / 案件</td>
+            <td class="highlight">ほぼ0円（学習後）</td>
+          </tr>
+          <tr>
+            <td>スピード</td>
+            <td>数週間〜数ヶ月</td>
+            <td class="highlight">数時間〜数日</td>
+          </tr>
+          <tr>
+            <td>修正・改善</td>
+            <td>追加費用 + 待ち時間</td>
+            <td class="highlight">自分ですぐ対応</td>
+          </tr>
+          <tr>
+            <td>イメージ通りか</td>
+            <td>伝達ロスが発生しがち</td>
+            <td class="highlight">自分で作るから100%</td>
+          </tr>
+          <tr>
+            <td>スキルの蓄積</td>
+            <td>自分には何も残らない</td>
+            <td class="highlight">ノウハウが資産になる</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Use cases -->
+  <section class="usecases">
+    <div class="container">
+      <h2 class="section-title">こんなものが作れるようになります</h2>
+      <p class="section-sub">ClaudeCodeを使えば、こんなものが作れます</p>
+      <div class="usecase-grid">
+        <div class="usecase">
+          <span class="tag">ひとり社長</span>
+          <h3>予約管理システム</h3>
+          <p>顧客からの予約をWebで受け付け、自動でカレンダーに反映。手動管理から解放され、ダブルブッキングもゼロに。</p>
+        </div>
+        <div class="usecase">
+          <span class="tag">フリーランス</span>
+          <h3>ポートフォリオサイト</h3>
+          <p>自分の実績を魅力的に見せるWebサイトを自作。外注なしで更新も自由自在。営業ツールとして活躍中。</p>
+        </div>
+        <div class="usecase">
+          <span class="tag">中小企業</span>
+          <h3>社内業務の自動化ツール</h3>
+          <p>日報の集計、請求書の自動生成、在庫管理の通知。毎日の繰り返し作業を自動化して、月20時間以上を削減。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voices -->
+  <section class="voices">
+    <div class="container">
+      <h2 class="section-title">使い始めた方の声</h2>
+      <p class="section-sub">ClaudeCodeを活用している方のリアルな感想</p>
+      <div class="voice-grid">
+        <div class="voice">
+          <div class="role">ひとり社長 / コンサルティング業</div>
+          <p>「外注に頼っていた業務ツールを自分で作れるようになりました。年間で100万円以上のコスト削減になっています。何より、思いついたアイデアをすぐ試せるのが最高です。」</p>
+          <div class="name">T.K さん（40代）</div>
+        </div>
+        <div class="voice">
+          <div class="role">フリーランス / デザイナー</div>
+          <p>「プログラミングは完全に未経験でしたが、ClaudeCodeを使い始めてすぐにWebサイトを自作できるようになりました。日本語で指示するだけなので、思った以上にハードルが低かったです。」</p>
+          <div class="name">M.S さん（30代）</div>
+        </div>
+        <div class="voice">
+          <div class="role">中小企業 代表取締役</div>
+          <p>「社内のExcel作業を自動化するツールを作りました。社員の残業が減り、ミスもなくなりました。経営者こそAIツールを使いこなすべきだと実感しています。」</p>
+          <div class="name">Y.N さん（50代）</div>
+        </div>
+        <div class="voice">
+          <div class="role">ひとり社長 / EC運営</div>
+          <p>「自分のECサイトの在庫管理と顧客対応を効率化するツールを作りました。自分のペースで少しずつ進められるのが良かったです。」</p>
+          <div class="name">A.H さん（30代）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="copyright">&copy; 2026 ClaudeCode</footer>
+
+</body>
+</html>
