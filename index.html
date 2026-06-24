@@ -45,6 +45,7 @@
     .hd-cta{font-size:12px !important;padding:9px 13px !important;}
     .ai-guide{display:none !important;}
     .sp-floating-cta{display:flex !important;}
+    .hero-cta{display:none !important;}
     div[style*="grid-template-columns:repeat(2"],
     div[style*="grid-template-columns: repeat(2"]{grid-template-columns:1fr !important;}
     div[style*="grid-template-columns:repeat(auto-fit"],
@@ -79,7 +80,7 @@
         <a class="hd-nav-link" href="#reason" style="text-decoration:none;color:rgba(251,250,247,0.82);font-size:14px;font-weight:500;">選ばれる理由</a>
         <a class="hd-nav-link" href="#price" style="text-decoration:none;color:rgba(251,250,247,0.82);font-size:14px;font-weight:500;">料金</a>
         <a class="hd-nav-link" href="#bonus" style="text-decoration:none;color:rgba(251,250,247,0.82);font-size:14px;font-weight:500;">特典</a>
-        <a class="hd-cta" href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:11px 20px;border-radius:10px;box-shadow:0 6px 16px rgba(6,199,85,0.32);" style-hover="filter:brightness(1.05);box-shadow:0 8px 22px rgba(6,199,85,0.45);outline:2px solid #d94f2b;outline-offset:2px;">
+        <a class="hd-cta" href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:11px 20px;border-radius:10px;box-shadow:0 4px 10px rgba(6,199,85,0.16);" style-hover="filter:brightness(1.05);box-shadow:0 5px 13px rgba(6,199,85,0.23);outline:2px solid #d94f2b;outline-offset:2px;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.9 3 2.75 6.36 2.75 10.5c0 3.7 3.27 6.8 7.7 7.4.3.06.7.2.8.45.09.23.06.58.03.81l-.13.78c-.04.23-.18.9.79.49s5.23-3.08 7.13-5.27c1.31-1.44 1.94-2.9 1.94-4.66C21.01 6.36 16.86 3 12 3z" fill="#fff"/><rect x="6.4" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="9" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="14.6" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/></svg>
           入会案内を受け取る
         </a>
@@ -115,8 +116,8 @@
             <span style="font-family:'Noto Serif JP',serif;font-size:20px;font-weight:900;color:#ff9e7d;line-height:1.15;">受講スタート</span>
           </div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
-          <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:13px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:19px;padding:19px 38px;border-radius:14px;box-shadow:0 14px 34px rgba(6,199,85,0.42);" style-hover="transform:translateY(-2px);box-shadow:0 20px 42px rgba(6,199,85,0.55);outline:2px solid #d94f2b;outline-offset:3px;">
+        <div class="hero-cta" style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+          <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:13px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:19px;padding:19px 38px;border-radius:14px;box-shadow:0 8px 20px rgba(6,199,85,0.21);" style-hover="transform:translateY(-2px);box-shadow:0 12px 25px rgba(6,199,85,0.28);outline:2px solid #d94f2b;outline-offset:3px;">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.9 3 2.75 6.36 2.75 10.5c0 3.7 3.27 6.8 7.7 7.4.3.06.7.2.8.45.09.23.06.58.03.81l-.13.78c-.04.23-.18.9.79.49s5.23-3.08 7.13-5.27c1.31-1.44 1.94-2.9 1.94-4.66C21.01 6.36 16.86 3 12 3z" fill="#fff"/><rect x="6.4" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="9" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="14.6" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/></svg>
             LINEで無料相談＋8大特典を受け取る
           </a>
@@ -124,7 +125,7 @@
       </div>
 
       <div class="hero-img" style="position:relative;display:flex;align-items:center;justify-content:center;padding:150px clamp(18px,2.5vw,48px) 80px clamp(8px,1.5vw,24px);box-sizing:border-box;">
-        <img src="assets/fv-collage.png" alt="受講対象の経営者・個人事業主のみなさん" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.4));"/>
+        <img src="assets/fv-collage.png" alt="受講対象の経営者・個人事業主のみなさん" style="display:block;width:100%;max-width:720px;margin:0 auto;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.4));"/>
       </div>
       </div>
     </div>
@@ -245,7 +246,7 @@
           <p style="font-size:14px;line-height:1.85;color:rgba(245,236,221,0.78);margin:0;">あとは私たちが、完成まで隣で伴走します。だから、完成率100%。</p>
         </div>
         <div style="flex:none;display:flex;flex-direction:column;align-items:center;gap:8px;">
-          <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:11px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:16px 28px;border-radius:13px;box-shadow:0 12px 28px rgba(6,199,85,0.4);" style-hover="transform:translateY(-2px);outline:2px solid #d94f2b;outline-offset:3px;">
+          <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:11px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:16px 28px;border-radius:13px;box-shadow:0 7px 17px rgba(6,199,85,0.2);" style-hover="transform:translateY(-2px);outline:2px solid #d94f2b;outline-offset:3px;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.9 3 2.75 6.36 2.75 10.5c0 3.7 3.27 6.8 7.7 7.4.3.06.7.2.8.45.09.23.06.58.03.81l-.13.78c-.04.23-.18.9.79.49s5.23-3.08 7.13-5.27c1.31-1.44 1.94-2.9 1.94-4.66C21.01 6.36 16.86 3 12 3z" fill="#fff"/></svg>
             無料で相談してみる
           </a>
@@ -658,7 +659,7 @@
           </ul>
         </div>
         <div style="text-align:center;margin-top:30px;">
-          <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:13px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:18px;padding:18px 38px;border-radius:14px;box-shadow:0 14px 32px rgba(6,199,85,0.4);" style-hover="transform:translateY(-2px);outline:2px solid #d94f2b;outline-offset:3px;">
+          <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:13px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:18px;padding:18px 38px;border-radius:14px;box-shadow:0 8px 19px rgba(6,199,85,0.2);" style-hover="transform:translateY(-2px);outline:2px solid #d94f2b;outline-offset:3px;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.9 3 2.75 6.36 2.75 10.5c0 3.7 3.27 6.8 7.7 7.4.3.06.7.2.8.45.09.23.06.58.03.81l-.13.78c-.04.23-.18.9.79.49s5.23-3.08 7.13-5.27c1.31-1.44 1.94-2.9 1.94-4.66C21.01 6.36 16.86 3 12 3z" fill="#fff"/><rect x="6.4" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="9" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="14.6" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/></svg>
             まずはLINEで相談する（無料）
           </a>
@@ -769,7 +770,7 @@
       </div>
 
       <div style="text-align:center;">
-        <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:13px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:18px;padding:18px 38px;border-radius:14px;box-shadow:0 14px 32px rgba(6,199,85,0.4);" style-hover="transform:translateY(-2px);outline:2px solid #d94f2b;outline-offset:3px;">
+        <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:13px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:18px;padding:18px 38px;border-radius:14px;box-shadow:0 8px 19px rgba(6,199,85,0.2);" style-hover="transform:translateY(-2px);outline:2px solid #d94f2b;outline-offset:3px;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.9 3 2.75 6.36 2.75 10.5c0 3.7 3.27 6.8 7.7 7.4.3.06.7.2.8.45.09.23.06.58.03.81l-.13.78c-.04.23-.18.9.79.49s5.23-3.08 7.13-5.27c1.31-1.44 1.94-2.9 1.94-4.66C21.01 6.36 16.86 3 12 3z" fill="#fff"/><rect x="6.4" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="9" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="14.6" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/></svg>
           いますぐLINEで8大特典を受け取る
         </a>
@@ -831,7 +832,7 @@
         <div style="display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border:1px solid rgba(245,236,221,0.2);border-radius:999px;margin-bottom:22px;"><span style="width:7px;height:7px;border-radius:50%;background:#d94f2b;"></span><span style="font-size:12.5px;color:#e8dcc4;font-weight:500;">まずはLINEから</span></div>
         <h2 style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:clamp(28px,3.6vw,44px);line-height:1.4;color:#fbfaf7;margin:0 0 20px;">まずはLINE登録で、<br><span style="color:#cba14c;">8大特典</span>とあなたの一歩を</h2>
         <p style="font-size:15px;line-height:2;color:rgba(245,236,221,0.8);margin:0 0 30px;max-width:480px;text-wrap:pretty;">忙しくて後回しにしてきた方こそ、まずは気軽に。LINEで友だち追加すれば、8大特典と最新情報、講座の相談まで、すべてトークで完結します。</p>
-        <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:13px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:19px;padding:19px 40px;border-radius:14px;box-shadow:0 16px 38px rgba(6,199,85,0.45);" style-hover="transform:translateY(-2px);box-shadow:0 22px 46px rgba(6,199,85,0.6);outline:2px solid #d94f2b;outline-offset:3px;">
+        <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:13px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:19px;padding:19px 40px;border-radius:14px;box-shadow:0 10px 23px rgba(6,199,85,0.23);" style-hover="transform:translateY(-2px);box-shadow:0 13px 28px rgba(6,199,85,0.3);outline:2px solid #d94f2b;outline-offset:3px;">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.9 3 2.75 6.36 2.75 10.5c0 3.7 3.27 6.8 7.7 7.4.3.06.7.2.8.45.09.23.06.58.03.81l-.13.78c-.04.23-.18.9.79.49s5.23-3.08 7.13-5.27c1.31-1.44 1.94-2.9 1.94-4.66C21.01 6.36 16.86 3 12 3z" fill="#fff"/><rect x="6.4" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="9" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="14.6" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/></svg>
           LINEで無料相談＋8大特典を受け取る
         </a>
@@ -841,7 +842,7 @@
       <div style="flex:none;display:flex;justify-content:center;">
         <div style="position:relative;width:min(264px,74vw);background:#fbfaf7;border-radius:20px;padding:30px 26px;box-shadow:0 24px 56px rgba(0,0,0,0.42);text-align:center;">
           <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#d94f2b;color:#fff;font-size:11.5px;font-weight:700;padding:5px 15px;border-radius:99px;white-space:nowrap;box-shadow:0 6px 16px rgba(217,79,43,0.4);">いま登録限定</div>
-          <div style="width:64px;height:64px;border-radius:18px;background:#06C755;display:flex;align-items:center;justify-content:center;margin:8px auto 16px;box-shadow:0 10px 24px rgba(6,199,85,0.4);"><svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.9 3 2.75 6.36 2.75 10.5c0 3.7 3.27 6.8 7.7 7.4.3.06.7.2.8.45.09.23.06.58.03.81l-.13.78c-.04.23-.18.9.79.49s5.23-3.08 7.13-5.27c1.31-1.44 1.94-2.9 1.94-4.66C21.01 6.36 16.86 3 12 3z" fill="#fff"/><rect x="6.4" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="9" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="14.6" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/></svg></div>
+          <div style="width:64px;height:64px;border-radius:18px;background:#06C755;display:flex;align-items:center;justify-content:center;margin:8px auto 16px;box-shadow:0 6px 14px rgba(6,199,85,0.2);"><svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.9 3 2.75 6.36 2.75 10.5c0 3.7 3.27 6.8 7.7 7.4.3.06.7.2.8.45.09.23.06.58.03.81l-.13.78c-.04.23-.18.9.79.49s5.23-3.08 7.13-5.27c1.31-1.44 1.94-2.9 1.94-4.66C21.01 6.36 16.86 3 12 3z" fill="#fff"/><rect x="6.4" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="9" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="14.6" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/></svg></div>
           <div style="font-family:'Noto Serif JP',serif;font-weight:900;font-size:34px;color:#16203a;line-height:1;">8<span style="font-size:17px;">大特典</span></div>
           <div style="font-size:13px;color:#6a6452;margin-top:8px;">友だち追加で<span style="color:#d94f2b;font-weight:700;">無料</span>プレゼント</div>
           <div style="margin-top:16px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;">
@@ -862,7 +863,7 @@
       <div style="display:flex;align-items:center;gap:16px;padding-top:22px;border-top:1px solid #e7ddc9;">
         <img src="assets/shimizu.png" alt="清水勝紀" style="width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:center 12%;flex:none;"/>
         <div><div style="font-size:12.5px;color:#8a8270;">ひとり社長サロン 代表 / AI講師</div><div style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:20px;color:#16203a;">清水 勝紀</div></div>
-        <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="margin-left:auto;display:inline-flex;align-items:center;gap:10px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 10px 24px rgba(6,199,85,0.38);" style-hover="transform:translateY(-2px);outline:2px solid #d94f2b;outline-offset:3px;">
+        <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="margin-left:auto;display:inline-flex;align-items:center;gap:10px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:15px;padding:14px 24px;border-radius:12px;box-shadow:0 6px 14px rgba(6,199,85,0.19);" style-hover="transform:translateY(-2px);outline:2px solid #d94f2b;outline-offset:3px;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.9 3 2.75 6.36 2.75 10.5c0 3.7 3.27 6.8 7.7 7.4.3.06.7.2.8.45.09.23.06.58.03.81l-.13.78c-.04.23-.18.9.79.49s5.23-3.08 7.13-5.27c1.31-1.44 1.94-2.9 1.94-4.66C21.01 6.36 16.86 3 12 3z" fill="#fff"/></svg>
           LINEで一歩踏み出す
         </a>
@@ -910,7 +911,7 @@
 
   <!-- ===== SP用 フローティングLINEボタン ===== -->
   <div class="sp-floating-cta" style="position:fixed;left:0;right:0;bottom:0;z-index:45;padding:10px 14px;background:rgba(22,32,58,0.96);backdrop-filter:blur(8px);box-shadow:0 -6px 20px rgba(0,0,0,0.28);align-items:center;justify-content:center;">
-    <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:15px;border-radius:12px;box-shadow:0 8px 20px rgba(6,199,85,0.4);">
+    <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:15px;border-radius:12px;box-shadow:0 5px 12px rgba(6,199,85,0.2);">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.9 3 2.75 6.36 2.75 10.5c0 3.7 3.27 6.8 7.7 7.4.3.06.7.2.8.45.09.23.06.58.03.81l-.13.78c-.04.23-.18.9.79.49s5.23-3.08 7.13-5.27c1.31-1.44 1.94-2.9 1.94-4.66C21.01 6.36 16.86 3 12 3z" fill="#fff"/><rect x="6.4" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="9" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/><rect x="14.6" y="9.1" width="1.3" height="4" rx="0.4" fill="#06C755"/></svg>
       無料で8大特典を受け取る
     </a>
