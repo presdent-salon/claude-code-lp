@@ -49,6 +49,7 @@
     .compare-arrow{width:100% !important;}
     .compare-arrow svg{transform:rotate(90deg);}
     .sp-br-hide{display:none !important;}
+    section[style*="padding:108px"],section[style*="padding:104px"],section[style*="padding:96px"]{padding-top:56px !important;padding-bottom:56px !important;}
     div[style*="grid-template-columns:repeat(2"],
     div[style*="grid-template-columns: repeat(2"]{grid-template-columns:1fr !important;}
     div[style*="grid-template-columns:repeat(auto-fit"],
@@ -116,7 +117,7 @@
           </div>
           <div style="flex:1 1 0;min-width:110px;display:flex;flex-direction:column;align-items:center;gap:2px;padding:15px 12px;border-radius:13px;background:rgba(217,79,43,0.12);border:1px solid rgba(217,79,43,0.4);">
             <span style="font-size:12.5px;color:rgba(245,236,221,0.82);font-weight:600;">最短翌日</span>
-            <span style="font-family:'Noto Serif JP',serif;font-size:20px;font-weight:900;color:#ff9e7d;line-height:1.15;">受講スタート</span>
+            <span style="font-family:'Noto Serif JP',serif;font-size:20px;font-weight:900;color:#ff9e7d;line-height:1.15;word-break:keep-all;">受講<wbr>スタート</span>
           </div>
         </div>
         <div class="hero-cta" style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
@@ -504,8 +505,8 @@
           <span style="width:11px;height:11px;border-radius:50%;background:#3a7a52;"></span>
           <span style="margin-left:12px;font-size:11px;color:rgba(245,236,221,0.5);font-family:'Courier New',monospace;">member.hitori-shacho-salon.jp</span>
         </div>
-        <div style="position:relative;width:100%;aspect-ratio:16/9;">
-          <image-slot id="memberSiteShot" shape="rect" src="assets/member-site.webp" placeholder="会員サイトのスクリーンショットをドロップ（クリックで選択も可）" style="display:block;position:absolute;inset:0;width:100%;height:100%;"></image-slot>
+        <div style="position:relative;width:100%;aspect-ratio:1280/785;">
+          <image-slot id="memberSiteShot" shape="rect" fit="contain" src="assets/member-site.webp" placeholder="会員サイトのスクリーンショットをドロップ（クリックで選択も可）" style="display:block;position:absolute;inset:0;width:100%;height:100%;"></image-slot>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;">
@@ -879,12 +880,11 @@
     <div style="max-width:1180px;margin:0 auto;">
       <div style="display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;align-items:flex-start;padding-bottom:34px;border-bottom:1px solid rgba(203,161,76,0.18);">
         <div style="flex:1 1 360px;min-width:280px;">
-          <div style="display:flex;align-items:center;gap:11px;margin-bottom:16px;"><span style="width:42px;height:42px;border-radius:11px;background:#0f1729;display:flex;align-items:center;justify-content:center;flex:none;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="10.5" r="6" fill="#d94f2b"/><rect x="3.5" y="16.4" width="17" height="2.2" rx="1.1" fill="#cba14c"/></svg></span><div><div style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:16px;color:#fbfaf7;">ClaudeCode伴走支援サービス</div><div style="font-size:11px;color:#cba14c;letter-spacing:0.06em;">運営：ひとり社長サロン</div></div></div>
+          <div style="display:flex;align-items:center;gap:11px;margin-bottom:16px;"><div><div style="font-family:'Noto Serif JP',serif;font-weight:700;font-size:16px;color:#fbfaf7;">ClaudeCode伴走支援サービス</div><div style="font-size:11px;color:#cba14c;letter-spacing:0.06em;">運営：ひとり社長サロン</div></div></div>
           <p style="font-size:13px;line-height:1.85;color:rgba(245,236,221,0.6);margin:0 0 14px;max-width:440px;text-wrap:pretty;">忙しい経営者が、スキマ時間で作りたいものを形にする。短期集中の伴走と、続く環境（会員サイト・作業会・コミュニティ）で支えます。</p>
           <div style="font-size:12px;color:rgba(245,236,221,0.5);">3ヶ月／全8回　｜　マンツーマン伴走　｜　会員サイト＋作業会つき</div>
         </div>
         <div style="flex:none;display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
-          <a href="{{ lineUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;background:#06C755;color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:12px 22px;border-radius:10px;" style-hover="filter:brightness(1.06);outline:2px solid #d94f2b;outline-offset:2px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3C6.9 3 2.75 6.36 2.75 10.5c0 3.7 3.27 6.8 7.7 7.4.3.06.7.2.8.45.09.23.06.58.03.81l-.13.78c-.04.23-.18.9.79.49s5.23-3.08 7.13-5.27c1.31-1.44 1.94-2.9 1.94-4.66C21.01 6.36 16.86 3 12 3z" fill="#fff"/></svg>LINEで特典を受け取る</a>
           <div style="display:flex;gap:18px;font-size:12.5px;">
             <a href="privacy.dc.html" style="color:rgba(245,236,221,0.62);text-decoration:none;">プライバシーポリシー</a>
             <a href="tokushoho.dc.html" style="color:rgba(245,236,221,0.62);text-decoration:none;">特定商取引法に基づく表記</a>
