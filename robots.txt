@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# 広告運用用の下層LPは検索インデックス対象外（将来の広告用に保持）
+Disallow: /lp1
+Disallow: /lp2
+Disallow: /lp3
+
+Sitemap: https://president-salon.com/sitemap.xml
