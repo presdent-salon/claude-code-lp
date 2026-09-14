@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コミュニティ運営者のためのAI活用セミナー｜コミュニティ運営ラボ</title>
+<meta name="description" content="コミュニティオーナー・運営担当者の方へ。告知・制作・動画編集をAIで効率化し、会員と向き合う時間を増やす。現役オーナー 松永勇樹（株式会社AI Docks 代表）が教える無料オンラインセミナー。">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://president-salon.com/community-ai-seminar/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="コミュニティ運営ラボ">
+<meta property="og:title" content="コミュニティ運営、ひとりで抱えていませんか？｜AI活用セミナー">
+<meta property="og:description" content="告知・制作・動画編集を、AIで効率化。現役オーナーが教えるコミュニティ運営者のためのAI活用セミナー（無料・オンライン）。">
+<meta property="og:url" content="https://president-salon.com/community-ai-seminar/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  /* 画像の座標系（幅948）をそのまま使う。1u = 表示幅/948 */
+  :root{
+    --w:min(100vw,640px);
+    --u:calc(var(--w) / 948);
+    --navy:#0e1b3d;
+    --blue:#1666e0;
+    --blue-t:#1b6ae3;
+    --sky:#eaf3fd;
+    --line:#cfe0f4;
+    --yel:#fde546;
+    --serif:'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif;
+    --sans:'Noto Sans JP','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{margin:0;background:#dde9f7;color:var(--navy);font-family:var(--sans);font-feature-settings:'palt' 1;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,p,ul{margin:0;padding:0;}
+  ul{list-style:none;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .page{width:var(--w);margin:0 auto;overflow:hidden;background:#f3f8fe;box-shadow:0 0 40px rgba(20,70,150,.08);}
+  section{position:relative;overflow:hidden;}
+  .orb{position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(circle at 35% 30%,#e9f3fe 0%,#cfe4fb 45%,#a9cff6 100%);filter:blur(calc(var(--u)*1.5));opacity:.75;}
+  .orb.soft{opacity:.45;}
+  .gem{position:absolute;pointer-events:none;border-radius:calc(var(--u)*8);background:linear-gradient(135deg,#ffec5c,#f7cf1e);transform:rotate(20deg);box-shadow:0 calc(var(--u)*6) calc(var(--u)*14) rgba(240,200,30,.25);}
+  .z{position:relative;z-index:2;}
+
+
+  /* 明朝体はGoogle Fontsでpaltが効かないので、約物だけ手で詰める */
+  .pr{margin-right:-.45em;}
+  .pl{margin-left:-.45em;}
+  .pm{margin:0 -.22em;}
+  .pq{margin:0 -.12em 0 -.06em;}
+  .pk{margin:0 -.09em;}
+  /* 共通パーツ */
+  .mk{background:linear-gradient(transparent 60%,var(--yel) 60%,var(--yel) 94%,transparent 94%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .04em;}
+  .ul{background:linear-gradient(transparent 84%,var(--yel) 84%,var(--yel) 97%,transparent 97%);-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+  .eyebrow{display:flex;align-items:center;justify-content:center;gap:calc(var(--u)*26);font-family:var(--sans);font-weight:700;color:var(--blue-t);font-size:calc(var(--u)*24);letter-spacing:.14em;line-height:1;padding-top:calc(var(--u)*38);}
+  .eyebrow::before,.eyebrow::after{content:"";width:calc(var(--u)*78);height:max(1px,calc(var(--u)*2.4));background:var(--blue-t);}
+  .h2{font-family:var(--serif);font-weight:900;text-align:center;color:var(--navy);letter-spacing:-.045em;white-space:nowrap;}
+  .lead-blue{font-weight:900;color:var(--blue-t);text-align:center;letter-spacing:.01em;}
+  .num{font-family:var(--serif);font-weight:700;line-height:1;background:linear-gradient(180deg,#5aa0f6,#1a5fd8);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.02em;}
+  .body{font-weight:500;font-size:max(12px,calc(var(--u)*27));line-height:1.48;letter-spacing:.02em;}
+  .card{background:rgba(255,255,255,.92);border-radius:calc(var(--u)*20);box-shadow:0 calc(var(--u)*6) calc(var(--u)*26) rgba(40,100,190,.09),0 0 0 1px rgba(210,226,245,.6);}
+
+  /* 青い帯 */
+  .band{position:relative;overflow:hidden;background:linear-gradient(180deg,#1a6ce6 0%,#1260dc 100%);color:#fff;text-align:center;}
+  .band .orb{background:radial-gradient(circle at 60% 40%,#3e8cf2 0%,#2a7aec 60%,#1f6fe6 100%);opacity:.55;filter:none;}
+  .band-pre{font-weight:700;font-size:max(12px,calc(var(--u)*31));letter-spacing:.03em;line-height:1.3;}
+  .band-h{font-family:var(--serif);font-weight:900;letter-spacing:-.02em;line-height:1.12;white-space:nowrap;}
+  .band-post{font-weight:700;font-size:max(12px,calc(var(--u)*30));letter-spacing:.03em;line-height:1.35;}
+
+  /* 申込ボタン */
+  .cta{position:relative;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;letter-spacing:.05em;border-radius:999px;background:linear-gradient(180deg,#2a82f2 0%,#0f5ad6 100%);box-shadow:0 calc(var(--u)*14) calc(var(--u)*34) rgba(22,102,224,.32),inset 0 calc(var(--u)*2) 0 rgba(255,255,255,.18);transition:transform .15s ease,box-shadow .15s ease;}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 calc(var(--u)*18) calc(var(--u)*40) rgba(22,102,224,.4);}
+  .cta .arr{position:absolute;top:50%;transform:translateY(-50%);border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;}
+  .cta .arr svg{width:42%;height:42%;}
+  .note{text-align:center;font-weight:700;letter-spacing:.04em;}
+
+  /* ===== 1. FV ===== */
+  .fv{background:linear-gradient(180deg,#f4f8fe 0%,#eef5fd 60%,#eaf3fc 100%);padding-bottom:calc(var(--u)*14);}
+  .fv-brand{font-weight:900;font-size:calc(var(--u)*37);line-height:1;letter-spacing:.03em;padding:calc(var(--u)*22) 0 0 calc(var(--u)*48);}
+  .fv-band{margin-top:calc(var(--u)*14);width:calc(var(--u)*860);height:calc(var(--u)*78);display:flex;align-items:center;padding-left:calc(var(--u)*48);color:#fff;font-weight:900;font-size:calc(var(--u)*39);letter-spacing:.07em;background:linear-gradient(90deg,#0f5ad8,#1d6fe8);clip-path:polygon(0 0,100% 0,calc(100% - var(--u)*80) 100%,0 100%);}
+  .fv-kicker{display:flex;align-items:center;margin:calc(var(--u)*30) 0 0 calc(var(--u)*48);font-weight:700;font-size:calc(var(--u)*31);letter-spacing:.04em;line-height:1;}
+  .fv-kicker::after{content:"";width:calc(var(--u)*112);height:max(1px,calc(var(--u)*2));background:var(--navy);margin-left:calc(var(--u)*34);}
+  .fv-h1{margin:calc(var(--u)*22) 0 0 calc(var(--u)*46);font-family:var(--serif);font-weight:900;font-size:calc(var(--u)*97);line-height:calc(var(--u)*122);letter-spacing:-.035em;white-space:nowrap;}
+  .fv-h1 .mk{padding:0 calc(var(--u)*8) 0 calc(var(--u)*6);margin-left:calc(var(--u)*-6);}
+  .fv-sub{margin:calc(var(--u)*12) 0 0 calc(var(--u)*48);font-weight:900;color:var(--blue-t);font-size:calc(var(--u)*50);line-height:calc(var(--u)*63);letter-spacing:-.01em;}
+  .fv-pills{margin:calc(var(--u)*20) 0 0 calc(var(--u)*48);display:grid;gap:calc(var(--u)*15);width:calc(var(--u)*422);}
+  .fv-pills li{height:calc(var(--u)*90);display:flex;align-items:center;gap:calc(var(--u)*24);padding-left:calc(var(--u)*18);background:#fff;border-radius:calc(var(--u)*16);box-shadow:0 calc(var(--u)*6) calc(var(--u)*22) rgba(40,100,190,.1);font-weight:700;font-size:max(12px,calc(var(--u)*31));letter-spacing:.02em;white-space:nowrap;}
+  .fv-pills .ic{flex:none;width:calc(var(--u)*76);height:calc(var(--u)*76);border-radius:50%;background:linear-gradient(180deg,#2378ee,#0f5ad6);display:flex;align-items:center;justify-content:center;}
+  .fv-pills .ic svg{width:58%;height:58%;}
+  .fv-lead{margin:calc(var(--u)*24) 0 0 calc(var(--u)*55);}
+  .fv-lead::before{content:"";display:block;width:calc(var(--u)*63);height:max(1px,calc(var(--u)*2));background:var(--navy);margin-bottom:calc(var(--u)*16);}
+  .fv-lead p{font-weight:700;font-size:calc(var(--u)*38);line-height:calc(var(--u)*50);letter-spacing:.01em;}
+  .fv-photo{position:absolute;left:calc(var(--u)*408);top:calc(var(--u)*488);width:calc(var(--u)*594);height:calc(var(--u)*792);overflow:hidden;z-index:1;}
+  .fv-photo img{width:100%;height:auto;}
+  .fv-name{position:absolute;z-index:3;left:calc(var(--u)*593);top:calc(var(--u)*1070);width:calc(var(--u)*355);height:calc(var(--u)*118);background:#0f2a5f;border-radius:calc(var(--u)*12) 0 0 calc(var(--u)*12);color:#fff;padding:calc(var(--u)*18) 0 0 calc(var(--u)*28);}
+  .fv-name small{display:block;font-size:calc(var(--u)*25);font-weight:500;letter-spacing:.02em;line-height:1.1;}
+  .fv-name strong{display:block;margin-top:calc(var(--u)*10);font-size:calc(var(--u)*44);font-weight:700;letter-spacing:.08em;line-height:1.1;}
+  .stats{display:grid;grid-template-columns:1fr 1fr;position:relative;z-index:3;}
+  .stats::after{content:"";position:absolute;left:50%;top:18%;bottom:14%;width:1px;background:#d5dde8;}
+  .stats .it{text-align:center;}
+  .stats .big{display:flex;align-items:baseline;justify-content:center;gap:calc(var(--u)*8);line-height:1;}
+  .fv-stats{margin:calc(var(--u)*18) calc(var(--u)*32) 0;height:calc(var(--u)*152);border-radius:calc(var(--u)*22);align-items:center;}
+  .fv-stats .n{font-weight:900;color:var(--blue);font-size:calc(var(--u)*82);letter-spacing:-.04em;}
+  .fv-stats .unit{font-weight:900;font-size:calc(var(--u)*37);}
+  .fv-stats .lbl{margin-top:calc(var(--u)*10);font-weight:700;font-size:max(11px,calc(var(--u)*30));letter-spacing:.02em;}
+  .fv-learn{display:flex;align-items:center;justify-content:center;gap:calc(var(--u)*30);margin-top:calc(var(--u)*22);font-weight:700;font-size:max(12px,calc(var(--u)*30));letter-spacing:.1em;}
+  .fv-learn::before,.fv-learn::after{content:"";width:calc(var(--u)*30);height:max(1px,calc(var(--u)*2.4));background:var(--navy);transform:rotate(55deg);}
+  .fv-learn::after{transform:rotate(-55deg);}
+  .fv-cta{margin:calc(var(--u)*6) calc(var(--u)*35) 0;height:calc(var(--u)*133);font-size:calc(var(--u)*52);padding-right:calc(var(--u)*60);}
+  .fv-cta .arr{right:calc(var(--u)*34);width:calc(var(--u)*66);height:calc(var(--u)*66);}
+  .fv .note{margin-top:calc(var(--u)*18);font-size:max(11px,calc(var(--u)*26));}
+
+  /* ===== 2. 悩み ===== */
+  .pain{background:linear-gradient(180deg,#f5f9fe,#eef5fd);}
+  .pain .h2{margin-top:calc(var(--u)*26);font-size:calc(var(--u)*88);line-height:calc(var(--u)*110);}
+  .pain .h2 .mk{background:linear-gradient(transparent 70%,var(--yel) 70%,var(--yel) 100%);}
+  .pain .lead-blue{margin-top:calc(var(--u)*22);font-size:calc(var(--u)*40);}
+  .pain-list{margin:calc(var(--u)*10) calc(var(--u)*36) 0;display:grid;gap:calc(var(--u)*17);}
+  .pain-list li{height:calc(var(--u)*195);display:flex;align-items:center;}
+  .pain-list .ic{flex:none;width:calc(var(--u)*155);height:calc(var(--u)*155);margin-left:calc(var(--u)*33);border-radius:50%;background:#e9f2fd;display:flex;align-items:center;justify-content:center;}
+  .pain-list .ic svg{width:60%;height:60%;}
+  .pain-list .tx{margin-left:calc(var(--u)*33);padding-left:calc(var(--u)*38);border-left:1px solid #d7e1ee;height:calc(var(--u)*140);display:flex;flex-direction:column;justify-content:center;}
+  .pain-list h3{font-weight:900;font-size:calc(var(--u)*40);letter-spacing:.01em;line-height:1.2;}
+  .pain-list .body{margin-top:calc(var(--u)*10);}
+  .pain .down{display:block;margin:calc(var(--u)*18) auto calc(var(--u)*12);width:calc(var(--u)*56);height:calc(var(--u)*30);}
+  .pain .band{padding:calc(var(--u)*30) 0 calc(var(--u)*34);}
+  .pain .band-h{font-size:calc(var(--u)*74);white-space:nowrap;}
+  .pain .band-post{margin-top:calc(var(--u)*22);font-size:max(13px,calc(var(--u)*36));line-height:1.4;}
+
+  /* ===== 3. WHY AI ===== */
+  .why{background:#f6f9fe;}
+  .why .h2{margin-top:calc(var(--u)*26);font-size:calc(var(--u)*88);line-height:calc(var(--u)*104);}
+  .why .lead-blue,.uses .lead-blue,.role .lead-blue,.prog .lead-blue,.inst .lead-blue{margin-top:calc(var(--u)*16);font-size:calc(var(--u)*37);line-height:1.26;}
+  .reason{display:grid;align-items:center;}
+  .reason .num{font-size:calc(var(--u)*74);display:flex;align-items:center;gap:calc(var(--u)*22);}
+  .reason .num::after{content:"";flex:1;height:max(1px,calc(var(--u)*2));background:#a9c8ef;}
+  .reason h3{margin-top:calc(var(--u)*12);font-weight:900;font-size:calc(var(--u)*38);letter-spacing:.01em;line-height:1.25;white-space:nowrap;}
+  .reason .body{margin-top:calc(var(--u)*10);line-height:1.42;}
+  .reason svg{width:100%;height:auto;display:block;}
+  .r1{grid-template-columns:calc(var(--u)*540) 1fr;padding:calc(var(--u)*14) calc(var(--u)*38) calc(var(--u)*14) calc(var(--u)*58);gap:calc(var(--u)*20);margin-top:calc(var(--u)*8);}
+  .r2{grid-template-columns:calc(var(--u)*240) 1fr;padding:calc(var(--u)*12) calc(var(--u)*50) calc(var(--u)*14) calc(var(--u)*90);gap:calc(var(--u)*58);background:#e9f2fd;}
+  .r3{grid-template-columns:calc(var(--u)*540) 1fr;padding:calc(var(--u)*14) calc(var(--u)*60) calc(var(--u)*16) calc(var(--u)*58);gap:calc(var(--u)*30);}
+  .why .band{padding:calc(var(--u)*28) 0 calc(var(--u)*30);}
+  .why .band-h{margin-top:calc(var(--u)*14);font-size:calc(var(--u)*72);}
+  .why .band-post{margin-top:calc(var(--u)*14);}
+
+  /* ===== 4. 活用例 / 5. 役割 / 6. プログラム 共通カード ===== */
+  .ncards{margin:calc(var(--u)*20) calc(var(--u)*22) 0;display:grid;gap:calc(var(--u)*18);}
+  .ncard{display:grid;grid-template-columns:calc(var(--u)*135) 1fr auto;padding:calc(var(--u)*26) calc(var(--u)*22) calc(var(--u)*22) calc(var(--u)*28);}
+  .ncard .num{font-size:calc(var(--u)*80);padding-top:calc(var(--u)*2);border-right:max(1px,calc(var(--u)*2)) solid #a9c8ef;margin-right:calc(var(--u)*32);align-self:stretch;margin-bottom:calc(var(--u)*6);}
+  .ncard h3{font-weight:900;font-size:calc(var(--u)*38);line-height:1.25;letter-spacing:.01em;white-space:nowrap;}
+  .ncard .body{margin-top:calc(var(--u)*10);line-height:1.38;}
+  .ncard .ill{align-self:center;}
+  .ncard .ill svg{display:block;height:auto;}
+  .chip{display:inline-block;border-radius:999px;color:#fff;font-weight:700;letter-spacing:.03em;background:linear-gradient(180deg,#3f90f2,#2a78ea);line-height:1;}
+  .chip.dark{background:#0f2a5f;}
+  .ex{line-height:1.3;font-size:max(10.5px,calc(var(--u)*24)) !important;margin-top:calc(var(--u)*14);padding-top:calc(var(--u)*12);border-top:max(1px,calc(var(--u)*2)) solid #d4e4f7;font-weight:700;color:var(--blue-t);font-size:max(11px,calc(var(--u)*24));letter-spacing:.02em;white-space:nowrap;}
+
+  .uses{background:#f6f9fe;}
+  .uses .h2{margin-top:calc(var(--u)*20);font-size:calc(var(--u)*98);line-height:calc(var(--u)*108);}
+  .uses .ncard{min-height:calc(var(--u)*216);align-items:start;position:relative;grid-template-columns:calc(var(--u)*135) 1fr;padding-right:calc(var(--u)*300);}
+  .uses .ncard .ill{position:absolute;right:calc(var(--u)*20);top:50%;transform:translateY(-50%);}
+  .uses .ncard h3{margin-right:calc(var(--u)*-300);font-size:calc(var(--u)*36);}
+  .uses .ncard:nth-child(2) .ill{right:calc(var(--u)*10);}
+  .uses .ncard .body{font-size:max(11px,calc(var(--u)*26.5));white-space:nowrap;}
+  .uses .band{margin-top:calc(var(--u)*16);padding:calc(var(--u)*16) 0 calc(var(--u)*16);}
+  .uses .band-h{margin-top:calc(var(--u)*10);font-size:calc(var(--u)*72);}
+  .uses .band-post{margin-top:calc(var(--u)*6);}
+
+  .role{background:#f6f9fe;}
+  .role .h2,.prog .h2{margin-top:calc(var(--u)*22);font-size:calc(var(--u)*88);line-height:calc(var(--u)*90);}
+  .role .ncard,.prog .ncard{align-items:start;}
+  .role .chip,.prog .chip{font-size:max(11px,calc(var(--u)*25));padding:calc(var(--u)*9) calc(var(--u)*26);margin-bottom:calc(var(--u)*10);}
+  .role .ncard,.prog .ncard{padding-top:calc(var(--u)*22);padding-bottom:calc(var(--u)*18);}
+  .role .ex,.prog .ex{margin-top:calc(var(--u)*10);padding-top:calc(var(--u)*8);}
+  .role .ncards,.prog .ncards{gap:calc(var(--u)*16);margin-top:calc(var(--u)*14);}
+  .ncard .chip{display:table;}
+  .role .ncard .body,.prog .ncard .body{font-size:max(11px,calc(var(--u)*25.5));white-space:nowrap;line-height:1.26;margin-top:calc(var(--u)*8);}
+  .role .band{margin-top:calc(var(--u)*16);padding:calc(var(--u)*18) 0 calc(var(--u)*20);}
+  .role .band-h{margin-top:calc(var(--u)*10);font-size:calc(var(--u)*72);}
+  .role .band-post{margin-top:calc(var(--u)*6);}
+
+  .prog{background:#f6f9fe;padding-bottom:calc(var(--u)*10);}
+  .prog .h2 .mk{background:linear-gradient(transparent 66%,var(--yel) 66%,var(--yel) 92%,transparent 92%);}
+  .goal{text-align:center;margin-top:calc(var(--u)*14);}
+  .prog .ncard{padding-top:calc(var(--u)*18);padding-bottom:calc(var(--u)*14);}
+  .goal .chip{font-size:max(11px,calc(var(--u)*26));padding:calc(var(--u)*9) calc(var(--u)*40);}
+  .goal h3{margin-top:calc(var(--u)*4);font-family:var(--serif);font-weight:900;font-size:calc(var(--u)*54);line-height:calc(var(--u)*60);white-space:nowrap;letter-spacing:-.01em;}
+  .prog-cta{margin:calc(var(--u)*10) calc(var(--u)*58) 0;height:calc(var(--u)*88);font-size:calc(var(--u)*44);padding-right:calc(var(--u)*44);}
+  .prog-cta .arr{right:calc(var(--u)*98);width:calc(var(--u)*56);height:calc(var(--u)*56);}
+  .prog .note{margin-top:calc(var(--u)*6);font-size:max(11px,calc(var(--u)*22));font-weight:500;}
+
+  /* ===== 7. 講師 ===== */
+  .inst{background:#f6f9fe;}
+  .inst .h2{margin-top:calc(var(--u)*22);font-size:calc(var(--u)*80);line-height:calc(var(--u)*86);}
+  .inst .lead-blue{margin-top:calc(var(--u)*14);font-size:calc(var(--u)*32);}
+  .inst-top{position:relative;height:calc(var(--u)*478);}
+  .inst-photo{position:absolute;left:calc(var(--u)*377);top:calc(var(--u)*18);width:calc(var(--u)*605);height:calc(var(--u)*472);overflow:hidden;z-index:1;}
+  .inst-photo img{width:100%;height:auto;}
+  .inst-prof{position:relative;z-index:2;padding:calc(var(--u)*76) 0 0 calc(var(--u)*68);}
+  .inst-prof .chip{font-size:calc(var(--u)*30);padding:calc(var(--u)*12) calc(var(--u)*54);}
+  .inst-prof .co{margin-top:calc(var(--u)*24);font-weight:700;font-size:max(12px,calc(var(--u)*30));letter-spacing:.02em;}
+  .inst-prof .nm{margin-top:calc(var(--u)*10);font-family:var(--serif);font-weight:900;font-size:calc(var(--u)*84);line-height:1.1;letter-spacing:.02em;}
+  .inst-prof .en{margin-top:calc(var(--u)*8);font-weight:500;color:var(--blue-t);font-size:max(11px,calc(var(--u)*27));letter-spacing:.06em;}
+  .inst-prof .rl{margin-top:calc(var(--u)*14);padding-top:calc(var(--u)*16);border-top:1px solid #cddcee;width:calc(var(--u)*320);font-weight:500;font-size:max(12px,calc(var(--u)*27));line-height:1.5;white-space:nowrap;}
+  .inst-stats{margin:0 calc(var(--u)*32);height:calc(var(--u)*188);border-radius:calc(var(--u)*18);align-items:center;}
+  .inst-stats::after{background:#3b82ea;width:max(1px,calc(var(--u)*2));top:16%;bottom:12%;}
+  .inst-stats .n{font-family:var(--serif);font-weight:900;color:var(--blue);font-size:calc(var(--u)*92);letter-spacing:-.02em;}
+  .inst-stats .unit{font-family:var(--serif);font-weight:900;color:var(--blue);font-size:calc(var(--u)*50);}
+  .inst-stats .lbl{margin-top:calc(var(--u)*6);font-weight:500;font-size:max(11px,calc(var(--u)*26));line-height:1.4;}
+  .inst-bio{margin:calc(var(--u)*18) 0 0 calc(var(--u)*152);font-size:max(12px,calc(var(--u)*26));line-height:1.36;}
+  .inst .band{margin-top:calc(var(--u)*24);padding:calc(var(--u)*22) 0 calc(var(--u)*28);}
+  .inst .band .eyebrow{color:#fff;padding-top:0;font-size:max(11px,calc(var(--u)*25));font-weight:500;letter-spacing:.08em;}
+  .inst .band .eyebrow::before,.inst .band .eyebrow::after{background:#fff;width:calc(var(--u)*56);}
+  .inst .band-h{margin-top:calc(var(--u)*18);font-size:calc(var(--u)*66);line-height:1.2;}
+  .inst .band-post{margin-top:calc(var(--u)*10);font-weight:500;font-size:max(12px,calc(var(--u)*28));line-height:1.45;}
+
+  /* ===== 8. 開催概要・FAQ ===== */
+  .info{background:#f6f9fe;}
+  .info .h2{margin-top:calc(var(--u)*22);font-size:calc(var(--u)*90);line-height:1.1;}
+  .info .lead-blue{margin-top:calc(var(--u)*8);font-size:calc(var(--u)*33);}
+  .tbl{margin:calc(var(--u)*24) calc(var(--u)*48) 0 calc(var(--u)*50);border:1px solid var(--line);border-radius:calc(var(--u)*20);overflow:hidden;background:#fff;box-shadow:0 calc(var(--u)*8) calc(var(--u)*26) rgba(40,100,190,.07);}
+  .tbl dl{margin:0;display:grid;grid-template-columns:calc(var(--u)*235) 1fr;}
+  .tbl dt,.tbl dd{margin:0;display:flex;align-items:center;border-top:1px solid var(--line);}
+  .tbl dt:first-of-type,.tbl dd:first-of-type{border-top:0;}
+  .tbl dt{justify-content:center;background:#e7f0fb;font-weight:700;font-size:max(12px,calc(var(--u)*30));letter-spacing:.22em;padding-left:.22em;}
+  .tbl dd{padding-left:calc(var(--u)*42);font-weight:500;font-size:max(12px,calc(var(--u)*32));letter-spacing:.03em;white-space:nowrap;}
+  .tbl .h86{height:calc(var(--u)*86);}
+  .tbl .h94{height:calc(var(--u)*94);}
+  .tbl .free{font-weight:900;color:var(--blue);font-size:calc(var(--u)*66);letter-spacing:.08em;}
+  .faq-ttl .eyebrow{padding-top:calc(var(--u)*30);}
+  .faq-ttl .h2{margin-top:calc(var(--u)*14);font-size:calc(var(--u)*82);line-height:1;}
+  .faq{margin:calc(var(--u)*20) calc(var(--u)*118) 0 calc(var(--u)*118);}
+  .faq .qa+.qa{border-top:1px solid #d6e2f1;margin-top:calc(var(--u)*18);padding-top:calc(var(--u)*24);}
+  .faq .row{display:grid;grid-template-columns:calc(var(--u)*110) 1fr;align-items:start;}
+  .faq .q{width:calc(var(--u)*50);height:calc(var(--u)*50);margin-left:calc(var(--u)*29);border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--u)*30);line-height:1;}
+  .faq .qt{font-weight:900;color:var(--blue-t);font-size:max(12px,calc(var(--u)*30));letter-spacing:.03em;align-self:center;}
+  .faq .a{margin-left:calc(var(--u)*40);font-weight:500;font-size:calc(var(--u)*36);line-height:1;padding-top:calc(var(--u)*14);}
+  .faq .row+.row{margin-top:calc(var(--u)*8);}
+  .faq .body{font-size:max(12px,calc(var(--u)*27.5));line-height:1.3;}
+  .info .band{margin-top:calc(var(--u)*18);padding:calc(var(--u)*22) 0 calc(var(--u)*16);}
+  .info .band-h{font-size:calc(var(--u)*62);line-height:1.16;}
+  .info .band-post{margin-top:calc(var(--u)*14);font-weight:500;font-size:max(12px,calc(var(--u)*30));line-height:1.36;}
+  .cta.white{margin:calc(var(--u)*18) calc(var(--u)*110) 0;height:calc(var(--u)*88);font-size:calc(var(--u)*44);background:#fff;color:var(--blue);box-shadow:0 calc(var(--u)*10) calc(var(--u)*26) rgba(0,40,120,.22);padding-right:calc(var(--u)*50);}
+  .cta.white .arr{background:var(--blue);right:calc(var(--u)*50);width:calc(var(--u)*62);height:calc(var(--u)*62);}
+  .info .band .note{margin-top:calc(var(--u)*12);font-size:max(11px,calc(var(--u)*22));font-weight:500;}
+  .foot{background:#fff;text-align:center;padding:calc(var(--u)*12) 0 calc(var(--u)*14);font-size:max(10px,calc(var(--u)*18));line-height:1.45;letter-spacing:.06em;}
+</style>
+</head>
+<body>
+<main class="page">
+
+<!-- ================= 1. FV ================= -->
+<section class="fv">
+  <span class="orb soft" style="left:calc(var(--u)*720);top:calc(var(--u)*-80);width:calc(var(--u)*300);height:calc(var(--u)*300);"></span>
+  <span class="orb" style="left:calc(var(--u)*470);top:calc(var(--u)*440);width:calc(var(--u)*760);height:calc(var(--u)*760);"></span>
+  <svg style="position:absolute;left:calc(var(--u)*828);top:calc(var(--u)*198);width:calc(var(--u)*92);height:calc(var(--u)*100);z-index:1" viewBox="0 0 92 100" aria-hidden="true"><defs><linearGradient id="gtri" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#56e0b8"/><stop offset="1" stop-color="#1fb89a"/></linearGradient></defs><path d="M10 14 C10 4 20 -1 29 4 L84 38 C93 44 93 56 84 62 L29 96 C20 101 10 96 10 86Z" fill="url(#gtri)" opacity=".92"/></svg>
+  <span class="gem" style="left:calc(var(--u)*860);top:calc(var(--u)*333);width:calc(var(--u)*48);height:calc(var(--u)*48);"></span>
+  <span class="gem" style="left:calc(var(--u)*908);top:calc(var(--u)*705);width:calc(var(--u)*62);height:calc(var(--u)*62);"></span>
+
+  <div class="fv-photo"><img src="assets/matsunaga-cutout.webp" alt="講師 松永勇樹" width="1100" height="1503"></div>
+
+  <div class="z">
+    <p class="fv-brand">コミュニティ運営ラボ</p>
+    <div class="fv-band">コミュニティオーナー・運営担当者の方へ</div>
+    <p class="fv-kicker">現役オーナーが教える AI活用セミナー</p>
+    <h1 class="fv-h1">コミ<span class="pk">ュ</span>ニテ<span class="pk">ィ</span>運営<span class="pr">、</span><br><span class="mk">ひとりで抱えて</span><br>いませんか<span class="pq">？</span></h1>
+    <p class="fv-sub">告知・制作・動画編集を、<br>AIで効率化。</p>
+    <ul class="fv-pills">
+      <li><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20v8a2 2 0 0 0 2 2h5l14 8V10L14 18H9a2 2 0 0 0-2 2z"/><path d="M14 30l3 8h4l-2-8"/><path d="M34 17l4-3M35 24h5M34 31l4 3"/></svg></span>イベント告知・バナー</li>
+      <li><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="9" width="36" height="26" rx="3"/><path d="M20 16v12l10-6z"/><path d="M17 41h14"/></svg></span>動画編集・レポート</li>
+      <li><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="16" r="5"/><path d="M15 37v-3a9 9 0 0 1 18 0v3z"/><circle cx="11.5" cy="20" r="4"/><path d="M4 36v-2a7.5 7.5 0 0 1 10-7"/><circle cx="36.5" cy="20" r="4"/><path d="M44 36v-2a7.5 7.5 0 0 0-10-7"/></svg></span>会員向けのお知らせ</li>
+    </ul>
+    <div class="fv-lead"><p>会員と向き合う時間を、<br>もっと増やす。</p></div>
+  </div>
+
+  <div class="fv-name"><small>株式会社AI Docks 代表</small><strong>松永 勇樹</strong></div>
+
+  <div class="stats card fv-stats">
+    <div class="it"><div class="big"><span class="n">150</span><span class="unit">名以上</span></div><p class="lbl">ノーコードサロンを運営</p></div>
+    <div class="it"><div class="big"><span class="n">50</span><span class="unit">件以上</span></div><p class="lbl">コミュニティ相談実績</p></div>
+  </div>
+  <p class="fv-learn z">現役オーナーの実践から学ぶ</p>
+  <a class="cta fv-cta z" href="#entry" data-cta>無料セミナーに申し込む<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#1666e0" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></a>
+  <p class="note z">オンライン（Zoom）開催</p>
+</section>
+
+<!-- ================= 2. 悩み ================= -->
+<section class="pain">
+  <span class="orb" style="left:calc(var(--u)*-330);top:calc(var(--u)*150);width:calc(var(--u)*480);height:calc(var(--u)*480);"></span>
+  <span class="orb" style="left:calc(var(--u)*810);top:calc(var(--u)*-60);width:calc(var(--u)*420);height:calc(var(--u)*420);"></span>
+  <span class="orb" style="left:calc(var(--u)*-90);top:calc(var(--u)*480);width:calc(var(--u)*130);height:calc(var(--u)*130);"></span>
+  <span class="orb" style="left:calc(var(--u)*810);top:calc(var(--u)*1230);width:calc(var(--u)*320);height:calc(var(--u)*320);"></span>
+  <span class="gem" style="left:calc(var(--u)*872);top:calc(var(--u)*240);width:calc(var(--u)*56);height:calc(var(--u)*56);"></span>
+  <div class="z">
+    <p class="eyebrow">COMMUNITY OWNER’S REALITY</p>
+    <h2 class="h2">会員と向き合いたい<span class="pr">。</span><br>でも<span class="pr">、</span>今日も<br><span class="mk">作業で一日が終わる<span class="pr">。</span></span></h2>
+    <p class="lead-blue">こんな毎日になっていませんか？</p>
+    <ul class="pain-list">
+      <li class="card"><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#1a62dc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20v8a2 2 0 0 0 2 2h5l14 8V10L14 18H9a2 2 0 0 0-2 2z"/><path d="M14 30l3 8h4l-2-8"/><path d="M34 17l4-3M35 24h5M34 31l4 3"/></svg></span><div class="tx"><h3>告知だけで、夜になる。</h3><p class="body">イベントページ、バナー、SNS投稿。<br>毎回ゼロから作っている。</p></div></li>
+      <li class="card"><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#1a62dc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="38" height="28" rx="3"/><path d="M20 18v12l10-6z"/></svg></span><div class="tx"><h3>録画が、たまっていく。</h3><p class="body">編集やレポート化が後回しになり、<br>せっかくの学びを届けきれない。</p></div></li>
+      <li class="card"><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#1a62dc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 7c10.5 0 19 6.9 19 15.5S34.5 38 24 38c-2.3 0-4.5-.3-6.5-.9L9 41l2.2-7.2C7.4 31 5 27 5 22.5 5 13.9 13.5 7 24 7z"/><circle cx="16" cy="22.5" r="1.4" fill="#1a62dc"/><circle cx="24" cy="22.5" r="1.4" fill="#1a62dc"/><circle cx="32" cy="22.5" r="1.4" fill="#1a62dc"/></svg></span><div class="tx"><h3>会員への声かけは、あとで。</h3><p class="body">事務作業に追われ、初参加者への<br>フォローや個別の対話が後回しに。</p></div></li>
+      <li class="card"><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#1a62dc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M27 42H10a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h22a2 2 0 0 1 2 2v14"/><path d="M14 14h14M14 21h14M14 28h7"/><circle cx="35" cy="31" r="4.5"/><path d="M26 43a9 9 0 0 1 18 0z"/></svg></span><div class="tx"><h3>自分が休むと、運営も止まる。</h3><p class="body">手順も判断基準も頭の中。<br>スタッフに任せたくても渡せない。</p></div></li>
+    </ul>
+    <svg class="down" viewBox="0 0 56 30" fill="none" stroke="#1a62dc" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4l24 22L52 4"/></svg>
+  </div>
+  <div class="band">
+    <p class="band-h">その作業を<span class="pr">、</span><span class="ul">AIと仕組み</span>に<span class="pr">。</span></p>
+    <p class="band-post">あなたの時間を、会員との対話や<br>新しい企画に使いませんか。</p>
+  </div>
+</section>
+
+<!-- ================= 3. WHY AI ================= -->
+<section class="why">
+  <span class="orb" style="left:calc(var(--u)*-300);top:calc(var(--u)*40);width:calc(var(--u)*400);height:calc(var(--u)*400);"></span>
+  <span class="orb" style="left:calc(var(--u)*820);top:calc(var(--u)*40);width:calc(var(--u)*400);height:calc(var(--u)*400);"></span>
+  <span class="orb soft" style="left:calc(var(--u)*800);top:calc(var(--u)*-160);width:calc(var(--u)*220);height:calc(var(--u)*220);"></span>
+  <span class="gem" style="left:calc(var(--u)*874);top:calc(var(--u)*246);width:calc(var(--u)*54);height:calc(var(--u)*54);"></span>
+  <div class="z">
+    <p class="eyebrow">WHY AI?</p>
+    <h2 class="h2">AI時代こそ<span class="pr">、</span><br><span class="mk">人と向き合う運営</span>に<br>時間を使う<span class="pr">。</span></h2>
+    <p class="lead-blue">コミュニティ運営者が、AIを使う3つの理由</p>
+
+    <div class="reason r1">
+      <div>
+        <p class="num">01</p>
+        <h3>情報だけでは、選ばれにくい。</h3>
+        <p class="body">AIで答えが見つかる今だからこそ、<br>相談できる仲間や、挑戦できる機会が<br>「ここにいる理由」になる。</p>
+      </div>
+      <svg viewBox="0 0 320 230" aria-hidden="true" fill="none" stroke="#1d5fd6" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="104" y="44" width="70" height="42" rx="12" fill="#fff"/><path d="M122 86l-8 14 20-14" fill="#fff"/><circle cx="126" cy="65" r="2.6" fill="#1d5fd6"/><circle cx="139" cy="65" r="2.6" fill="#1d5fd6"/><circle cx="152" cy="65" r="2.6" fill="#1d5fd6"/>
+        <rect x="190" y="6" width="70" height="42" rx="12" fill="#dbeafd"/><path d="M238 48l6 13-18-13" fill="#dbeafd"/><circle cx="212" cy="27" r="2.6" fill="#1d5fd6"/><circle cx="225" cy="27" r="2.6" fill="#1d5fd6"/><circle cx="238" cy="27" r="2.6" fill="#1d5fd6"/>
+        <path d="M30 118l-14-6M26 132l-15 2M36 104l-8-12"/>
+        <path d="M30 230c0-44 20-68 46-70 26 2 46 26 46 70" fill="#1f6fe5"/>
+        <path d="M66 150v12h20v-12" fill="#fff"/>
+        <circle cx="76" cy="126" r="26" fill="#fff"/>
+        <path d="M50 132c-6-32 8-50 30-50 22 0 32 18 26 42-8-6-16-18-18-28-12 12-26 22-38 36z" fill="#0f2a5c"/>
+        <path d="M50 132c-2 12 0 26 8 34 4-4 4-14 2-24" fill="#0f2a5c"/>
+        <circle cx="84" cy="128" r="1.8" fill="#1d5fd6"/><path d="M84 140c4 2 8 1 10-2"/>
+        <path d="M196 230c0-44 22-70 52-72 30 2 52 28 52 72" fill="#dbeafd"/>
+        <path d="M238 150v12h20v-12" fill="#fff"/>
+        <circle cx="246" cy="120" r="27" fill="#fff"/>
+        <path d="M220 122c-6-30 10-48 32-46 20 2 30 16 26 34-10-8-24-12-40-10-6 6-10 14-18 22z" fill="#0f2a5c"/>
+        <circle cx="236" cy="124" r="1.8" fill="#1d5fd6"/><path d="M232 136c-3 2-6 2-9 0"/>
+        <path d="M150 170c10-6 18-14 30-10 6 2 10 8 18 12" fill="#fff"/><path d="M170 160l10-12M180 164l12-12M160 166l8-14"/>
+      </svg>
+    </div>
+
+    <div class="reason r2">
+      <svg viewBox="0 0 240 210" aria-hidden="true" fill="none" stroke="#1d5fd6" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M150 116V16a6 6 0 0 0-6-6H14a6 6 0 0 0-6 6v166a6 6 0 0 0 6 6h98" fill="#fff"/>
+        <path d="M36 50h86M36 82h86M36 114h60M36 146h40"/>
+        <circle cx="162" cy="160" r="46" fill="#dbeafd"/><path d="M162 132v30h22"/>
+        <path d="M176 36l10-18M196 54l18-8"/>
+      </svg>
+      <div>
+        <p class="num">02</p>
+        <h3>続けられる運営体制をつくる。</h3>
+        <p class="body">毎回の告知・制作をAIと仕組みに。<br>オーナーが抱える作業を減らし、<br>会員へのフォローに時間を使う。</p>
+      </div>
+    </div>
+
+    <div class="reason r3">
+      <div>
+        <p class="num">03</p>
+        <h3>活動を、次の価値につなげる。</h3>
+        <p class="body">勉強会の録画を、要約や記事へ。<br>その場限りにせず、欠席者への共有や<br>次回の集客に活かす。</p>
+      </div>
+      <svg viewBox="0 0 260 220" aria-hidden="true" fill="none" stroke="#1d5fd6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="30" width="158" height="104" rx="8" fill="#dbeafd"/><path d="M4 120h158" /><path d="M70 60v36l30-18z" fill="#1d5fd6"/>
+        <rect x="140" y="80" width="112" height="136" rx="4" fill="#dbeafd" transform="rotate(4 196 148)"/>
+        <rect x="126" y="74" width="112" height="136" rx="4" fill="#fff"/>
+        <path d="M146 104h72M146 126h72M146 148h72M146 170h50"/>
+        <path d="M206 20l6-16M226 36l16-8M228 58l16 2"/>
+      </svg>
+    </div>
+  </div>
+  <div class="band">
+    <span class="orb" style="left:calc(var(--u)*-60);top:calc(var(--u)*110);width:calc(var(--u)*170);height:calc(var(--u)*260);"></span>
+    <span class="orb" style="left:calc(var(--u)*840);top:calc(var(--u)*110);width:calc(var(--u)*200);height:calc(var(--u)*260);"></span>
+    <p class="band-pre z">AIが担うのは、下書きや情報整理。</p>
+    <p class="band-h z">人が担うのは<span class="pr">、</span><br><span class="ul">判断<span class="pm">・</span>対話<span class="pm">・</span>関係づくり<span class="pr">。</span></span></p>
+    <p class="band-post z">その役割分担を、現役オーナーが解説します。</p>
+  </div>
+</section>
+
+<!-- ================= 4. 活用例 ================= -->
+<section class="uses">
+  <span class="orb" style="left:calc(var(--u)*-260);top:calc(var(--u)*20);width:calc(var(--u)*400);height:calc(var(--u)*400);"></span>
+  <span class="orb" style="left:calc(var(--u)*820);top:calc(var(--u)*40);width:calc(var(--u)*400);height:calc(var(--u)*400);"></span>
+  <span class="gem" style="left:calc(var(--u)*874);top:calc(var(--u)*218);width:calc(var(--u)*54);height:calc(var(--u)*54);"></span>
+  <div class="z">
+    <p class="eyebrow">AI USE CASES</p>
+    <h2 class="h2">例えば<span class="pr">、</span><br>この<span class="mk">運営業務</span>から<span class="pr">。</span></h2>
+    <p class="lead-blue">いつもの素材や運営ルールを使って、<br>毎回ゼロから作る負担を減らします。</p>
+    <ul class="ncards">
+      <li class="card ncard">
+        <p class="num">01</p>
+        <div><h3>イベントの告知・バナー</h3><p class="body">日時とテーマをもとに、<br>告知文とバナーのたたき台を作成。<br>媒体ごとの書き直しもスムーズに。</p></div>
+        <div class="ill"><svg style="width:calc(var(--u)*278)" viewBox="0 0 278 160" aria-hidden="true" fill="none" stroke="#1d5fd6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="274" height="156" rx="10" fill="#dcebfd" stroke="#8dbaf2"/>
+          <circle cx="240" cy="150" r="30" fill="#c6defb" stroke="none"/><circle cx="20" cy="18" r="4" fill="#fff" stroke="none"/>
+          <text x="34" y="74" font-family="Noto Sans JP, sans-serif" font-weight="900" font-size="38" fill="#1d5fd6" stroke="none">勉強会</text>
+          <path d="M36 104h90M36 124h60" stroke="#9cc4f5" stroke-width="7"/>
+          <circle cx="206" cy="60" r="28" fill="#fde546" stroke="none" opacity=".75"/>
+          <path d="M168 76l44-30v62l-44-18z" fill="#fff"/><path d="M168 76h-8v14h8" fill="#1d5fd6"/><path d="M176 94l10 30h10l-6-26" fill="#1d5fd6"/><path d="M212 46c10 8 10 54 0 62" fill="#1d5fd6"/>
+          <path d="M236 42l14-14M242 62h20M238 82l14 10"/>
+        </svg></div>
+      </li>
+      <li class="card ncard">
+        <p class="num">02</p>
+        <div><h3>動画編集・イベントレポート</h3><p class="body">録画や文字起こしをもとに、<br>カット案・見出し・要約を作成。<br>欠席者にも学びを届けやすく。</p></div>
+        <div class="ill"><svg style="width:calc(var(--u)*262);margin-top:calc(var(--u)*-8)" viewBox="0 0 290 180" aria-hidden="true" fill="none" stroke="#1d5fd6" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="232" cy="80" r="62" fill="#dcebfd" stroke="none"/>
+          <rect x="2" y="16" width="172" height="112" rx="6" fill="#dcebfd"/><path d="M2 110h172"/><path d="M14 119h8M34 119h110" stroke-width="4"/><path d="M72 46v36l32-18z" fill="#1d5fd6"/>
+          <rect x="146" y="40" width="136" height="136" rx="4" fill="#fff"/>
+          <text x="160" y="72" font-family="Noto Sans JP, sans-serif" font-weight="900" font-size="18" fill="#1d5fd6" stroke="none">開催レポート</text>
+          <path d="M162 96h104M162 116h104M162 136h104M162 156h70" stroke="#8dbaf2" stroke-width="4"/>
+        </svg></div>
+      </li>
+      <li class="card ncard">
+        <p class="num">03</p>
+        <div><h3>会員向けのお知らせ</h3><p class="body">開催予定や共有事項から、<br>週次のお知らせをまとめて下書き。<br>伝え漏れを防ぐ型も用意。</p></div>
+        <div class="ill"><svg style="width:calc(var(--u)*278)" viewBox="0 0 278 180" aria-hidden="true" fill="none" stroke="#1d5fd6" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="46" cy="118" r="50" fill="#dcebfd" stroke="none"/>
+          <rect x="30" y="6" width="190" height="150" rx="6" fill="#fff"/>
+          <text x="48" y="42" font-family="Noto Sans JP, sans-serif" font-weight="900" font-size="20" fill="#1d5fd6" stroke="none">今週のお知らせ</text>
+          <path d="M50 70h140M50 96h112M50 122h80" stroke="#8dbaf2" stroke-width="4.5"/>
+          <rect x="174" y="98" width="86" height="76" rx="8" fill="#fff"/><path d="M174 118h86" /><path d="M196 88v18M238 88v18"/>
+          <path d="M190 132h14v12h-14zM212 132h14v12h-14zM234 132h14v12h-14zM190 152h14v12h-14zM212 152h14v12h-14z" fill="#1d5fd6" stroke="none"/>
+          <path d="M240 48l12-18M250 70l18-8M252 90l20 2"/>
+        </svg></div>
+      </li>
+      <li class="card ncard">
+        <p class="num">04</p>
+        <div><h3>運営マニュアル・引き継ぎ</h3><p class="body">手順や判断基準を言語化し、<br>スタッフに渡せる資料へ整理。<br>担当者が変わっても続く運営へ。</p></div>
+        <div class="ill"><svg style="width:calc(var(--u)*240);margin-right:calc(var(--u)*18)" viewBox="0 0 240 180" aria-hidden="true" fill="none" stroke="#1d5fd6" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="196" cy="98" r="44" fill="#dcebfd" stroke="none"/>
+          <rect x="70" y="10" width="140" height="160" rx="4" fill="#dcebfd" transform="rotate(8 140 90)"/>
+          <path d="M168 58h26M170 84h22M168 110h22" transform="rotate(8 140 90)"/>
+          <rect x="44" y="4" width="126" height="146" rx="4" fill="#fff" transform="rotate(4 107 77)"/>
+          <rect x="22" y="14" width="128" height="160" rx="4" fill="#fff"/>
+          <text x="38" y="60" font-family="Noto Sans JP, sans-serif" font-weight="900" font-size="20" fill="#1d5fd6" stroke="none">運営ガイド</text>
+          <path d="M40 94h92M40 116h92M40 138h60" stroke="#8dbaf2" stroke-width="4.5"/>
+        </svg></div>
+      </li>
+    </ul>
+  </div>
+  <div class="band">
+    <span class="orb" style="left:calc(var(--u)*-70);top:calc(var(--u)*90);width:calc(var(--u)*170);height:calc(var(--u)*230);"></span>
+    <span class="orb" style="left:calc(var(--u)*840);top:calc(var(--u)*80);width:calc(var(--u)*200);height:calc(var(--u)*240);"></span>
+    <p class="band-pre z">まずは、繰り返している業務をひとつ。</p>
+    <p class="band-h z">あなたの運営なら<span class="pr">、</span><br><span class="ul">どこからAIを使う<span class="pq">？</span></span></p>
+    <p class="band-post z">現役オーナーが、具体例と進め方を解説します。</p>
+  </div>
+</section>
+
+<!-- ================= 5. AI × HUMAN ================= -->
+<section class="role">
+  <span class="orb" style="left:calc(var(--u)*-260);top:calc(var(--u)*30);width:calc(var(--u)*400);height:calc(var(--u)*400);"></span>
+  <span class="orb" style="left:calc(var(--u)*820);top:calc(var(--u)*40);width:calc(var(--u)*400);height:calc(var(--u)*400);"></span>
+  <span class="gem" style="left:calc(var(--u)*874);top:calc(var(--u)*212);width:calc(var(--u)*54);height:calc(var(--u)*54);"></span>
+  <div class="z">
+    <p class="eyebrow">AI × HUMAN</p>
+    <h2 class="h2">AIに任せるほど<span class="pr">、</span><br><span class="mk">人の役割</span>が<br>大切になる<span class="pr">。</span></h2>
+    <p class="lead-blue">運営業務を、3つの役割に分けて考えます。<br>大切なのは、任せる範囲を決めること。</p>
+    <ul class="ncards">
+      <li class="card ncard">
+        <p class="num">01</p>
+        <div><span class="chip">AIを中心に進める</span><h3>下書き・整理を任せる。</h3><p class="body">告知文のたたき台、文字起こし、要約。<br>決まった型の作業を進めてもらう。</p><p class="ex">例：録画から開催レポートの下書きへ</p></div>
+        <div class="ill"><svg style="width:calc(var(--u)*262);margin:calc(var(--u)*10) 0 0 calc(var(--u)*-60)" viewBox="0 0 262 230" aria-hidden="true" fill="none" stroke="#1d5fd6" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="112" cy="110" r="90" fill="#dcebfd" stroke="none"/>
+          <rect x="30" y="40" width="110" height="140" rx="4" fill="#dcebfd" transform="rotate(-8 85 110)"/>
+          <rect x="74" y="20" width="118" height="146" rx="4" fill="#fff"/>
+          <path d="M92 52h82M92 76h82M92 100h82M92 124h50" stroke="#8dbaf2" stroke-width="5"/>
+          <rect x="12" y="138" width="116" height="66" rx="6" fill="#dcebfd"/><path d="M60 156v30l24-15z" fill="#1d5fd6"/>
+          <path d="M238 70l-72 118-8 24 20-16 72-118z" fill="#1f6fe5"/><path d="M226 88l14 10"/><path d="M158 212l6-10"/>
+          <path d="M214 30l10-22M234 48l20-12M236 72l20 0"/>
+        </svg></div>
+      </li>
+      <li class="card ncard">
+        <p class="num">02</p>
+        <div><span class="chip">AIと人で進める</span><h3>案を広げ、人が選ぶ。</h3><p class="body">企画の壁打ちや、会員への返信案。<br>場の目的や相手に合わせて整える。</p><p class="ex">例：企画案から次の勉強会テーマを選ぶ</p></div>
+        <div class="ill"><svg style="width:calc(var(--u)*270);margin:calc(var(--u)*4) 0 0 calc(var(--u)*-66)" viewBox="0 0 270 210" aria-hidden="true" fill="none" stroke="#1d5fd6" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="150" cy="96" r="84" fill="#dcebfd" stroke="none"/>
+          <rect x="40" y="64" width="176" height="104" rx="6" fill="#fff"/><path d="M20 176h216l-10 12H30z" fill="#dcebfd"/><path d="M40 176h176"/>
+          <path d="M80 140h70M80 124h80" stroke="#8dbaf2" stroke-width="4"/>
+          <rect x="6" y="58" width="72" height="56" rx="4" fill="#fff" transform="rotate(-6 42 86)"/><path d="M20 78h40M20 92h40M20 104h26" stroke="#8dbaf2" stroke-width="4" transform="rotate(-6 42 86)"/>
+          <rect x="126" y="22" width="92" height="66" rx="4" fill="#fff"/><path d="M140 42h60M140 56h60M140 70h36" stroke="#8dbaf2" stroke-width="4"/>
+          <rect x="192" y="64" width="44" height="42" rx="8" fill="#1f6fe5"/><path d="M202 84l9 9 16-18" stroke="#fff" stroke-width="4.5"/>
+          <path d="M214 122c0-8 10-8 10 0v28c4-8 14-6 14 2 4-6 12-4 12 4 4-4 12-2 12 6v24c0 14-10 24-24 24h-8c-10 0-16-6-22-14l-18-22c-4-6 4-14 10-8l14 12z" fill="#fff"/>
+          <path d="M236 18l8-16M252 36l16-8M254 58h14"/>
+        </svg></div>
+      </li>
+      <li class="card ncard">
+        <p class="num">03</p>
+        <div><span class="chip dark">人が中心を担う</span><h3>対話と、関係をつくる。</h3><p class="body">初参加者への声かけ、メンバーの紹介。<br>空気を読み、場の方針を決める。</p><p class="ex">例：相性を考えて、二人を紹介する</p></div>
+        <div class="ill"><svg style="width:calc(var(--u)*306);margin:calc(var(--u)*-4) calc(var(--u)*-12) 0 calc(var(--u)*-92)" viewBox="0 0 306 230" aria-hidden="true" fill="none" stroke="#1d5fd6" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="36" y="10" width="72" height="48" rx="18" fill="#fff"/><path d="M62 58l-6 14 18-14" fill="#fff"/><circle cx="58" cy="34" r="3" fill="#1d5fd6"/><circle cx="72" cy="34" r="3" fill="#1d5fd6"/><circle cx="86" cy="34" r="3" fill="#1d5fd6"/>
+          <rect x="206" y="12" width="72" height="48" rx="18" fill="#fff"/><path d="M252 60l6 14-18-14" fill="#fff"/><circle cx="228" cy="36" r="3" fill="#1d5fd6"/><circle cx="242" cy="36" r="3" fill="#1d5fd6"/><circle cx="256" cy="36" r="3" fill="#1d5fd6"/>
+          <path d="M136 24l6 16M160 16v18M180 26l-6 16"/>
+          <path d="M4 230c0-50 20-78 50-80 30 2 50 30 50 80" fill="#1f6fe5"/>
+          <circle cx="58" cy="118" r="28" fill="#fff"/><path d="M30 116c-2-28 14-40 32-38 18 2 28 14 24 30-12-6-26-4-40 0-6 2-10 6-16 8z" fill="#0f2a5c"/><circle cx="72" cy="120" r="2" fill="#1d5fd6"/>
+          <path d="M88 200c14-10 24-18 34-20" />
+          <path d="M104 230c0-50 22-80 54-82 32 2 54 32 54 82" fill="#dcebfd"/>
+          <circle cx="158" cy="114" r="28" fill="#fff"/><path d="M128 124c-6-34 10-50 30-50s36 16 30 50c-6-12-12-22-12-30-14 8-32 10-44 8-2 8-2 16-4 22z" fill="#0f2a5c"/><circle cx="150" cy="118" r="2" fill="#1d5fd6"/><circle cx="166" cy="118" r="2" fill="#1d5fd6"/><path d="M150 130c6 4 12 4 16 0"/>
+          <path d="M204 230c0-50 20-78 50-80 30 2 50 30 50 80" fill="#1f6fe5"/>
+          <circle cx="252" cy="118" r="28" fill="#fff"/><path d="M226 110c-4-24 12-34 30-32 18 2 26 16 24 32-14-2-30-6-40-12-4 6-10 10-14 12z" fill="#0f2a5c"/><circle cx="240" cy="122" r="2" fill="#1d5fd6"/>
+        </svg></div>
+      </li>
+    </ul>
+  </div>
+  <div class="band">
+    <span class="orb" style="left:calc(var(--u)*-70);top:calc(var(--u)*90);width:calc(var(--u)*170);height:calc(var(--u)*230);"></span>
+    <span class="orb" style="left:calc(var(--u)*840);top:calc(var(--u)*80);width:calc(var(--u)*200);height:calc(var(--u)*240);"></span>
+    <p class="band-pre z">作業の負担を減らした、その先へ。</p>
+    <p class="band-h z">会員との信頼は<span class="pr">、</span><br><span class="ul">人が積み重ねる<span class="pr">。</span></span></p>
+    <p class="band-post z">この役割分担を、セミナーで具体的に解説。</p>
+  </div>
+</section>
+
+<!-- ================= 6. プログラム ================= -->
+<section class="prog">
+  <span class="orb" style="left:calc(var(--u)*-260);top:calc(var(--u)*20);width:calc(var(--u)*400);height:calc(var(--u)*400);"></span>
+  <span class="orb" style="left:calc(var(--u)*820);top:calc(var(--u)*40);width:calc(var(--u)*400);height:calc(var(--u)*400);"></span>
+  <span class="orb soft" style="left:calc(var(--u)*-120);bottom:calc(var(--u)*-60);width:calc(var(--u)*260);height:calc(var(--u)*380);"></span>
+  <span class="orb soft" style="left:calc(var(--u)*830);bottom:calc(var(--u)*-60);width:calc(var(--u)*260);height:calc(var(--u)*380);"></span>
+  <span class="gem" style="left:calc(var(--u)*874);top:calc(var(--u)*212);width:calc(var(--u)*54);height:calc(var(--u)*54);"></span>
+  <div class="z">
+    <p class="eyebrow">SEMINAR PROGRAM</p>
+    <h2 class="h2"><span class="mk"><span class="pl">「</span>何から始めるか<span class="pr">」</span></span>が<br>わかる<br>実践セミナー<span class="pr">。</span></h2>
+    <p class="lead-blue">告知・記録・引き継ぎを題材に、<br>現役オーナーが具体的な進め方を解説。</p>
+    <ul class="ncards">
+      <li class="card ncard">
+        <p class="num">01</p>
+        <div><span class="chip">見つける</span><h3>AIに任せる業務を見極める</h3><p class="body">毎週のお知らせ、イベント準備、録画整理。<br>繰り返し発生する作業から、<br>優先して取り組む業務を選びます。</p><p class="ex">学ぶこと：業務の棚卸しと優先順位</p></div>
+        <div class="ill"><svg style="width:calc(var(--u)*230);margin:calc(var(--u)*20) 0 0 calc(var(--u)*-60)" viewBox="0 0 230 200" aria-hidden="true" fill="none" stroke="#1d5fd6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="150" cy="118" r="72" fill="#dcebfd" stroke="none"/>
+          <rect x="8" y="10" width="136" height="164" rx="6" fill="#fff"/>
+          <rect x="24" y="36" width="26" height="26" rx="5" fill="#1f6fe5"/><path d="M30 49l6 6 10-12" stroke="#fff"/>
+          <rect x="24" y="80" width="26" height="26" rx="5" fill="#1f6fe5"/><path d="M30 93l6 6 10-12" stroke="#fff"/>
+          <rect x="24" y="124" width="26" height="26" rx="5" fill="#1f6fe5"/><path d="M30 137l6 6 10-12" stroke="#fff"/>
+          <path d="M64 44h54M64 56h36M64 88h54M64 100h36M64 132h40M64 144h30" stroke="#8dbaf2" stroke-width="4.5"/>
+          <circle cx="146" cy="120" r="36" fill="#fff" stroke-width="7"/><path d="M172 146l30 30" stroke-width="12"/>
+          <path d="M172 20l12-18M192 42l20-10"/>
+        </svg></div>
+      </li>
+      <li class="card ncard">
+        <p class="num">02</p>
+        <div><span class="chip">つくる</span><h3>AIへの情報の渡し方を知る</h3><p class="body">過去の告知文、開催ルール、録画など、<br>手元の素材を使った下書きづくり。<br>毎回説明し直さないための型を学びます。</p><p class="ex">学ぶこと：素材・ルール・指示のまとめ方</p></div>
+        <div class="ill"><svg style="width:calc(var(--u)*230);margin:calc(var(--u)*20) 0 0 calc(var(--u)*-60)" viewBox="0 0 230 200" aria-hidden="true" fill="none" stroke="#1d5fd6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="160" cy="92" r="72" fill="#dcebfd" stroke="none"/>
+          <rect x="8" y="24" width="136" height="164" rx="6" fill="#fff"/>
+          <path d="M28 54h96M28 80h96M28 106h96M28 132h70M28 158h50" stroke="#8dbaf2" stroke-width="5"/>
+          <path d="M118 88h96a8 8 0 0 1 8 8v58a8 8 0 0 1-8 8h-60l-16 16v-16h-20a8 8 0 0 1-8-8V96a8 8 0 0 1 8-8z" fill="#1f6fe5" stroke="#1f6fe5"/>
+          <path d="M140 116h60M140 136h40" stroke="#fff" stroke-width="6"/>
+          <path d="M180 30l12-20M200 50l20-10"/>
+        </svg></div>
+      </li>
+      <li class="card ncard">
+        <p class="num">03</p>
+        <div><span class="chip">続ける</span><h3>確認と引き継ぎの型を学ぶ</h3><p class="body">AIの出力を、どこまで確認するか。<br>スタッフに、何を渡せば任せられるか。<br>日々の運営に組み込む手順を考えます。</p><p class="ex">学ぶこと：確認基準と運営手順の残し方</p></div>
+        <div class="ill"><svg style="width:calc(var(--u)*236);margin:calc(var(--u)*20) 0 0 calc(var(--u)*-66)" viewBox="0 0 236 210" aria-hidden="true" fill="none" stroke="#1d5fd6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="150" cy="100" r="76" fill="#dcebfd" stroke="none"/>
+          <rect x="10" y="44" width="116" height="150" rx="5" fill="#fff" transform="rotate(-8 68 119)"/>
+          <path d="M34 80h70M34 102h70M34 124h70M34 146h50" stroke="#8dbaf2" stroke-width="5" transform="rotate(-8 68 119)"/>
+          <rect x="96" y="54" width="112" height="146" rx="5" fill="#fff" transform="rotate(8 152 127)"/>
+          <path d="M118 90h66M116 112h66M114 134h50" stroke="#8dbaf2" stroke-width="5" transform="rotate(8 152 127)"/>
+          <circle cx="196" cy="168" r="30" fill="#1f6fe5" stroke="#fff" stroke-width="6"/><path d="M182 168l10 10 18-20" stroke="#fff" stroke-width="6"/>
+          <path d="M186 30l12-22M206 52l22-10"/>
+        </svg></div>
+      </li>
+    </ul>
+    <div class="goal">
+      <span class="chip">参加後のゴール</span>
+      <h3><span class="mk">最初にAIを使う業務</span>と<span class="pr">、</span><br>その進め方が見えてくる<span class="pr">。</span></h3>
+    </div>
+    <a class="cta prog-cta" href="#entry" data-cta>無料セミナーに申し込む<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#1666e0" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></a>
+    <p class="note">オンライン（Zoom）開催</p>
+  </div>
+</section>
+
+<!-- ================= 7. 講師 ================= -->
+<section class="inst">
+  <span class="orb" style="left:calc(var(--u)*-260);top:calc(var(--u)*20);width:calc(var(--u)*400);height:calc(var(--u)*400);"></span>
+  <span class="orb" style="left:calc(var(--u)*800);top:calc(var(--u)*-60);width:calc(var(--u)*300);height:calc(var(--u)*300);"></span>
+  <span class="orb" style="left:calc(var(--u)*-130);top:calc(var(--u)*1100);width:calc(var(--u)*240);height:calc(var(--u)*240);"></span>
+  <span class="orb" style="left:calc(var(--u)*840);top:calc(var(--u)*1060);width:calc(var(--u)*240);height:calc(var(--u)*240);"></span>
+  <span class="gem" style="left:calc(var(--u)*874);top:calc(var(--u)*205);width:calc(var(--u)*54);height:calc(var(--u)*54);"></span>
+  <div class="z">
+    <p class="eyebrow">INSTRUCTOR</p>
+    <h2 class="h2"><span class="mk">現役の運営者</span>が<span class="pr">、</span><br>現場のAI活用を<br>お伝えします<span class="pr">。</span></h2>
+    <p class="lead-blue">コミュニティづくりとAI活用、その両方を実践。</p>
+  </div>
+  <div class="inst-top">
+    <span class="orb" style="left:calc(var(--u)*440);top:calc(var(--u)*30);width:calc(var(--u)*560);height:calc(var(--u)*560);"></span>
+    <div class="inst-photo"><img src="assets/matsunaga-cutout.webp" alt="講師 松永勇樹" width="1100" height="1503" loading="lazy"></div>
+    <div class="inst-prof">
+      <span class="chip">講師紹介</span>
+      <p class="co">株式会社AI Docks 代表</p>
+      <p class="nm">松永 勇樹</p>
+      <p class="en">Yuki Matsunaga</p>
+      <p class="rl">ノーコードサロン運営<br>コミュニティ運営ラボ運営</p>
+    </div>
+  </div>
+  <div class="stats card inst-stats">
+    <div class="it"><div class="big"><span class="n">150</span><span class="unit">名以上</span></div><p class="lbl">ノーコードサロン<br>参加者数</p></div>
+    <div class="it"><div class="big"><span class="n">50</span><span class="unit">件以上</span></div><p class="lbl">コミュニティ相談実績</p></div>
+  </div>
+  <p class="inst-bio body z">ノーコードサロン、コミュニティ運営ラボを運営。<br>自社コミュニティの運営に加え、<br>企業のコミュニティ立ち上げ・運営支援に携わる。<br>告知や制作、情報整理へのAI活用を通じて、<br>少人数でも続けられる運営の仕組みを探求している。</p>
+  <div class="band">
+    <span class="orb" style="left:calc(var(--u)*-70);top:calc(var(--u)*40);width:calc(var(--u)*200);height:calc(var(--u)*300);"></span>
+    <span class="orb" style="left:calc(var(--u)*830);top:calc(var(--u)*40);width:calc(var(--u)*200);height:calc(var(--u)*300);"></span>
+    <p class="eyebrow z">大切にしていること</p>
+    <p class="band-h z">AIで生まれた時間を<span class="pr">、</span><br><span class="ul">人とのつながり</span>に<span class="pr">。</span></p>
+    <p class="band-post z">会員の声を聞く。相性のよい人をつなぐ。<br>一緒に挑戦する機会をつくる。<br>その時間を増やすためのAI活用を、お伝えします。</p>
+  </div>
+</section>
+
+<!-- ================= 8. 開催概要・FAQ ================= -->
+<section class="info" id="info">
+  <span class="orb" style="left:calc(var(--u)*-250);top:calc(var(--u)*40);width:calc(var(--u)*380);height:calc(var(--u)*380);"></span>
+  <span class="orb" style="left:calc(var(--u)*810);top:calc(var(--u)*-40);width:calc(var(--u)*300);height:calc(var(--u)*300);"></span>
+  <span class="orb" style="left:calc(var(--u)*-140);top:calc(var(--u)*630);width:calc(var(--u)*260);height:calc(var(--u)*300);"></span>
+  <span class="orb" style="left:calc(var(--u)*800);top:calc(var(--u)*620);width:calc(var(--u)*300);height:calc(var(--u)*360);"></span>
+  <span class="orb" style="left:calc(var(--u)*-150);top:calc(var(--u)*1040);width:calc(var(--u)*250);height:calc(var(--u)*250);"></span>
+  <span class="orb" style="left:calc(var(--u)*840);top:calc(var(--u)*1000);width:calc(var(--u)*250);height:calc(var(--u)*250);"></span>
+  <span class="gem" style="left:calc(var(--u)*858);top:calc(var(--u)*768);width:calc(var(--u)*54);height:calc(var(--u)*54);"></span>
+  <div class="z">
+    <p class="eyebrow">SEMINAR INFORMATION</p>
+    <h2 class="h2">セミナー開催概要</h2>
+    <p class="lead-blue">コミュニティ運営者のためのAI活用セミナー</p>
+    <div class="tbl">
+      <dl>
+        <dt class="h86">開催形式</dt><dd class="h86">オンライン（Zoom）</dd>
+        <dt class="h94">参加費</dt><dd class="h94"><span class="free">無料</span></dd>
+        <dt class="h86">対象</dt><dd class="h86">コミュニティオーナー・運営担当者</dd>
+        <dt class="h86">講師</dt><dd class="h86">松永 勇樹（株式会社AI Docks 代表）</dd>
+      </dl>
+    </div>
+    <div class="faq-ttl">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="h2">よくある質問</h2>
+    </div>
+    <div class="faq">
+      <div class="qa">
+        <div class="row"><span class="q">Q</span><p class="qt">AI初心者でも参加できますか？</p></div>
+        <div class="row"><span class="a">A</span><p class="body">はい。基本的な考え方から、<br>告知や記録など身近な運営業務に沿って<br>解説します。</p></div>
+      </div>
+      <div class="qa">
+        <div class="row"><span class="q">Q</span><p class="qt">少人数のコミュニティでも役立ちますか？</p></div>
+        <div class="row"><span class="a">A</span><p class="body">はい。一人や少人数で運営している方にも、<br>繰り返す作業を減らす考え方や、<br>仕組みづくりの進め方をお伝えします。</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="band" id="entry">
+    <span class="orb" style="left:calc(var(--u)*-90);top:calc(var(--u)*100);width:calc(var(--u)*240);height:calc(var(--u)*300);"></span>
+    <span class="orb" style="left:calc(var(--u)*830);top:calc(var(--u)*50);width:calc(var(--u)*240);height:calc(var(--u)*300);"></span>
+    <p class="band-h z">まずは<span class="pr">、</span>ひとつの業務から<span class="pr">。</span><br><span class="ul">運営に<span class="pr">、</span>ゆとりを<span class="pr">。</span></span></p>
+    <p class="band-post z">現役オーナーの実践を、<br>あなたのコミュニティ運営に。</p>
+    <a class="cta white z" href="#entry" data-cta>無料セミナーに申し込む<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+    <p class="note z">オンライン（Zoom）開催</p>
+  </div>
+  <footer class="foot">運営：株式会社AI Docks<br>© AI Docks</footer>
+</section>
+
+</main>
+<script>
+  // 申込先URL。決まったらここだけ差し替える（空のあいだはページ内の申込ブロックへ移動）
+  var ENTRY_URL = '';
+  if (ENTRY_URL) {
+    document.querySelectorAll('[data-cta]').forEach(function (a) {
+      a.href = ENTRY_URL; a.target = '_blank'; a.rel = 'noopener';
+    });
+  }
+</script>
+</body>
+</html>
