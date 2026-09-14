@@ -2,15 +2,15 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>コミュニティ運営者のためのAI活用セミナー｜コミュニティ運営ラボ</title>
-<meta name="description" content="コミュニティオーナー・運営担当者の方へ。告知・制作・動画編集をAIで効率化し、会員と向き合う時間を増やす。現役オーナー 松永勇樹（株式会社AI Docks 代表）が教える無料オンラインセミナー。">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>コミュニティ運営者のためのAI活用セミナー｜ひとり社長サロン</title>
+<meta name="description" content="コミュニティオーナー・運営担当者の方へ。運営業務の8割をAI・外注で効率化し、会員と向き合う時間を増やす。ひとり社長サロン主催、現役オーナー 松永勇樹（株式会社AI Docks 代表）が教える無料オンラインセミナー。">
 <meta name="robots" content="noindex,nofollow">
 <link rel="canonical" href="https://president-salon.com/community-ai-seminar/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="コミュニティ運営ラボ">
+<meta property="og:site_name" content="ひとり社長サロン">
 <meta property="og:title" content="コミュニティ運営、ひとりで抱えていませんか？｜AI活用セミナー">
-<meta property="og:description" content="告知・制作・動画編集を、AIで効率化。現役オーナーが教えるコミュニティ運営者のためのAI活用セミナー（無料・オンライン）。">
+<meta property="og:description" content="運営業務の8割を、AI・外注で効率化。現役オーナーが教えるコミュニティ運営者のためのAI活用セミナー（無料・オンライン）。">
 <meta property="og:url" content="https://president-salon.com/community-ai-seminar/">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary">
@@ -86,6 +86,7 @@
   .fv-h1{margin:calc(var(--u)*22) 0 0 calc(var(--u)*46);font-family:var(--serif);font-weight:900;font-size:calc(var(--u)*97);line-height:calc(var(--u)*122);letter-spacing:-.035em;white-space:nowrap;}
   .fv-h1 .mk{padding:0 calc(var(--u)*8) 0 calc(var(--u)*6);margin-left:calc(var(--u)*-6);}
   .fv-sub{margin:calc(var(--u)*12) 0 0 calc(var(--u)*48);font-weight:900;color:var(--blue-t);font-size:calc(var(--u)*50);line-height:calc(var(--u)*63);letter-spacing:-.01em;}
+  .fv-8{font-size:calc(var(--u)*74);letter-spacing:-.02em;margin:0 calc(var(--u)*2);padding:0 calc(var(--u)*4);background:linear-gradient(transparent 66%,var(--yel) 66%,var(--yel) 92%,transparent 92%);}
   .fv-pills{margin:calc(var(--u)*20) 0 0 calc(var(--u)*48);display:grid;gap:calc(var(--u)*15);width:calc(var(--u)*422);}
   .fv-pills li{height:calc(var(--u)*90);display:flex;align-items:center;gap:calc(var(--u)*24);padding-left:calc(var(--u)*18);background:#fff;border-radius:calc(var(--u)*16);box-shadow:0 calc(var(--u)*6) calc(var(--u)*22) rgba(40,100,190,.1);font-weight:700;font-size:max(12px,calc(var(--u)*31));letter-spacing:.02em;white-space:nowrap;}
   .fv-pills .ic{flex:none;width:calc(var(--u)*76);height:calc(var(--u)*76);border-radius:50%;background:linear-gradient(180deg,#2378ee,#0f5ad6);display:flex;align-items:center;justify-content:center;}
@@ -106,12 +107,14 @@
   .fv-stats .n{font-weight:900;color:var(--blue);font-size:calc(var(--u)*82);letter-spacing:-.04em;}
   .fv-stats .unit{font-weight:900;font-size:calc(var(--u)*37);}
   .fv-stats .lbl{margin-top:calc(var(--u)*10);font-weight:700;font-size:max(11px,calc(var(--u)*30));letter-spacing:.02em;}
-  .fv-learn{display:flex;align-items:center;justify-content:center;gap:calc(var(--u)*30);margin-top:calc(var(--u)*22);font-weight:700;font-size:max(12px,calc(var(--u)*30));letter-spacing:.1em;}
+  .fv-learn{display:flex;align-items:center;justify-content:center;gap:calc(var(--u)*30);font-weight:700;font-size:max(11px,calc(var(--u)*26));letter-spacing:.1em;line-height:1;}
   .fv-learn::before,.fv-learn::after{content:"";width:calc(var(--u)*30);height:max(1px,calc(var(--u)*2.4));background:var(--navy);transform:rotate(55deg);}
   .fv-learn::after{transform:rotate(-55deg);}
-  .fv-cta{margin:calc(var(--u)*6) calc(var(--u)*35) 0;height:calc(var(--u)*133);font-size:calc(var(--u)*52);padding-right:calc(var(--u)*60);}
+  .fv-cta{margin-top:calc(var(--u)*10);height:max(52px,calc(var(--u)*112));font-size:max(17px,calc(var(--u)*48));padding-right:calc(var(--u)*60);}
+  .sticky-cta{position:fixed;left:50%;bottom:0;transform:translateX(-50%);z-index:100;width:var(--w);padding:max(10px,calc(var(--u)*18)) calc(var(--u)*35) calc(max(10px,calc(var(--u)*20)) + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(243,248,254,0) 0%,rgba(243,248,254,.94) 28%,rgba(243,248,254,.98) 100%);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);}
+  .fv-note{margin-top:calc(var(--u)*22);}
   .fv-cta .arr{right:calc(var(--u)*34);width:calc(var(--u)*66);height:calc(var(--u)*66);}
-  .fv .note{margin-top:calc(var(--u)*18);font-size:max(11px,calc(var(--u)*26));}
+  .fv .note{font-size:max(11px,calc(var(--u)*26));}
 
   /* ===== 2. 悩み ===== */
   .pain{background:linear-gradient(180deg,#f5f9fe,#eef5fd);}
@@ -247,7 +250,7 @@
   .cta.white{margin:calc(var(--u)*18) calc(var(--u)*110) 0;height:calc(var(--u)*88);font-size:calc(var(--u)*44);background:#fff;color:var(--blue);box-shadow:0 calc(var(--u)*10) calc(var(--u)*26) rgba(0,40,120,.22);padding-right:calc(var(--u)*50);}
   .cta.white .arr{background:var(--blue);right:calc(var(--u)*50);width:calc(var(--u)*62);height:calc(var(--u)*62);}
   .info .band .note{margin-top:calc(var(--u)*12);font-size:max(11px,calc(var(--u)*22));font-weight:500;}
-  .foot{background:#fff;text-align:center;padding:calc(var(--u)*12) 0 calc(var(--u)*14);font-size:max(10px,calc(var(--u)*18));line-height:1.45;letter-spacing:.06em;}
+  .foot{background:#fff;text-align:center;padding:calc(var(--u)*12) 0 calc(max(88px,calc(var(--u)*190)) + env(safe-area-inset-bottom));font-size:max(10px,calc(var(--u)*18));line-height:1.45;letter-spacing:.06em;}
 </style>
 </head>
 <body>
@@ -264,11 +267,11 @@
   <div class="fv-photo"><img src="assets/matsunaga-cutout.webp" alt="講師 松永勇樹" width="1100" height="1503"></div>
 
   <div class="z">
-    <p class="fv-brand">コミュニティ運営ラボ</p>
+    <p class="fv-brand">ひとり社長サロン</p>
     <div class="fv-band">コミュニティオーナー・運営担当者の方へ</div>
     <p class="fv-kicker">現役オーナーが教える AI活用セミナー</p>
     <h1 class="fv-h1">コミ<span class="pk">ュ</span>ニテ<span class="pk">ィ</span>運営<span class="pr">、</span><br><span class="mk">ひとりで抱えて</span><br>いませんか<span class="pq">？</span></h1>
-    <p class="fv-sub">告知・制作・動画編集を、<br>AIで効率化。</p>
+    <p class="fv-sub">運営業務の<span class="fv-8">8割</span>を、<br>AI・外注で効率化。</p>
     <ul class="fv-pills">
       <li><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20v8a2 2 0 0 0 2 2h5l14 8V10L14 18H9a2 2 0 0 0-2 2z"/><path d="M14 30l3 8h4l-2-8"/><path d="M34 17l4-3M35 24h5M34 31l4 3"/></svg></span>イベント告知・バナー</li>
       <li><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="9" width="36" height="26" rx="3"/><path d="M20 16v12l10-6z"/><path d="M17 41h14"/></svg></span>動画編集・レポート</li>
@@ -280,12 +283,10 @@
   <div class="fv-name"><small>株式会社AI Docks 代表</small><strong>松永 勇樹</strong></div>
 
   <div class="stats card fv-stats">
-    <div class="it"><div class="big"><span class="n">150</span><span class="unit">名以上</span></div><p class="lbl">ノーコードサロンを運営</p></div>
+    <div class="it"><div class="big"><span class="n">150</span><span class="unit">名以上</span></div><p class="lbl">月額コミュニティを運営</p></div>
     <div class="it"><div class="big"><span class="n">50</span><span class="unit">件以上</span></div><p class="lbl">コミュニティ相談実績</p></div>
   </div>
-  <p class="fv-learn z">現役オーナーの実践から学ぶ</p>
-  <a class="cta fv-cta z" href="#entry" data-cta>無料セミナーに申し込む<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#1666e0" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></a>
-  <p class="note z">オンライン（Zoom）開催</p>
+  <p class="note fv-note z">オンライン（Zoom）開催</p>
 </section>
 
 <!-- ================= 2. 悩み ================= -->
@@ -639,6 +640,7 @@
         <dt class="h94">参加費</dt><dd class="h94"><span class="free">無料</span></dd>
         <dt class="h86">対象</dt><dd class="h86">コミュニティオーナー・運営担当者</dd>
         <dt class="h86">講師</dt><dd class="h86">松永 勇樹（株式会社AI Docks 代表）</dd>
+        <dt class="h86">主催</dt><dd class="h86">ひとり社長サロン</dd>
       </dl>
     </div>
     <div class="faq-ttl">
@@ -664,10 +666,16 @@
     <a class="cta white z" href="#entry" data-cta>無料セミナーに申し込む<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
     <p class="note z">オンライン（Zoom）開催</p>
   </div>
-  <footer class="foot">運営：株式会社AI Docks<br>© AI Docks</footer>
+  <footer class="foot">主催：ひとり社長サロン／運営：株式会社AI Docks<br>© AI Docks</footer>
 </section>
 
 </main>
+
+<!-- 画面下に追従する申込ボタン -->
+<div class="sticky-cta">
+  <p class="fv-learn">現役オーナーの実践から学ぶ</p>
+  <a class="cta fv-cta" href="#entry" data-cta>無料セミナーに申し込む<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#1666e0" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span></a>
+</div>
 <script>
   // 申込先URL。決まったらここだけ差し替える（空のあいだはページ内の申込ブロックへ移動）
   var ENTRY_URL = '';
